@@ -1,0 +1,102 @@
+.inputField {
+  width: var(--width-272);
+  height: var(--height-48);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--input-field-padding-verticle);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-text-body-subtle-on-primary);
+  font-family: var(--family-primary);
+}
+.labelContainer {
+  width: var(--width-240);
+  align-items: center;
+  gap: var(--input-field-padding-support);
+  flex-shrink: 0;
+}
+.label {
+  position: relative;
+  line-height: var(--line-height-sm);
+  font-weight: var(--font-weight-medium);
+}
+.infoIcon {
+  height: var(--input-field-label-icon-size);
+  width: var(--width-16);
+  position: relative;
+}
+.inputContainer {
+  align-self: stretch;
+  height: var(--input-field-height);
+  border-radius: var(--input-field-corner-radius);
+  border: var(--input-field-border-width) solid
+    var(--color-border-border-default);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: var(--padding-0) var(--input-field-padding);
+  gap: var(--input-field-input-spacing);
+  flex-shrink: 0;
+}
+.personIcon {
+  cursor: pointer;
+  padding: var(--padding-01);
+  height: var(--input-field-input-icon-size);
+  width: var(--width-20);
+  display: none;
+}
+.personIcon,
+.placeholderText,
+.searchIcon {
+  border: 0;
+  background-color: transparent;
+  position: relative;
+}
+.placeholderText {
+  width: var(--width-calc100-52);
+  outline: 0;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--family-primary);
+  font-size: var(--font-size-md);
+  flex: 1;
+  line-height: var(--line-height-lg);
+  color: var(--color-text-text-body-subtle-on-secondary);
+  text-align: left;
+  display: inline-block;
+}
+.searchIcon {
+  cursor: pointer;
+  padding: var(--padding-01);
+  height: var(--input-field-input-icon-size);
+  width: var(--width-20);
+}
+.validationContainer {
+  width: var(--width-240);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-0);
+  flex-shrink: 0;
+  font-size: var(--font-size-2xs);
+}
+.validationTextContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--input-field-padding-support);
+}
+.validationInfoIcon {
+  height: var(--input-field-supporting-icon-size);
+  width: var(--width-14);
+  position: relative;
+}
+.characterCount,
+.validationText {
+  position: relative;
+  line-height: var(--line-height-2xs);
+}
+.characterCount {
+  flex: 1;
+  text-align: right;
+}

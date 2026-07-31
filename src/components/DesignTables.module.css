@@ -1,0 +1,140 @@
+.frameWrapper {
+  align-self: stretch;
+  border-radius: var(--br-8);
+  background-color: var(--color-whitesmoke);
+  display: flex;
+  align-items: center;
+  padding: var(--padding-16);
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--fs-20);
+  color: var(--color-gray-500);
+  font-family: var(--font-noto-sans);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.frameWrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+.frameGroup,
+.frameParent {
+  flex: 1;
+  display: flex;
+  max-width: 100%;
+}
+.frameParent {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-10) var(--gap-12);
+}
+.frameGroup {
+  align-items: center;
+  gap: var(--gap-16);
+  min-width: var(--min-w-614);
+}
+.frameContainer {
+  height: var(--height-48);
+  width: var(--width-37);
+  position: relative;
+}
+.frameChild {
+  position: absolute;
+  height: 66.67%;
+  width: 56.76%;
+  top: 16.67%;
+  right: 21.62%;
+  bottom: 16.67%;
+  left: 21.62%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.hbkDesignComponentsLibraryParent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-8);
+  min-width: var(--min-w-580);
+  max-width: 100%;
+}
+.hbkDesignComponents {
+  margin: 0;
+  height: auto;
+  position: relative;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-block;
+}
+.coreComponentsUsed {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-14);
+  color: var(--color-dimgray);
+}
+.frameButton {
+  cursor: pointer;
+  border: var(--border-7);
+  padding: var(--padding-11) var(--padding-10) var(--padding-11)
+    var(--padding-15);
+  background-color: var(--color-white);
+  height: var(--height-48);
+  border-radius: var(--br-12);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.caretrightParent {
+  width: var(--width-108);
+  height: var(--height-24);
+  display: flex;
+  align-items: center;
+}
+.caretrightIcon {
+  height: var(--height-24);
+  width: var(--width-24);
+  position: relative;
+  display: none;
+}
+.viewFigmaKit {
+  position: relative;
+  font-size: var(--fs-14);
+  letter-spacing: -0.02em;
+  line-height: var(--lh-24);
+  font-weight: 500;
+  font-family: var(--font-noto-sans);
+  color: var(--color-black);
+  text-align: left;
+}
+@media screen and (max-width: 1200px) {
+  .hbkFigmaResources{
+    font-size: var(--fs-30);
+    line-height: var(--lh-30);
+  }
+  .accessThePrivate{
+    font-size: var(--fs-20);
+    line-height: var(--lh-24);
+  }
+  .hbkDesignComponents{
+    font-size: var(--fs-20);
+    line-height: var(--lh-24);
+  }
+}
+@media screen and (max-width: 768px) {
+  .frameGroup{
+    min-width: 100%;
+  }
+  .frameButton{
+    margin-left: 54px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hbkDesignComponents{
+    font-size: var(--fs-18);
+    line-height: var(--lh-24);
+  }
+}

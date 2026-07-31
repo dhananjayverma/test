@@ -1,0 +1,68 @@
+.frameParent {
+  flex: 1;
+  border-radius: var(--br-24);
+  background-color: var(--color-background-bg-primary);
+  border: var(--border-4);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--internal-padding-medium);
+  gap: var(--gap-24);
+  min-width: var(--min-w-262);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-text-text-heading-on-tertiary);
+  font-family: var(--family-primary);
+}
+.frameChild {
+  align-self: stretch;
+  height: var(--height-210);
+  position: relative;
+  border-radius: var(--br-8);
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.visionValuesPrinciplesParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-8);
+}
+.definesTheCore,
+.visionValues {
+  align-self: stretch;
+  position: relative;
+}
+.visionValues {
+  margin: 0;
+  font-size: inherit;
+  line-height: var(--line-height-2xl1);
+  font-weight: var(--font-weight-semibold);
+  font-family: inherit;
+}
+.definesTheCore {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-xl);
+  color: var(--color-text-text-body-on-tertiary);
+  display: -webkit-inline-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+@media screen and (max-width: 450px) {
+  .frameParent {
+    padding-top: var(--padding-20);
+    padding-bottom: var(--padding-20);
+    box-sizing: border-box;
+  }
+  .visionValues {
+    font-size: var(--fs-16);
+    line-height: var(--lh-22);
+  }
+}

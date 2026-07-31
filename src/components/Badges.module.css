@@ -1,0 +1,35 @@
+.numberContainer,
+.root {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.root {
+  height: var(--icon-md);
+  width: var(--width-20);
+  border-radius: var(--border-radius-rd-full);
+  background-color: var(--color-background-bg-brand);
+  display: none;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-text-on-brand);
+  font-family: var(--family-primary);
+}
+.root[data-type="Number unselected"][data-size="Small"] {
+  background-color: var(--color-background-bg-grey);
+}
+.root[data-type="Number unselected"][data-size="Small"] .number {
+  color: var(--color-text-text-dark);
+}
+.numberContainer {
+  width: 100%;
+  display: flex;
+  max-width: 100%;
+}
+.number {
+  align-self: stretch;
+  position: relative;
+  line-height: var(--line-height-sm);
+  font-weight: var(--font-weight-medium);
+}

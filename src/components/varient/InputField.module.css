@@ -1,0 +1,92 @@
+.inputField {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--input-field-padding-verticle);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-text-body-subtle-on-primary);
+  font-family: var(--family-primary);
+}
+.labelContainer {
+  width: var(--width-240);
+  align-items: center;
+  gap: var(--input-field-padding-support);
+  flex-shrink: 0;
+}
+.label {
+  position: relative;
+  line-height: var(--line-height-sm);
+  font-weight: var(--font-weight-medium);
+}
+.infoIcon {
+  height: var(--input-field-label-icon-size);
+  width: var(--width-16);
+  position: relative;
+}
+.inputContainer {
+  align-self: stretch;
+  height: var(--input-field-height);
+  border-radius: var(--input-field-corner-radius);
+  border: var(--border-1);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: var(--padding-0) var(--input-field-padding);
+  gap: var(--input-field-input-spacing);
+  flex-shrink: 0;
+}
+.personIcon {
+  height: var(--input-field-input-icon-size);
+  width: var(--width-20);
+  position: relative;
+}
+.placeholderText {
+  width: var(--width-calc100-52);
+  border: 0;
+  outline: 0;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--family-primary);
+  font-size: var(--font-size-md);
+  background-color: transparent;
+  flex: 1;
+  position: relative;
+  line-height: var(--line-height-lg);
+  color: var(--color-text-text-fg-disabled);
+  text-align: left;
+  display: inline-block;
+}
+.searchIcon {
+  width: var(--width-20);
+  position: relative;
+  max-height: 100%;
+}
+.validationContainer {
+  width: var(--width-240);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-0);
+  flex-shrink: 0;
+  font-size: var(--font-size-2xs);
+}
+.validationTextContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--input-field-padding-support);
+}
+.validationInfoIcon {
+  height: var(--input-field-supporting-icon-size);
+  width: var(--width-14);
+  position: relative;
+}
+.characterCount,
+.validationText {
+  position: relative;
+  line-height: var(--line-height-2xs);
+}
+.characterCount {
+  flex: 1;
+  text-align: right;
+}

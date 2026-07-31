@@ -1,0 +1,74 @@
+.frameContainer,
+.frameWrapper {
+  flex: 1;
+  display: flex;
+  max-width: 100%;
+}
+.frameWrapper {
+  background-color: var(--color-background-bg-tertiary);
+  align-items: center;
+  min-width: var(--min-w-310);
+  text-align: left;
+  font-size: var(--fs-24);
+  color: var(--color-gray-500);
+  font-family: var(--font-noto-sans);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+.frameWrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+.frameContainer {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-24);
+  box-sizing: border-box;
+}
+.frameParent {
+  gap: var(--gap-16);
+}
+.frameDiv,
+.frameParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.premiumCustomerExperience {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+.div {
+  position: relative;
+  display: none;
+}
+.chooseYourContext {
+  width: 100%;
+  font-size: var(--fs-16);
+  display: inline-block;
+}
+.chooseYourContext {
+  position: relative;
+  letter-spacing: -0.01em;
+  line-height: 150%;
+  color: var(--color-dimgray);
+  max-width: var(--max-w-484);
+}
+@media screen and (max-width: 1200px) {
+  .frameWrapper{
+    font-size: var(--fs-20);
+    line-height: var(--lh-24);
+  }
+}
+@media screen and (max-width: 768px) {
+  .frameWrapper{
+    min-width: 100%;
+  }
+}

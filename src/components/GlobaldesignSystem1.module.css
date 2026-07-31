@@ -1,0 +1,169 @@
+.frameParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  gap: var(--gap-16);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--fs-22);
+  color: var(--color-gray-500);
+  font-family: "Noto Sans";
+  
+  /* Added card styles */
+  background: #fff;
+  border-radius: 28px;
+  padding: 16px;
+  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+.frameParent:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+  border-color: #e5e7eb;
+}
+.frameChild {
+  align-self: stretch;
+  position: relative;
+  border-radius: var(--br-24);
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.frameGroup {
+  gap: var(--gap-16);
+}
+.frameGroup,
+.frameWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.guidingPrinciples {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+.frameContainer {
+  width: var(--width-318);
+  height: var(--height-48);
+  position: relative;
+  display: none;
+  flex-shrink: 0;
+}
+.frameDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12);
+  background-color: var(--color-mediumslateblue-200);
+  width: var(--width-167);
+  height: var(--height-48);
+}
+.caretrightIcon,
+.caretrightParent {
+  position: absolute;
+  height: var(--height-24);
+}
+.caretrightParent {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-01);
+  background-color: transparent;
+  top: 12px;
+  left: 16px;
+  width: var(--width-135);
+}
+.caretrightIcon {
+  top: 0;
+  left: 0;
+  width: var(--width-24);
+}
+.exploreSystem {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  font-size: var(--fs-16);
+  letter-spacing: -0.02em;
+  line-height: var(--lh-24);
+  font-weight: 500;
+  font-family: "Noto Sans";
+  color: var(--color-background-bg-white);
+  text-align: left;
+  display: inline-block;
+  min-width: var(--min-w-107);
+}
+.frameWrapper2 {
+  position: absolute;
+  top: 0;
+  left: 183px;
+  border-radius: var(--br-12);
+  background-color: var(--color-background-bg-white);
+  border: var(--border-3);
+  box-sizing: border-box;
+  width: var(--width-135);
+  height: var(--height-48);
+}
+.caretrightGroup,
+.caretrightIcon2 {
+  position: absolute;
+  height: var(--height-24);
+}
+.caretrightGroup {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-01);
+  background-color: transparent;
+  top: 12px;
+  left: 16px;
+  width: var(--width-103);
+}
+.caretrightIcon2 {
+  top: 0;
+  left: 0;
+  width: var(--width-24);
+  display: none;
+}
+.viewFigmaKit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--fs-16);
+  letter-spacing: -0.02em;
+  line-height: var(--lh-24);
+  font-weight: 500;
+  font-family: "Noto Sans";
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  min-width: var(--min-w-103);
+  width: 100%;
+  height: 100%;
+}
+.chooseYourContext {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-14);
+  letter-spacing: -0.01em;
+  line-height: 24px;
+  color: var(--color-dimgray-200);
+}
+@media screen and (max-width: 1000px) {
+  .guidingPrinciples{
+    font-size: var(--fs-20);
+    line-height: var(--lh-24);
+  }
+}
+@media screen and (max-width: 480px) {
+  .guidingPrinciples {
+    font-size: var(--fs-18);
+  }
+}

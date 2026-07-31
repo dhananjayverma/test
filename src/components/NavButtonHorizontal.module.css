@@ -1,0 +1,57 @@
+.navButtonHorizontal {
+  height: var(--button-button-base);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-text-on-brand);
+  font-family: var(--family-primary);
+}
+.selectionContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--button-spacing-base);
+  z-index: 0;
+  flex-shrink: 0;
+}
+.addIcon,
+.textLabel {
+  position: relative;
+  flex-shrink: 0;
+}
+.textLabel {
+  line-height: var(--line-height-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-text-fg-brand);
+}
+.addIcon {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-01);
+  background-color: transparent;
+  height: var(--button-icon-size-base);
+  width: var(--width-20);
+  display: none;
+}
+.navButtonHorizontalChild,
+.selectionIndicator {
+  height: var(--height-2);
+  width: var(--width-300);
+  position: absolute;
+  margin: 0 !important;
+  left: 0;
+  background-color: var(--color-border-border-brand);
+  flex-shrink: 0;
+}
+.navButtonHorizontalChild {
+  top: 0;
+  display: none;
+  z-index: 1;
+}
+.selectionIndicator {
+  bottom: 0;
+  z-index: 2;
+}

@@ -1,0 +1,85 @@
+.frameGroup,
+.frameWrapper {
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+}
+.frameWrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  font-size: var(--fs-20);
+  color: var(--color-gray-500);
+  font-family: var(--font-noto-sans);
+}
+.frameGroup {
+  align-items: stretch;
+  gap: var(--gap-16);
+}
+.frameContainer {
+  flex: 1.0609;
+  border-radius: var(--br-24);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: var(--padding-16) 9px;
+  box-sizing: border-box;
+  width: calc(25% - 16px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+.frameContainer:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+.frameChild {
+  width: 100%;
+  max-width: 280px;
+  position: relative;
+}
+.componentLibraryParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 7px var(--padding-16);
+  gap: var(--gap-4);
+}
+.componentLibrary {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  font-family: inherit;
+}
+.preBuiltCustomizableUi {
+  width: 100%;
+  position: relative;
+  font-size: var(--fs-14);
+  letter-spacing: -0.01em;
+  line-height: 150%;
+  color: var(--color-dimgray);
+  display: inline-block;
+}
+@media screen and (max-width: 1200px) {
+  .componentLibrary{
+    font-size: var(--fs-20);
+    line-height: var(--lh-24);
+  }
+}
+@media screen and (max-width: 768px) {
+  .frameGroup{
+    flex-wrap: wrap;
+  }
+  .frameContainer{
+    min-width: 100%;
+  }
+  .frameContainer,.componentLibraryParent{
+    align-items: center;
+  }
+  .preBuiltCustomizableUi{
+    text-align: center;
+  }
+}

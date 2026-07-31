@@ -1,0 +1,78 @@
+.frameGroup,
+.frameParent {
+  align-self: stretch;
+  display: flex;
+  max-width: 100%;
+}
+.frameParent {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-48) var(--padding-48);
+  box-sizing: border-box;
+  gap: var(--gap-32);
+  text-align: left;
+  font-size: var(--fs-16);
+  color: var(--color-dimgray);
+  font-family: var(--font-noto-sans);
+}
+.frameGroup {
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: var(--gap-10) var(--gap-24);
+}
+.frameContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-24);
+  min-width: var(--min-w-209);
+  max-width: 100%;
+}
+.frameChild {
+  width: 129.8px;
+  position: relative;
+  max-height: 100%;
+}
+.integratingDesignInto {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  max-width: var(--max-w-320_7);
+}
+.h2 {
+  margin: 0;
+  position: relative;
+  font-size: var(--fs-32);
+  letter-spacing: -0.01em;
+  line-height: 142%;
+  font-weight: 300;
+  font-family: inherit;
+}
+.frameInner,
+.frameItem {
+  width: 115.7px;
+  position: relative;
+  max-height: 100%;
+}
+.frameInner {
+  width: 116px;
+}
+.frameChild,
+.frameInner,
+.frameItem {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.frameChild:hover,
+.frameInner:hover,
+.frameItem:hover {
+  transform: scale(1.05);
+}
+@media screen and (max-width: 768px) {
+  .frameContainer{
+    min-width: 100%;
+  }
+}

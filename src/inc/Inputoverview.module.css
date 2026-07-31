@@ -1,0 +1,240 @@
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px 48px 56px;
+  font-family: "Noto Sans", sans-serif;
+  color: #444;
+}
+.page {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+.content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  text-align: left;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width:  100%;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.sectionTitle,
+.subTitle {
+  margin: 0;
+  color: #282828;
+  font-weight: 600;
+}
+.sectionTitle {
+  font-size: 30px;
+  line-height: 38px;
+}
+.subTitle {
+  font-size: 22px;
+  line-height: 30px;
+}
+.sectionText {
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  color: #52525b;
+}
+.sectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.tableWrap {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+.tableHeader,
+.tableRow {
+  display: grid;
+  grid-template-columns: 56px minmax(140px, 1.2fr) minmax(140px, 1fr) minmax(220px, 2fr);
+  gap: 16px;
+  align-items: center;
+  padding: 16px 24px;
+}
+.tableHeader {
+  background: #f8f8fa;
+  color: #252636;
+  font-size: 14px;
+  font-weight: 600;
+}
+.tableRow {
+  background: #fcfcfc;
+  border-top: 1px solid #f1f1f4;
+  color: #282828;
+  font-size: 14px;
+}
+.colNo {
+  font-weight: 500;
+}
+.dosDontsGrid {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+.dosCard,
+.dontsCard {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+  width:50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.dosCard:hover,
+.dontsCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+.dosCard {
+  background-color: var(--color-forestgreen-100);
+}
+.dontsCard {
+  background-color: var(--color-red-100);
+}
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #282828;
+  padding: var(--padding-20) var(--padding-16);
+}
+.dosCard .cardTitle {
+  background-color: var(--color-forestgreen-200);
+}
+.dontsCard .cardTitle {
+  background-color: var(--color-red-200);
+}
+.list {
+  margin: 0;
+  padding: var(--padding-16);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #444;
+  line-height: 24px;
+  list-style: none;
+}
+.list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+}
+.bullet {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.bullet img{
+  width: 16px;
+  height: 16px;
+}
+
+.sideNav {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position:sticky;
+  top:170px;
+}
+.navItem {
+  padding: 8px 16px;
+  border-left: 1px solid #e7e7e7;
+  font-size: 14px;
+  line-height: 20px;
+  color: #52525b;
+  text-align: left;
+  cursor: pointer;
+}
+.navItemActive {
+  border-left: 2px solid #101828;
+  color: #101828;
+  font-weight: 600;
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #e5e7eb;
+}
+@media screen and (max-width: 1200px) {
+  .page {
+    flex-direction: column;
+  }
+  .container {
+    padding: var(--padding-24) var(--padding-24) var(--padding-48);
+  }
+  .sideNav {
+    display:none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px 24px 40px;
+  }
+  .content {
+    gap: 32px;
+  }
+  .sectionTitle {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .subTitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .tableHeader, .tableRow{
+    padding:16px 10px;
+    grid-template-columns: 40px 120px 120px 1fr;
+    gap: 8px;
+  }
+  .dosDontsGrid{
+    flex-direction: column;
+  }
+  .dosCard, .dontsCard{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+  .sectionTitle {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .sectionText {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .tableHeader, .tableRow{
+    font-size: 12px;
+    grid-template-columns: 40px 80px 80px 1fr;
+  }
+  .list li{
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,29 @@
+.badges,
+.numberContainer {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.badges {
+  height: var(--icon-md);
+  position: relative;
+  border-radius: var(--border-radius-rd-full);
+  background-color: var(--color-background-bg-brand);
+  display: none;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-text-on-brand);
+  font-family: var(--family-primary);
+}
+.numberContainer {
+  display: flex;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.number {
+  align-self: stretch;
+  position: relative;
+  line-height: var(--line-height-sm);
+  font-weight: var(--font-weight-medium);
+}

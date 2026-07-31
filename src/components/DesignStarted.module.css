@@ -1,0 +1,126 @@
+.frameGroup,
+.frameWrapper {
+  align-self: stretch;
+  flex-direction: column;
+}
+.frameWrapper {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--fs-30);
+  color: var(--color-gray-500);
+  font-family: var(--font-noto-sans);
+}
+.frameGroup {
+  gap: var(--gap-16);
+}
+.frameContainer,
+.frameDiv,
+.frameGroup {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.frameContainer {
+  align-self: stretch;
+}
+.frameDiv {
+  flex: 1;
+}
+.aVisionPowered {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  font-family: inherit;
+}
+.frameParent2,
+.frameWrapper3 {
+  display: flex;
+  align-items: stretch;
+  max-width: 100%;
+}
+.frameParent2 {
+  align-self: stretch;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--gap-10) var(--gap-16);
+  font-size: var(--fs-20);
+}
+.frameWrapper3 {
+  flex: 1;
+  border-radius: var(--br-8);
+  background-color: var(--color-background-bg-tertiary);
+  padding: var(--padding-24) var(--padding-24) 45px;
+  box-sizing: border-box;
+  min-width: 266px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+.frameWrapper3:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+.beTrueParent,
+.frameWrapper4,
+.frameWrapper5 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.frameWrapper4 {
+  flex: 1;
+}
+.beTrueParent,
+.frameWrapper5 {
+  align-self: stretch;
+}
+.frameWrapper5 {
+  justify-content: center;
+}
+.beTrueParent {
+  gap: var(--gap-8);
+}
+.listNo{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-text-text-fg-brand);
+  color: #fff;
+  border-radius: 20px;
+}
+.beTrue {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+}
+.weActWith {
+  width: 100%;
+  position: relative;
+  font-size: var(--fs-14);
+  color: var(--color-dimgray);
+  display: inline-block;
+  max-width: 1005;
+}
+@media screen and (max-width: 1200px) {
+  .frameWrapper3{
+    min-width: auto;
+    width: calc(33.33% - 16px);
+  }
+  .aVisionPowered{
+    font-size: var(--fs-30);
+    line-height: var(--lh-30);
+  }
+}
+@media screen and (max-width: 768px) {
+  .frameWrapper3{
+    min-width: 100%;
+  }
+}

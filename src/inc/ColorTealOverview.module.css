@@ -1,0 +1,295 @@
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px 48px 56px;
+  font-family: "Noto Sans", sans-serif;
+  color: #444;
+}
+.page {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+.content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  text-align: left;
+}
+.heroSection {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 100%;
+}
+.heroCopy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 100%;
+}
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.sectionTitle,
+.subTitle {
+  margin: 0;
+  color: #282828;
+  font-weight: 600;
+}
+.sectionTitle {
+  font-size: 30px;
+  line-height: 38px;
+}
+.subTitle {
+  font-size: 22px;
+  line-height: 30px;
+}
+.sectionText {
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  color: #52525b;
+}
+.sectionText span {
+  font-weight: 700;
+}
+.colorCard {
+  width: 52%;
+  max-width: 100%;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+.colorCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+.colorCardInner {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-align: left;
+}
+.colorSwatch {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: #008080;
+  flex-shrink: 0;
+}
+.colorCardText h3 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 36px;
+  font-weight: 600;
+  color: #000;
+}
+.colorCardText p {
+  margin: 4px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+}
+
+.colorCardCaption {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #52525b;
+  font-style: italic;
+}
+.reminderCard {
+  background: #f0f1f1;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 860px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+.reminderCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+.reminderList {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #282828;
+}
+.reminderList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 24px;
+}
+.bullet {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.bullet img{
+  width: 16px;
+  height: 16px;
+}
+.valueChainCard {
+  border-radius: 8px;
+  width: 100%;
+  margin-top:10px;
+  margin-bottom: 25px;
+}
+.valueChainImage{
+  width: 100%;
+  height: auto;
+}
+.simulationPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 100%;
+}
+.simulationPanel {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #F0F1F1;
+  text-align: center;
+}
+.simulationImage {
+  width: 80%;
+  height: auto;
+}
+.sideNav {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position:sticky;
+  top:170px;
+}
+.navItem {
+  padding: 8px 16px;
+  border-left: 1px solid #e7e7e7;
+  font-size: 14px;
+  line-height: 20px;
+  color: #52525b;
+  text-align: left;
+  cursor: pointer;
+}
+.navItemActive {
+  border-left: 2px solid #101828;
+  color: #101828;
+  font-weight: 600;
+}
+.divider{
+  width: 100%;
+  height: 1px;
+  background: #e5e7eb;
+}
+@media screen and (max-width: 1200px) {
+  .page {
+    flex-direction: column;
+  }
+  .container{
+    padding: var(--padding-24) var(--padding-24) var(--padding-48);
+  }
+  .simulationPreview{
+    max-width: 100%;
+  }
+  .sideNav {
+    display:none;
+  }
+  .colorSection{
+    gap: var(--gap-16);
+  }
+  .navItem {
+    border-left: 0;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .navItemActive {
+    border-left: 0;
+    border-bottom: 2px solid #101828;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px 24px 40px;
+  }
+  .content {
+    gap: 32px;
+  }
+  .sectionTitle {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .heroSection{
+    flex-wrap: wrap;
+  }
+  .heroCopy{
+    flex: 1;
+    width:100%;
+  }
+  .colorCard{
+    width: 100%;
+  }
+  .subTitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .neutralCard {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+  .sectionTitle {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .colorCardText h3{
+    font-size: 22px;
+  }
+  .sectionText,
+  .list,
+  .tableReason,
+  .footerText {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .sectionHeader {
+    gap: 16px;
+  }
+  .heroSection{
+    margin-top:-15px;
+  }
+  .reminderList li{
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

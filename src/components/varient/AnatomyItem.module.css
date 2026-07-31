@@ -1,0 +1,127 @@
+.anatomyItem {
+  overflow: hidden;
+  flex-direction: column;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) var(--padding-28);
+  position: relative;
+  isolation: isolate;
+  gap: var(--gap-8);
+  text-align: left;
+  font-size: var(--fs-16);
+  color: var(--color-black);
+  font-family: var(--family-primary);
+}
+.anatomyItem,
+.element,
+.element2,
+.elementParent {
+  display: flex;
+  align-items: flex-start;
+}
+.elementParent {
+  gap: var(--gap-24);
+  z-index: 0;
+  flex-shrink: 0;
+}
+.element,
+.element2 {
+  overflow: hidden;
+}
+.element {
+  flex-direction: column;
+  gap: var(--gap-2);
+}
+.element2 {
+  gap: var(--gap-6);
+}
+.text,
+.typeIcon {
+  position: relative;
+}
+.typeIcon {
+  height: var(--height-20);
+  width: var(--width-20);
+}
+.text {
+  line-height: var(--lh-24);
+  font-weight: var(--font-weight-semibold);
+}
+.attribute,
+.attributes {
+  overflow: hidden;
+  display: flex;
+}
+.attributes {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-2);
+  font-size: var(--font-size-2xs);
+}
+.attribute {
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-4);
+}
+.name {
+  position: relative;
+  line-height: var(--line-height-xs);
+}
+.nameSpacerOne {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-4) var(--padding-0);
+  text-align: center;
+}
+.value {
+  position: relative;
+  line-height: var(--line-height-2xs);
+  font-weight: var(--font-weight-medium);
+}
+.attributes2,
+.nameSpacerThree {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.attributes2 {
+  flex-direction: column;
+  font-size: var(--font-size-2xs);
+}
+.nameSpacerThree {
+  border-radius: var(--br-99);
+  background-color: var(--color-whitesmoke);
+  border: var(--border-3);
+  padding: var(--padding-4) var(--padding-9);
+  text-align: center;
+  color: var(--color-brown);
+}
+.dot,
+.spacerComponent {
+  width: var(--width-20);
+  display: flex;
+}
+.dot {
+  height: var(--height-20);
+  margin: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-100);
+  background-color: var(--color-chocolate-100);
+  overflow: hidden;
+  flex-shrink: 0;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-0) var(--padding-4);
+  box-sizing: border-box;
+  z-index: 1;
+  text-align: center;
+  font-size: var(--fs-12);
+  color: var(--color-background-bg-primary);
+  font-family: var(--font-inter);
+}
+.spacerComponent {
+  height: var(--height-16);
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}

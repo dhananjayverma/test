@@ -1,0 +1,38 @@
+.root {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-0) var(--button-padding-small);
+  background-color: var(--color-background-bg-cta);
+  height: var(--button-button-small);
+  position: relative;
+  border-radius: var(--button-border-radius);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: var(--button-spacing-small);
+  min-width: var(--button-min-width-small);
+}
+.placeholderIcon {
+  height: var(--button-icon-size-small);
+  width: var(--width-16);
+  position: relative;
+}
+.buttonText {
+  position: relative;
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-2xs);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--family-primary);
+  color: var(--color-text-text-on-cta);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.placeholderIcon2 {
+  height: var(--button-icon-size-small);
+  width: var(--width-16);
+  position: relative;
+}

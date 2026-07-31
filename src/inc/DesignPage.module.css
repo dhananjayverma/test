@@ -1,0 +1,165 @@
+.sectionParent {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 var(--padding-48) var(--padding-48);
+  box-sizing: border-box;
+  gap: 32px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.builtForTeamsParent,
+.frameParent,
+.frameWrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.frameWrapper {
+  align-self: stretch;
+  text-align: left;
+  font-size: var(--fs-30);
+  color: var(--color-gray-500);
+  font-family: var(--font-noto-sans);
+}
+.builtForTeamsParent,
+.frameParent {
+  flex: 1;
+}
+.builtForTeamsParent {
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.builtForTeams {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  font-family: inherit;
+}
+.hbkGlobalDesign {
+  width: 100%;
+  position: relative;
+  font-size: var(--fs-14);
+  letter-spacing: -0.01em;
+  line-height: 150%;
+  color: var(--color-dimgray);
+  display: inline-block;
+  max-width: 1096px;
+}
+.frameGroup {
+  height: var(--height-48);
+  width: 318px;
+  position: relative;
+  display: none;
+  flex-shrink: 0;
+}
+.frameContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12);
+  background-color: var(--color-mediumslateblue);
+  width: 167px;
+  height: var(--height-48);
+}
+.caretrightIcon,
+.caretrightParent {
+  position: absolute;
+  height: var(--height-24);
+}
+.caretrightParent {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 12px;
+  left: 16px;
+  width: 135px;
+}
+.caretrightIcon {
+  top: 0;
+  left: 0;
+  width: var(--width-24);
+}
+.exploreSystem {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  font-size: var(--fs-16);
+  letter-spacing: -0.02em;
+  line-height: var(--lh-24);
+  font-weight: 500;
+  font-family: var(--font-noto-sans);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+  min-width: 107px;
+}
+.frameDiv {
+  position: absolute;
+  top: 0;
+  left: 183px;
+  border-radius: var(--br-12);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  box-sizing: border-box;
+  width: 135px;
+  height: var(--height-48);
+}
+.caretrightGroup,
+.caretrightIcon2 {
+  position: absolute;
+  height: var(--height-24);
+}
+.caretrightGroup {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 12px;
+  left: 16px;
+  width: 103px;
+}
+.caretrightIcon2 {
+  top: 0;
+  left: 0;
+  width: var(--width-24);
+  display: none;
+}
+.viewFigmaKit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--fs-16);
+  letter-spacing: -0.02em;
+  line-height: var(--lh-24);
+  font-weight: 500;
+  font-family: var(--font-noto-sans);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  min-width: 103px;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 1200px) {
+  .sectionParent{
+    padding: 0 var(--padding-24) var(--padding-24);
+  }
+  .frameWrapper{
+    font-size: var(--fs-30);
+  }
+}
+@media screen and (max-width: 480px) {
+  .sectionParent{
+    padding: 0 var(--padding-16) var(--padding-24);
+  }
+  .frameWrapper{
+    font-size: var(--fs-24);
+    line-height: var(--lh-28);
+  }
+}

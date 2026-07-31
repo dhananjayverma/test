@@ -1,0 +1,260 @@
+.sideNavigation {
+  width: 320px;
+  background-color: var(--color-background-bg-white);
+  overflow-y: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-24) var(--padding-0) var(--padding-16) var(--padding-0);
+  box-sizing: border-box;
+  min-width: 256px;
+  max-width: 280px;
+  position: sticky;
+  top: 106px;
+  align-self: flex-start;
+  height: calc(100vh - 106px);
+  text-align: left;
+  font-size: var(--fs-14);
+  color: var(--color-darkslategray-200);
+  font-family: "Noto Sans";
+  scrollbar-width: thin;
+  scrollbar-color: #fff #fff;
+}
+.sideNavigation::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.sideNavigation::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* Thumb */
+.sideNavigation::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* Thumb on hover */
+.sideNavigation::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+.getStarted {
+  align-self: stretch;
+  display: flex;
+  background-color: var(--color-white);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-12) var(--padding-24) var(--padding-0);
+}
+.designElements {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.1px;
+  color: #A8A8A8;
+}
+
+
+/* Menu list */
+.menuList {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-16) 0 var(--padding-16);
+  gap: 0;
+  flex-shrink: 0;
+  font-size: var(--fs-18);
+  color: var(--color-gray-700);
+}
+.sidebar-item{
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-12) var(--padding-32) var(--padding-12) var(--padding-24);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--fs-14);
+  color: var(--color-gray);
+  font-family: var(--font-noto-sans);
+}
+
+
+/* Each accordion item */
+.menuItem {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Clickable header row */
+.menuHeader {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-12) 0;
+  background-color: transparent;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-8);
+  font-size: var(--fs-18);
+  font-family: "Noto Sans";
+  font-weight: 600;
+  color: var(--color-gray-700);
+  line-height: var(--lh-24);
+  width: 100%;
+  text-align: left;
+  border-radius: var(--br-10);
+  transition: background-color 0.15s ease;
+}
+
+.menuHeader:hover {
+  background-color: var(--color-background-bg-secondary);
+}
+
+.menuHeader:focus-visible {
+  outline: 2px solid var(--color-background-bg-cta);
+  outline-offset: 2px;
+}
+/* Caret icon */
+.caretIcon {
+  cursor: pointer;
+  height: var(--height-24);
+  width: var(--width-24);
+  position: relative;
+  object-fit: contain;
+  flex-shrink: 0;
+  transform: rotate(0deg);
+  transition: transform 0.25s ease;
+}
+.caretOpen {
+  transform: rotate(90deg);
+}
+
+.menuLabel {
+  flex: 1;
+  position: relative;
+  line-height: var(--lh-24);
+  font-weight: 600;
+}
+
+/* Sub-menu panel — CSS grid for smooth animation */
+.subMenu {
+  align-self: stretch;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.subMenuOpen {
+  grid-template-rows: 1fr;
+}
+
+.subMenuInner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* Individual sub-menu item */
+.subMenuItem {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  align-self: stretch;
+  width: 100%;
+  padding: var(--padding-8) var(--padding-8) var(--padding-8) 32px;
+  font-size: var(--fs-16);
+  font-family: "Noto Sans";
+  font-weight: 400;
+  color: var(--color-text-text-body-on-primary);
+  line-height: var(--lh-24);
+  text-align: left;
+  border-radius: var(--br-8);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.subMenuItem:hover {
+  background-color: var(--color-background-bg-secondary);
+  color: var(--color-background-bg-cta);
+}
+
+.subMenuItemActive {
+  background-color: var(--color-aliceblue-100);
+  color: var(--color-background-bg-cta);
+  font-weight: 600;
+  border-left: 3px solid var(--color-background-bg-cta);
+  padding-left: 29px;
+}
+
+.subMenuItemActive:hover {
+  background-color: var(--color-aliceblue-100);
+}
+
+.subMenuItem:focus-visible {
+  outline: 2px solid var(--color-background-bg-cta);
+  outline-offset: 2px;
+}
+
+/* Divider between items */
+.divider {
+  align-self: stretch;
+  height: var(--height-1);
+  background-color: var(--color-border-border-soft);
+  opacity: 0.6;
+}
+.close_sidenav{
+  text-align: right;
+  width: 100%;
+  display: none;
+}
+.close_sidenav .image{
+  height: 20px;
+  cursor: pointer;
+}
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .caretIcon,
+  .subMenu {
+    transition: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .close_sidenav{
+    display: block;
+  }
+  .sideNavigation{
+    position: fixed;
+    top: 106px;
+    z-index: 100;
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sideNavigation{
+    top: 86px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sideNavigation {
+    flex: 1;
+  }
+  .sideNavigation{
+    top: 78px;
+  }
+}
+
+
+
+
+

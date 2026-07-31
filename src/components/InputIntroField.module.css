@@ -1,0 +1,97 @@
+.root {
+  position: absolute;
+  top: calc(50% - 65.5px);
+  left: calc(50% - 120px);
+  width: var(--width-240);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--input-field-padding-verticle);
+  text-align: center;
+  font-size: var(--fs-14);
+  color: var(--color-text-text-body-subtle-on-primary);
+  font-family: var(--font-noto-sans);
+}
+.labelContainer {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: var(--input-field-padding-support);
+}
+.label {
+  position: relative;
+  line-height: var(--lh-20);
+  font-weight: 500;
+}
+.infoIcon {
+  width: var(--width-16);
+  position: relative;
+  max-height: 100%;
+}
+.inputContainer {
+  align-self: stretch;
+  height: var(--input-field-height);
+  border-radius: var(--input-field-corner-radius);
+  border: var(--border-6);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: var(--padding-0) var(--input-field-padding);
+  gap: var(--input-field-input-spacing);
+  text-align: left;
+  font-size: var(--fs-16);
+  color: var(--color-text-text-fg-disabled);
+}
+.personIcon {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-01);
+  background-color: transparent;
+  height: var(--input-field-input-icon-size);
+  width: var(--width-20);
+  position: relative;
+}
+.placeholderText {
+  flex: 1;
+  position: relative;
+  line-height: var(--lh-24);
+  font-weight: 500;
+}
+.searchIcon {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-01);
+  background-color: transparent;
+  height: var(--input-field-input-icon-size);
+  width: var(--width-20);
+  position: relative;
+}
+.validationContainer {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-0);
+  font-size: var(--fs-12);
+}
+.validationTextContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--input-field-padding-support);
+}
+.validationInfoIcon {
+  width: var(--width-14);
+  position: relative;
+  max-height: 100%;
+}
+.characterCount,
+.validationText {
+  position: relative;
+  line-height: var(--lh-16);
+}
+.characterCount {
+  flex: 1;
+  text-align: right;
+}
+

@@ -1,0 +1,130 @@
+.frameWrapper {
+  flex: 1;
+  border-radius: var(--br-8);
+  background-color: var(--color-background-bg-tertiary);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-24);
+  box-sizing: border-box;
+  min-width: calc(33.33% - 16px);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--fs-20);
+  color: var(--color-gray-500);
+  font-family: "Noto Sans";
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.frameWrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+.frameParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-12);
+  flex: 1;
+}
+.frameGroup {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-8);
+  flex: 1;
+}
+.frameChild {
+  width: 37px;
+  height: var(--height-48);
+  position: relative;
+}
+.foundationsLibraryParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-8);
+}
+.foundationsLibrary {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+}
+.gridSpacingTypography {
+  width: 100%;
+  position: relative;
+  font-size: var(--fs-14);
+  line-height: var(--lh-24);
+  color: var(--color-dimgray-200);
+  display: inline-block;
+  max-width: 100%;
+}
+.frameContainer {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-12) var(--padding-16);
+  background-color: var(--color-background-bg-cta);
+  width: auto;
+  min-width: 140px;
+  height: var(--height-48);
+  border-radius: var(--br-12);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin-top: var(--gap-16);
+  transition: all 0.2s ease;
+}
+.frameContainer:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.caretrightParent {
+  height: var(--height-24);
+  display: flex;
+  align-items: center;
+  gap: var(--gap-4);
+  white-space: nowrap;
+}
+.caretrightIcon,
+.downloadIcon {
+  height: var(--height-24);
+  width: var(--width-24);
+  position: relative;
+}
+.downloadKit {
+  position: relative;
+  font-size: var(--fs-14);
+  letter-spacing: -0.02em;
+  line-height: var(--lh-24);
+  font-weight: 500;
+  font-family: "Noto Sans";
+  color: var(--color-background-bg-white);
+  text-align: left;
+  white-space: nowrap;
+}
+@media screen and (max-width: 1000px) {
+  .foundationsLibrary{
+    font-size: var(--fs-20);
+    line-height: var(--lh-24);
+  }
+}
+@media screen and (max-width: 768px) {
+  .frameWrapper{
+    min-width:100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .foundationsLibrary {
+    font-size: var(--fs-18);
+  }
+}
+

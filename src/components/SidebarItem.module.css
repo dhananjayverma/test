@@ -1,0 +1,90 @@
+.sidebarItem{
+  width:100%;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--fs-14);
+  color: var(--color-gray);
+  font-family: var(--font-noto-sans);
+}
+.sidebarTitle{
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-20);
+  padding: var(--padding-12) var(--padding-0) var(--padding-12) var(--padding-24);
+}
+.sidebarLink{
+  display: flex;
+  align-items: center;
+  gap: var(--gap-12);
+  color: var(--color-gray);
+}
+.sidebarContent{
+  width: 100%;
+}
+.sidebarItem > .sidebarContent > .sidebarItem > .sidebarTitle{
+  padding: var(--padding-0);
+}
+.sidebarContent  .sidebarLink{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--color-gray);
+  padding: var(--padding-8) var(--padding-01) var(--padding-8) 56px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--fs-14);
+  color: var(--color-gray);
+  font-family: var(--font-noto-sans);
+}
+.sidebarItem.open .sidebarItem.open .sidebarContent  .sidebarLink{
+  padding: var(--padding-8) var(--padding-01) var(--padding-8) 80px;
+}
+.sidebarContent  .sidebarLink.active{
+  padding: var(--padding-8) var(--padding-01) var(--padding-8) 52px;
+}
+.sidebarItem.open .sidebarItem.open .sidebarContent  .sidebarLink.active{
+  padding: var(--padding-8) var(--padding-01) var(--padding-8) 76px;
+}
+.sidebarContent  .sidebarLink.active{
+  background-color: var(--color-aliceblue);
+  border-left: 4px solid var(--color-darkslategray);
+  color: var(--color-darkslategray-400);
+}
+.sidebarTitle:has(.sidebarLink.active){
+  background-color: var(--color-aliceblue);
+}
+.open > .sidebarContent > .sidebarItem > .sidebarLink{
+  padding: var(--padding-0);
+}
+.sidebarItem.open > .sidebarTitle > .sidebarLink{
+  font-weight: 700;
+}
+.sidebarItem.open > .sidebarContent > .sidebarItem.open > .sidebarTitle > .sidebarLink{
+  font-weight: 600;
+}
+.sidebarItem.open > .sidebarContent > .sidebarItem.open > .sidebarTitle > .sidebarLink.active{
+  font-weight: inherit;
+}
+.disabled{
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.toggleBtn{
+  background: none;
+  border:none;
+  margin-right: 8px;
+}
+.toggleBtn img{
+  transform: rotate(-90deg);
+}
+.toggleBtn img.rotate{
+  transform: rotate(0deg);
+}

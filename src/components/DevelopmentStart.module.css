@@ -1,0 +1,92 @@
+.frameParent {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-32);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--fs-24);
+  color: var(--color-gray-500);
+  font-family: var(--font-noto-sans);
+}
+.frameChild {
+  width: calc(50% - 16px);
+  position: relative;
+  border-radius: var(--br-8);
+  max-height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.frameChild:hover {
+  transform: scale(1.02);
+}
+.beforeYouBeginParent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-24);
+  min-width: 334px;
+  max-width: 100%;
+}
+.beforeYouBegin {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-24);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-family: inherit;
+}
+.theHbkDesignSystemIsImpleParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-12);
+  font-size: var(--fs-14);
+  color: var(--color-dimgray);
+}
+.theHbkDesignContainer {
+  align-self: stretch;
+  position: relative;
+}
+.theHbkDesign {
+  margin-block-start: 0;
+  margin-block-end: 8px;
+}
+.yarnAddReact1820ReactDWrapper {
+  align-self: stretch;
+  border-radius: var(--br-24);
+  background-color: var(--color-whitesmoke-200);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-24) var(--padding-16);
+  color: var(--color-steelblue-100);
+}
+.yarnAddReact1820 {
+  align-self: stretch;
+  position: relative;
+  line-height: var(--lh-24);
+  font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .frameParent{
+    flex-wrap: wrap;
+  }
+  .frameChild{
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .frameParent{
+    gap: var(--gap-16);
+  }
+  .beforeYouBeginParent{
+    gap: var(--gap-16);
+  }
+}

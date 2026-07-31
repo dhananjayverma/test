@@ -1,0 +1,122 @@
+import { FunctionComponent, useState } from "react";
+import styles from "./ColorOverview.module.css";
+
+export type ContainerType = {
+  className?: string;
+};
+const reminderItems = [
+  {id: 1, name: "HBK Product Dark Blue is defined only for Digital Products.", icon: "/green-check.svg"},
+  {id: 2, name: "HBK Product colors are used to define color theme for different value chains. Do not use them interchangeably.", icon: "/green-check.svg"},
+];
+const navigationItems = [
+  { label: "Overview", id: "overview" },
+  { label: "Color Categorization", id: "color-categorization" },
+];
+
+const ProductStrongBlueCard: FunctionComponent<{ className?: string }> = ({ className }) => (
+  <div className={[styles.colorCard, className].filter(Boolean).join(" ")}>
+    <div className={styles.colorCardInner}>
+      <div className={styles.colorSwatch} />
+      <div className={styles.colorCardText}>
+        <h3>Product Strong Blue</h3>
+        <p>#006AC2</p>
+      </div>
+    </div>
+    <span className={styles.colorCardCaption}>Product Strong Blue Color</span>
+  </div>
+);
+
+const ColorOverview: FunctionComponent<ContainerType> = ({ className = "" }) => {
+  const [activeNav, setActiveNav] = useState("overview");
+  const handleNavClick = (id: string) => {
+    setActiveNav(id);
+    const section = document.getElementById(id);
+    if (section) {
+      const offset = 170;
+      const top =
+        section.getBoundingClientRect().top +
+        window.scrollY -
+        offset;
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
+    }
+  };
+  return (
+    <div className={[styles.container, className].filter(Boolean).join(" ")}>
+      <div className={styles.page}>
+        <div className={styles.content}>
+          <section className={styles.section} id="overview">
+            <h2 className={styles.sectionTitle}>Color Overview</h2>
+            <div className={styles.heroSection} >
+              <div className={styles.heroCopy}>
+                <p className={styles.sectionText}>
+                  HBK’s <span>Product Strong Blue Color</span> is evolved to reinforce innovation and performance within digital experiences. The refined Hex Code enhances clarity and energy while creating a modern and dynamic visual identity. The update ensures stronger representation of speed, simulation capabilities, and advanced engineering solutions within the digital ecosystem.
+                </p>
+              </div>
+              <ProductStrongBlueCard />
+            </div>
+          </section>
+          <section className={styles.reminderCard}>
+            <h3 className={styles.subTitle}>Things to remember</h3>
+            <ul className={styles.reminderList}>
+              {reminderItems.map((item) => (
+                <li key={item.id}>
+                  <span className={styles.bullet} ><img src={item.icon} alt={item.icon} /></span>
+                  <span>{item.name}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+          <div className={styles.divider}></div>
+          <section className={styles.section} id="color-categorization">
+            <div className={styles.sectionHeader}>
+              <h3 className={styles.sectionTitle}>Color Categorization</h3>
+              <p className={styles.sectionText}>
+                HBK drives immense value through its value chain, and each product under different value chains communicates a message and serves a unique purpose. Hence, the <span>Product Strong Blue Color</span> is designed to communicate innovation, agility, virtual modeling, and engineering excellence to empower Simulation tools and accelerate product development and problem-solving.
+              </p>
+            </div>
+
+            <div className={styles.valueChainCard}>
+              <img src="/value-chain.svg" alt="HBK Value Chain" className={styles.valueChainImage} />
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <h3 className={styles.subTitle}>Simulation Tools</h3>
+              <p className={styles.sectionText}>
+                Simulation Tools aim to create virtual environments and digital models that enable testing, prediction, and optimization before real-world implementation.
+              </p>
+            </div>
+            <div className={styles.simulationPreview}>
+              <div className={styles.simulationPanel}>
+                <img src="/strong-blue.svg" alt="Simulation Tools" className={styles.simulationImage} /> 
+              </div>
+              <div className={styles.simulationHint}>
+                <i>A quick preview of how the simulation tools would look-like in Product Strong Blue color palette</i>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside className={styles.sideNav}>
+          {navigationItems.map((item) => (
+            <div
+              key={item.id}
+              className={`${styles.navItem} ${
+                activeNav === item.id ? styles.navItemActive : ""
+              }`}
+              onClick={() => handleNavClick(item.id)}
+            >
+              {item.label}
+            </div>
+          ))}
+        </aside>
+      </div>
+    </div>
+  );
+};
+
+export default ColorOverview;

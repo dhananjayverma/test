@@ -1,0 +1,92 @@
+.artwork {
+  align-self: stretch;
+  border-radius: var(--br-12);
+  background-color: var(--color-whitesmoke-200);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-24) var(--padding-30);
+}
+.buttonParent {
+  height: 96px;
+  width: 167px;
+  position: relative;
+}
+.placeholderIcon,
+.placeholderIcon2 {
+  height: var(--button-icon-size-small);
+  width: var(--width-16);
+  position: relative;
+}
+.alignmentMiddleCenter,
+.directionArrowIcon,
+.elementResizingIcon {
+  position: absolute;
+  top: calc(50% - 46.5px);
+  left: calc(50% - 67px);
+  width: var(--width-16);
+  height: var(--height-16);
+  flex-shrink: 0;
+}
+.alignmentMiddleCenter,
+.elementResizingIcon {
+  left: calc(50% - 83px);
+}
+.elementResizingIcon {
+  top: calc(50% + 9.5px);
+  height: var(--height-40);
+  object-fit: contain;
+}
+.elementResizingIcon2,
+.frame {
+  position: absolute;
+  width: 111px;
+  flex-shrink: 0;
+}
+.elementResizingIcon2 {
+  top: calc(50% - 22.5px);
+  left: calc(50% - 27px);
+  height: var(--height-16);
+  object-fit: cover;
+}
+.frame {
+  top: 57.5px;
+  left: 56.5px;
+  border: 1px solid var(--color-royalblue-100);
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-11) var(--padding-14);
+}
+.childElementOverlay {
+  height: var(--height-16);
+  width: var(--width-16);
+  position: relative;
+  background-color: var(--color-royalblue-300);
+}
+.childElementResizing {
+  position: absolute;
+  top: calc(50% - 6.5px);
+  left: calc(50% + 13px);
+  width: 31px;
+  height: var(--height-16);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.childElementOverlay2,
+.childElementOverlay3 {
+  position: absolute;
+  top: calc(50% + 21.5px);
+  background-color: var(--color-royalblue-300);
+  height: var(--height-16);
+  flex-shrink: 0;
+}
+.childElementOverlay2 {
+  left: calc(50% + 13px);
+  width: 31px;
+}
+.childElementOverlay3 {
+  left: calc(50% + 52px);
+  width: var(--width-16);
+}

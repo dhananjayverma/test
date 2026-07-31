@@ -1,0 +1,17 @@
+.root {
+  height: var(--button-icon-size-small);
+  width: var(--width-16);
+  position: relative;
+}
+.root[data-size="Small"][data-states="Default"][data-type="Primary"]:focus-within {
+  z-index: 0;
+  flex-shrink: 0;
+}
+.root[data-size="Small"][data-states="Disabled"][data-type="Primary"] {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(11%) saturate(1216%)
+    hue-rotate(330deg) brightness(85%) contrast(86%);
+}
+.div {
+  position: relative;
+  display: none;
+}

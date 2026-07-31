@@ -1,0 +1,115 @@
+.frameParent {
+  border-radius: var(--br-12);
+  background-color: var(--color-whitesmoke-100);
+  border: var(--border-2);
+  flex-direction: column;
+  padding: var(--padding-16);
+  text-align: left;
+  font-size: var(--fs-18);
+  color: var(--color-gray-300);
+  font-family: var(--font-noto-sans);
+}
+.frameParent,
+.keyParent {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-24);
+}
+.action,
+.key {
+  width: 200px;
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.action {
+  width: var(--width-236);
+}
+.frameGroup,
+.tabParent {
+  align-self: stretch;
+  display: flex;
+}
+.frameGroup {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-2);
+  font-size: var(--fs-16);
+  color: var(--color-darkslategray);
+}
+.tabParent {
+  background-color: var(--color-gray-100);
+  align-items: center;
+  padding: var(--padding-16) var(--padding-24);
+  gap: var(--gap-24);
+}
+.tab {
+  width: var(--width-176);
+  position: relative;
+  line-height: var(--lh-24);
+  font-weight: 500;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.movesToTheNextFieldWrapper {
+  width: var(--width-236);
+  display: flex;
+  align-items: flex-start;
+}
+.movesToThe {
+  flex: 1;
+  position: relative;
+  line-height: var(--lh-24);
+  font-weight: 500;
+}
+.dismissesSuggestionsOrOverlWrapper {
+  width: var(--width-236);
+  display: flex;
+  align-items: center;
+}
+.dismissesSuggestionsOr {
+  flex: 1;
+  position: relative;
+  line-height: var(--lh-24);
+  font-weight: 500;
+  display: inline-block;
+  min-width: 266px;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 768px) {
+  .thisIsWhere{
+    font-size: var(--fs-16);
+    line-height: var(--lh-24);
+  }
+  .keyParent{
+    font-size: var(--fs-16);
+    gap: var(--gap-10);
+  }
+  .guideline,.key{
+    width: 136px;
+  }
+  .visibleLabelParent,.requiredFieldsParent,.tabParent{
+    padding: var(--padding-10);
+    gap: var(--gap-10);
+    font-size: var(--fs-14);
+  }
+  .tab{
+    width: 126px;;
+  }
+  .movesToTheNextFieldWrapper,.dismissesSuggestionsOrOverlWrapper,.dismissesSuggestionsOr{
+    min-width: auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  .guideline,.key{
+    width: 100px;
+  }
+  .frameParent{
+    padding: 12px;
+  }
+  .tab{
+    width: 90px;;
+  }
+}

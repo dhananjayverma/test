@@ -1,0 +1,212 @@
+.borderBox{
+  padding:10px;
+  border-radius: 10px;
+  border:1px solid var(--color-whitesmoke-400);
+  background-color: var(--color-white);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.borderBox:hover {
+  transform: scale(1.02);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+.artwork {
+  align-self: stretch;
+  height: 253px;
+  position: relative;
+  background-color: var(--color-whitesmoke-400);
+  overflow: hidden;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: var(--fs-12);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+.validationInfoIcon {
+  width: var(--width-14);
+  position: relative;
+  max-height: 100%;
+}
+.personIcon,
+.searchIcon {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-01);
+  background-color: transparent;
+  height: var(--input-field-input-icon-size);
+  width: var(--width-20);
+  position: relative;
+}
+.div {
+  position: relative;
+  display: none;
+}
+.markerInputFeild {
+  position: absolute;
+  top: calc(50% - 31.5px);
+  left: calc(50% - 168px);
+  width: var(--width-48);
+  height: var(--height-24);
+  overflow: hidden;
+}
+.dot,
+.rectangle {
+  position: absolute;
+  left: 0;
+  background-color: var(--color-chocolate);
+}
+.rectangle {
+  width: 100%;
+  top: calc(50% - 0px);
+  right: 0;
+  height: var(--height-1);
+}
+.dot {
+  top: calc(50% - 12px);
+  border-radius: var(--br-100);
+  width: var(--width-24);
+  height: var(--height-24);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.b {
+  position: relative;
+  top:4px;
+}
+.markerLabel {
+  position: absolute;
+  top: calc(50% - 67.7px);
+  left: calc(50% - 168px);
+  width: 49.7px;
+  height: var(--height-24);
+  overflow: hidden;
+}
+.rectangle2 {
+  position: absolute;
+  width: calc(100% + 0.3px);
+  top: calc(50% - 0px);
+  right: -0.3px;
+  left: 0;
+  background-color: var(--color-chocolate);
+  height: var(--height-1);
+}
+.markerInfo {
+  position: absolute;
+  top: calc(50% - 113.5px);
+  left: calc(50% - 52px);
+  width: var(--width-24);
+  height: 50px;
+  overflow: hidden;
+}
+.dot3,
+.rectangle3 {
+  top: 0;
+  background-color: var(--color-chocolate);
+}
+.rectangle3 {
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  left: calc(50% - 0px);
+  width: var(--width-1);
+}
+.dot3 {
+  left: calc(50% - 12px);
+  border-radius: var(--br-100);
+  width: var(--width-24);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.dot3,
+.dot4,
+.markerInputContainer {
+  position: absolute;
+  height: var(--height-24);
+  overflow: hidden;
+}
+.markerInputContainer {
+  top: calc(50% - 29.5px);
+  left: calc(50% + 120px);
+  width: var(--width-48);
+}
+.dot4 {
+  top: calc(50% - 12px);
+  right: 0;
+  border-radius: var(--br-100);
+  background-color: var(--color-chocolate);
+  width: var(--width-24);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.markerPersonIcon {
+  top: calc(50% - 7.5px);
+  left: calc(50% - 106px);
+  height: 82px;
+}
+.dot5,
+.markerPersonIcon,
+.markerPlaceholderText,
+.markerSearchIcon {
+  position: absolute;
+  width: var(--width-24);
+  overflow: hidden;
+}
+.dot5 {
+  bottom: 0;
+  left: calc(50% - 12px);
+  border-radius: var(--br-100);
+  background-color: var(--color-chocolate);
+  height: var(--height-24);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.markerPlaceholderText,
+.markerSearchIcon {
+  top: calc(50% - 11.3px);
+  left: calc(50% - 38.2px);
+  height: 85.8px;
+}
+.markerSearchIcon {
+  top: calc(50% - 7.5px);
+  left: calc(50% + 82px);
+  height: 82px;
+}
+.markerValidationInfo {
+  position: absolute;
+  top: calc(50% + 6.5px);
+  left: calc(50% - 168px);
+  width: var(--width-48);
+  height: var(--height-24);
+  overflow: hidden;
+}
+.markerValidationText {
+  position: absolute;
+  top: calc(50% + 23.6px);
+  left: calc(50% - 82px);
+  width: var(--width-24);
+  height: 98.9px;
+  overflow: hidden;
+}
+.markerCharacterCount {
+  position: absolute;
+  top: calc(50% + 7px);
+  left: calc(50% + 119.5px);
+  width: 48.5px;
+  height: var(--height-24);
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .noParent{
+    gap:var(--gap-10);
+  }
+}
+@media screen and (max-width: 385px) {
+  .borderBox{
+    padding:0px
+  }
+}
