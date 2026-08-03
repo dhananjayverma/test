@@ -156,10 +156,15 @@
   width: 100%;
   margin-top:10px;
   margin-bottom: 25px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .valueChainImage{
   width: 100%;
   height: auto;
+  transition: transform 0.3s ease;
+}
+.valueChainCard:hover .valueChainImage, .simulationPanel:hover .simulationImage {
+  transform: scale(1.05);
 }
 .simulationPreview {
   display: flex;
@@ -173,10 +178,12 @@
   overflow: hidden;
   background: #F0F1F1;
   text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .simulationImage {
   width: 80%;
   height: auto;
+  transition: transform 0.3s ease;
 }
 .sideNav {
   width: 160px;

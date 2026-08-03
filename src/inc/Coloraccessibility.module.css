@@ -204,11 +204,19 @@
   border-radius: 12px;
   padding: 10px;
 }
+.imgWrapper {
+  overflow: hidden;
+  border-radius: 8px;
+}
 .previewCard img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.previewCard:hover img {
+  transform: scale(1.05);
 }
 .previewCard p {
   margin: 12px 0 0;

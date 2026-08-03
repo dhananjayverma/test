@@ -7,18 +7,18 @@ export type ContainerType = {
 };
 
 const labelRows = [
-  { id:"1", name: "Sign In Screen", value: "Parent container for the authentication experience." },
-  { id:"2", name: "Image Container", value: "Displays illustrations, promotional content, or supporting visuals." },
-  { id:"3", name: "Right Container", value: "Contains the authentication form and related actions." },
-  { id:"4", name: "Logo", value: "Brand identifier displayed prominently." },
-  { id:"5", name: "Heading", value: "Primary message communicating the screen purpose." },
-  { id:"6", name: "Subheading", value: "Supporting information or instructions." },
-  { id:"7", name: "Form Container", value: "Holds authentication fields and actions." },
-  { id:"8", name: "Input Fields", value: "Collect user credentials such as email and password." },
-  { id:"9", name: "Sign In Button", value: "Primary action to authenticate users." },
-  { id:"10", name: "Forgot Password Link", value: "Recovery option for users who cannot access their account." },
-  { id:"11", name: "Register Button", value: "Secondary action for account creation." },
-  { id:"12", name: "Additional Help Text", value: "Optional guidance or support information." },
+  { id: "1", name: "Sign In Screen", value: "Parent container for the authentication experience." },
+  { id: "2", name: "Image Container", value: "Displays illustrations, promotional content, or supporting visuals." },
+  { id: "3", name: "Right Container", value: "Contains the authentication form and related actions." },
+  { id: "4", name: "Logo", value: "Brand identifier displayed prominently." },
+  { id: "5", name: "Heading", value: "Primary message communicating the screen purpose." },
+  { id: "6", name: "Subheading", value: "Supporting information or instructions." },
+  { id: "7", name: "Form Container", value: "Holds authentication fields and actions." },
+  { id: "8", name: "Input Fields", value: "Collect user credentials such as email and password." },
+  { id: "9", name: "Sign In Button", value: "Primary action to authenticate users." },
+  { id: "10", name: "Forgot Password Link", value: "Recovery option for users who cannot access their account." },
+  { id: "11", name: "Register Button", value: "Secondary action for account creation." },
+  { id: "12", name: "Additional Help Text", value: "Optional guidance or support information." },
 ];
 
 const navigationItems = [
@@ -55,8 +55,8 @@ const SigninIntroducation: FunctionComponent<ContainerType> = ({ className = "" 
               <p className={styles.sectionText}>The template includes support for branding, headings, form fields, password recovery, registration links, and optional supporting content. It is designed to provide a consistent login experience across all HBK applications.
               </p>
             </div>
-            <div className={styles.typeImage}>
-              <img src="./sign-in.svg" alt="Sign In Screen" />
+            <div className={styles.anatomyImageContainer}>
+              <img src="./sign-in.svg" alt="Sign In Screen" className={styles.anatomyImage} />
             </div>
           </section>
           <section className={styles.section} id="principles">
@@ -82,7 +82,7 @@ const SigninIntroducation: FunctionComponent<ContainerType> = ({ className = "" 
               <div className={clsx(styles.dosDontsGrid, styles.dosDontsStyle)}>
                 <div className={styles.dosCard}>
                   <div className={styles.cardTitle}>
-                    <span className={styles.bullet}><img alt="green-check" src="/green-check.svg"/></span> When to use
+                    <span className={styles.bullet}><img alt="green-check" src="/green-check.svg" /></span> When to use
                   </div>
                   <ul className={styles.list}>
                     <li>User authentication</li>
@@ -94,7 +94,7 @@ const SigninIntroducation: FunctionComponent<ContainerType> = ({ className = "" 
                 </div>
                 <div className={styles.dontsCard}>
                   <div className={styles.cardTitle}>
-                    <span className={styles.bullet}><img alt="red-close" src="/red-close.svg"/></span> When not to use
+                    <span className={styles.bullet}><img alt="red-close" src="/red-close.svg" /></span> When not to use
                   </div>
                   <ul className={styles.list}>
                     <li>Guest access experiences</li>
@@ -112,44 +112,43 @@ const SigninIntroducation: FunctionComponent<ContainerType> = ({ className = "" 
               <h3 className={styles.sectionTitle}>Best Practices</h3>
             </div>
             <div className={styles.dosDontsGrid}>
-                <div className={styles.dosCard}>
-                  <div className={styles.cardTitle}>
-                    Do
-                  </div>
-                  <ul className={styles.list}>
-                    <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg"/></span> Display clear branding and screen purpose.</li>
-                    <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg"/></span> Keep the authentication form visually prominent.</li>
-                    <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg"/></span> Use concise headings and supporting text.</li>
-                    <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg"/></span> Provide password recovery options.</li>
-                    <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg"/></span> Maintain consistent spacing and alignment.</li>
-                    <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg"/></span> Support responsive layouts across devices.</li>
-                    <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg"/></span> Clearly differentiate primary and secondary actions.</li>
-                    <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg"/></span> Keep the number of required fields to a minimum.</li>
-                  </ul>
+              <div className={styles.dosCard}>
+                <div className={styles.cardTitle}>
+                  Do
                 </div>
-                <div className={styles.dontsCard}>
-                  <div className={styles.cardTitle}>
-                    Don’t
-                  </div>
-                  <ul className={styles.list}>
-                    <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg"/></span> Overload the screen with marketing content.</li>
-                    <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg"/></span> Require unnecessary information during sign in.</li>
-                    <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg"/></span> Hide recovery or registration options.</li>
-                    <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg"/></span> Place multiple competing primary actions.</li>
-                    <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg"/></span> Use unclear button labels.</li>
-                    <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg"/></span> Distract users from the authentication task.</li>
-                  </ul>
-                </div>
+                <ul className={styles.list}>
+                  <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg" /></span> Display clear branding and screen purpose.</li>
+                  <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg" /></span> Keep the authentication form visually prominent.</li>
+                  <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg" /></span> Use concise headings and supporting text.</li>
+                  <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg" /></span> Provide password recovery options.</li>
+                  <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg" /></span> Maintain consistent spacing and alignment.</li>
+                  <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg" /></span> Support responsive layouts across devices.</li>
+                  <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg" /></span> Clearly differentiate primary and secondary actions.</li>
+                  <li><span className={styles.bullet}><img alt="green-check" src="/green-check.svg" /></span> Keep the number of required fields to a minimum.</li>
+                </ul>
               </div>
+              <div className={styles.dontsCard}>
+                <div className={styles.cardTitle}>
+                  Don’t
+                </div>
+                <ul className={styles.list}>
+                  <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg" /></span> Overload the screen with marketing content.</li>
+                  <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg" /></span> Require unnecessary information during sign in.</li>
+                  <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg" /></span> Hide recovery or registration options.</li>
+                  <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg" /></span> Place multiple competing primary actions.</li>
+                  <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg" /></span> Use unclear button labels.</li>
+                  <li><span className={styles.bullet}><img alt="red-close" src="/red-close.svg" /></span> Distract users from the authentication task.</li>
+                </ul>
+              </div>
+            </div>
           </section>
         </div>
         <aside className={styles.sideNav}>
           {navigationItems.map((item) => (
             <div
               key={item.id}
-              className={`${styles.navItem} ${
-                activeNav === item.id ? styles.navItemActive : ""
-              }`}
+              className={`${styles.navItem} ${activeNav === item.id ? styles.navItemActive : ""
+                }`}
               onClick={() => handleNavClick(item.id)}
             >
               {item.label}

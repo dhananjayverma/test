@@ -109,8 +109,7 @@
   cursor: pointer;
 }
 .frameWrapper:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+  /* Only image zooms, card doesn't float anymore */
 }
 .frameDiv {
   align-self: stretch;
@@ -120,6 +119,10 @@
   width: var(--width-64);
   height: 64.6px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.frameWrapper:hover .frameChild {
+  transform: scale(1.05);
 }
 .gitRepoParent {
   align-self: stretch;
@@ -187,6 +190,10 @@
   width: var(--width-64);
   height: 64px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.frameWrapper:hover .frameItem {
+  transform: scale(1.05);
 }
 .frameWrapper3 {
   cursor: pointer;

@@ -160,6 +160,10 @@
 .valueChainImage{
   width: 100%;
   height: auto;
+  transition: transform 0.3s ease;
+}
+.valueChainCard:hover .valueChainImage, .simulationPanel:hover .simulationImage {
+  transform: scale(1.05);
 }
 .simulationPreview {
   display: flex;
@@ -177,6 +181,7 @@
 .simulationImage {
   width: 80%;
   height: auto;
+  transition: transform 0.3s ease;
 }
 .sideNav {
   width: 160px;

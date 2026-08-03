@@ -87,7 +87,17 @@
   font-size: 14px;
   line-height: 24px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
+.paletteRow:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+
 
 .paletteRow:last-child {
   border-bottom: 0;
@@ -132,6 +142,15 @@
   border-top: 1px solid #f1f1f4;
   font-size: 14px;
   color: #444;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+.tableRow:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
 }
 
 .tableRow:first-child {
@@ -170,10 +189,11 @@
 .dosDontsGrid {
   display: flex;
   gap: 16px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 .dosCard,
 .dontsCard {
+  flex: 1;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   background: #fff;
@@ -184,6 +204,13 @@
 }
 .dontsCard {
   background-color: var(--color-red-100);
+}
+.dosCard, .dontsCard, .paletteCard {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.dosCard:hover, .dontsCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
 }
 .cardTitle {
   display: flex;

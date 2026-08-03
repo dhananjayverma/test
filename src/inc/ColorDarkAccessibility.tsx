@@ -170,7 +170,9 @@ const Coloraccessibility: FunctionComponent<ContainerType> = ({ className = "" }
                 </p>
               </div>
               <div className={styles.previewCard}>
-                <img src="./dark-test.svg" alt="Color blindness preview" />
+                <div className={styles.imgWrapper}>
+                  <img src="./dark-test.svg" alt="Color blindness preview" />
+                </div>
                 <p>A quick preview of Color Blindness test for HBK Product Dark Blue color</p>
               </div>
             </div>

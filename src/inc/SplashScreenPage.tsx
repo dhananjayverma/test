@@ -142,8 +142,8 @@ const SplashScreenPage: FunctionComponent<ContainerType> = ({ className = "" }) 
               <p className={styles.sectionText}>A splash screen typically contains:</p>
             </div>
              <div className={styles.sectionHeader}>
-              <div className={styles.typeImage}>
-                <img src="/splash-anatomy.svg" alt="Splash Screen" />
+              <div className={styles.anatomyImageContainer}>
+                <img src="/splash-anatomy.svg" alt="Splash Screen" className={styles.anatomyImage} />
               </div>
             </div>
             <div className={styles.sectionHeader}>

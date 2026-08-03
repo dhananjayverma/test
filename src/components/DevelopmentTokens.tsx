@@ -20,11 +20,13 @@ const DevelopmentToken: FunctionComponent<FrameComponent3Type> = ({
           maintainable.
         </div>
       </div>
-      <img
-        className={styles.frameWrapper}
-        alt=""
-        src="/development.svg"
-      />
+      <div className={styles.frameWrapper}>
+        <img
+          className={styles.frameImage}
+          alt=""
+          src="/development.svg"
+        />
+      </div>
     </section>
   );
 };

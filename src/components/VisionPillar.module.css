@@ -30,6 +30,7 @@
   gap: var(--gap-24);
   min-width: var(--min-w-209);
   max-width: 100%;
+  cursor: pointer;
 }
 .frameChild {
   width: 129.8px;
@@ -63,12 +64,11 @@
 .frameChild,
 .frameInner,
 .frameItem {
-  transition: all 0.3s ease;
-  cursor: pointer;
+  transition: transform 0.3s ease;
 }
-.frameChild:hover,
-.frameInner:hover,
-.frameItem:hover {
+.frameContainer:hover .frameChild,
+.frameContainer:hover .frameInner,
+.frameContainer:hover .frameItem {
   transform: scale(1.05);
 }
 @media screen and (max-width: 768px) {

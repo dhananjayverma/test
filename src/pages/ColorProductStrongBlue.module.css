@@ -116,6 +116,10 @@
   object-fit: contain;
   max-height: 238px;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.frameContainer:hover .frameIcon {
+  transform: scale(1.05);
 }
 .navButtonHorizontalParent {
   align-self: stretch;

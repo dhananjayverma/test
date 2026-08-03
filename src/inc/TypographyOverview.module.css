@@ -5,11 +5,13 @@
   font-family: "Noto Sans", sans-serif;
   color: #444;
 }
+
 .page {
   display: flex;
   align-items: flex-start;
   gap: 48px;
 }
+
 .content {
   flex: 1;
   min-width: 0;
@@ -18,28 +20,33 @@
   gap: 60px;
   text-align: left;
 }
+
 .section {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  max-width:  100%;
+  max-width: 100%;
   scroll-margin-top: 170px;
 }
+
 .sectionHeader {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+
 .sectionHeaders {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+
 .sectionsHeader {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 .sectionTitle,
 .subTitle,
 .headingTitle {
@@ -47,88 +54,110 @@
   color: #282828;
   font-weight: 600;
 }
+
 .sectionTitle {
   font-size: 30px;
   line-height: 38px;
 }
+
 .subTitle {
   font-size: 22px;
   line-height: 30px;
 }
-.subtext{
+
+.subtext {
   margin: 0px;
   font-size: 18px;
   line-height: 26px;
   font-weight: 600;
 }
+
 .sectionsHeader .subTitle {
   font-size: 18px;
   line-height: 26px;
 }
+
 .headingTitle {
   font-size: 22px;
   line-height: 30px;
 }
+
 .sectionText {
   margin: 0;
   font-size: 14px;
   line-height: 24px;
   color: #52525b;
 }
-.sectionText span{
+
+.sectionText span {
   font-weight: 600;
 }
+
 .heroSection {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
   max-width: 100%;
+  cursor: pointer;
 }
+
 .heroCopy {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.sectionList{
+
+.sectionList {
   margin: 0;
   font-size: 14px;
   line-height: 24px;
   color: #52525b;
   padding-left: 25px;
 }
-.styleNone{
+
+.styleNone {
   list-style: none;
   padding-left: 20px;
 }
-.sectionList li{
+
+.sectionList li {
   padding-bottom: 5px;
 }
-.typeText, .typeImage{
+
+.typeText,
+.typeImage {
   display: block;
 }
-.typeText{
+
+.typeText {
   width: calc(55% - 16px);
 }
+
 .typeImage {
   overflow: hidden;
   border-radius: 8px;
   cursor: pointer;
 }
-.typeImage img{
+
+.typeImage img {
   width: 100%;
   transition: transform 0.5s ease;
 }
+
+.heroSection:hover .typeImage img,
 .typeImage:hover img {
   transform: scale(1.05);
 }
+
 .tableSection {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+
 .table {
   width: 100%;
   border: 1px solid #e5e7eb;
@@ -136,26 +165,30 @@
   overflow: hidden;
   background: #fff;
 }
+
 .tablesHeader,
 .tablesRow {
   display: grid;
-  grid-template-columns: 100px 200px  1fr;
+  grid-template-columns: 100px 200px 1fr;
   align-items: center;
   gap: 24px;
   padding: 16px 24px;
 }
+
 .tablesHeader {
   background: #f8f8fa;
   font-weight: 600;
   color: #252636;
   font-size: 14px;
 }
+
 .tablesRow {
   background: #fcfcfc;
   border-top: 1px solid #f0f0f2;
   font-size: 14px;
   color: #282828;
 }
+
 .tableHeading,
 .tableRows {
   display: grid;
@@ -164,18 +197,21 @@
   gap: 24px;
   padding: 16px 24px;
 }
+
 .tableHeading {
   background: #f8f8fa;
   font-weight: 600;
   color: #252636;
   font-size: 14px;
 }
+
 .tableRows {
   background: #fcfcfc;
   border-top: 1px solid #f0f0f2;
   font-size: 14px;
   color: #282828;
 }
+
 .table2Header,
 .table2Rows {
   display: grid;
@@ -184,18 +220,21 @@
   gap: 24px;
   padding: 16px 24px;
 }
+
 .table2Header {
   background: #f8f8fa;
   font-weight: 600;
   color: #252636;
   font-size: 14px;
 }
+
 .table2Rows {
   background: #fcfcfc;
   border-top: 1px solid #f0f0f2;
   font-size: 14px;
   color: #282828;
 }
+
 .tables2Header,
 .tables2Rows {
   display: grid;
@@ -204,18 +243,21 @@
   gap: 24px;
   padding: 16px 24px;
 }
+
 .tables2Header {
   background: #f8f8fa;
   font-weight: 600;
   color: #252636;
   font-size: 14px;
 }
+
 .tables2Rows {
   background: #fcfcfc;
   border-top: 1px solid #f0f0f2;
   font-size: 14px;
   color: #282828;
 }
+
 .table3Header,
 .table3Rows {
   display: grid;
@@ -224,26 +266,31 @@
   gap: 24px;
   padding: 16px 24px;
 }
+
 .table3Header {
   background: #f8f8fa;
   font-weight: 600;
   color: #252636;
   font-size: 14px;
 }
+
 .table3Rows {
   background: #fcfcfc;
   border-top: 1px solid #f0f0f2;
   font-size: 14px;
   color: #282828;
 }
+
 .colNo {
   font-weight: 500;
 }
+
 .colGuideline,
 .colDescription {
   line-height: 1.5;
 }
-.heighlight_text{
+
+.heighlight_text {
   border-radius: 8px;
   border: 1px solid #E5E7EB;
   background: #F5F9FA;
@@ -251,11 +298,13 @@
   color: #00607E;
   font-size: 14px;
 }
+
 .dosDontsGrid {
   display: flex;
   gap: 16px;
   align-items: stretch;
 }
+
 .dosCard,
 .dontsCard {
   flex: 1;
@@ -266,17 +315,21 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
 }
+
 .dosCard:hover,
 .dontsCard:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
 }
+
 .dosCard {
   background-color: var(--color-forestgreen-100);
 }
+
 .dontsCard {
   background-color: var(--color-red-100);
 }
+
 .cardTitle {
   display: flex;
   align-items: center;
@@ -286,16 +339,20 @@
   color: #282828;
   padding: var(--padding-20) var(--padding-16);
 }
+
 .dosCard .cardTitle {
   background-color: var(--color-forestgreen-200);
 }
+
 .dontsCard .cardTitle {
   background-color: var(--color-red-200);
 }
-.dosDontsStyle .bullet img{
+
+.dosDontsStyle .bullet img {
   height: 18px;
   width: 18px;
 }
+
 .list {
   margin: 0;
   padding: var(--padding-16);
@@ -306,37 +363,45 @@
   line-height: 24px;
   list-style: none;
 }
+
 .list li {
   display: flex;
   align-items: flex-start;
   gap: 8px;
   font-size: 14px;
 }
-.dosDontsStyle .list{
+
+.dosDontsStyle .list {
   gap: 20px;
   padding: var(--padding-0);
 }
-.dosDontsStyle .list{
+
+.dosDontsStyle .list {
   gap: 0px;
 }
-.dosDontsStyle .list li{
+
+.dosDontsStyle .list li {
   border-bottom: 1px solid #fff;
   padding: var(--padding-20) var(--padding-16);
 }
+
 .bullet {
   margin-top: 2px;
   flex-shrink: 0;
 }
-.bullet img{
+
+.bullet img {
   width: 16px;
   height: 16px;
 }
-.sectionBtn{
+
+.sectionBtn {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
-.btnText{
+
+.btnText {
   padding: 4px 16px;
   border-radius: 999px;
   border: 1px solid #BEBEBE;
@@ -347,7 +412,8 @@
   font-style: normal;
   line-height: 20px;
 }
-.previewSurface{
+
+.previewSurface {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -358,6 +424,25 @@
   height: calc(100% - 20px);
   background: #fff;
 }
+
+.anatomyImageContainer {
+  cursor: pointer;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f2f2f2;
+  padding: 40px;
+  box-sizing: border-box;
+}
+.anatomyImage {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.anatomyImageContainer:hover .anatomyImage {
+  transform: scale(1.05);
+}
+
 .previewImage {
   display: flex;
   align-items: center;
@@ -367,22 +452,26 @@
   background: #f2f2f2;
   cursor: pointer;
 }
+
 .previewImage img {
   width: 100%;
   height: auto;
   transition: transform 0.5s ease;
 }
+
 .previewImage:hover img {
   transform: scale(1.05);
 }
-.sectionCard{
+
+.sectionCard {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 60px;
 }
-.smallCard{
+
+.smallCard {
   width: 110px;
   display: flex;
   flex-direction: column;
@@ -391,24 +480,29 @@
   gap: 8px;
   cursor: pointer;
 }
+
 .smallCard img {
   transition: transform 0.3s ease;
 }
+
 .smallCard:hover img {
   transform: scale(1.1);
 }
-.cardText{
+
+.cardText {
   margin: 0px;
   font-size: 12px;
 }
+
 .sideNav {
   width: 160px;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  position:sticky;
-  top:170px;
+  position: sticky;
+  top: 170px;
 }
+
 .navItem {
   padding: 8px 16px;
   border-left: 1px solid #e7e7e7;
@@ -418,30 +512,35 @@
   text-align: left;
   cursor: pointer;
 }
+
 .navItemActive {
   border-left: 2px solid #101828;
   color: #101828;
   font-weight: 600;
 }
+
 .divider {
   width: 100%;
   height: 1px;
   background: #e5e7eb;
   margin: 0px;
 }
-.splashProduct{
+
+.splashProduct {
   display: flex;
   align-items: stretch;
   justify-content: center;
   gap: 24px;
   flex-wrap: wrap;
 }
-.tabContent{
+
+.tabContent {
   display: block;
   flex: 1;
   width: 100%;
 }
-.cardGrid{
+
+.cardGrid {
   width: 230px;
   display: flex;
   flex-direction: column;
@@ -449,6 +548,7 @@
   align-items: stretch;
   justify-content: space-around;
 }
+
 .brandCard {
   display: flex;
   flex-direction: column;
@@ -461,78 +561,98 @@
   text-align: left;
   cursor: pointer;
 }
+
 .brandCardActive {
   border-color: #d4d4d8;
   background: #fff;
   box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.05);
 }
+
 .swatch {
   width: calc(100% - 20px);
   border-radius: 8px;
   padding: 10px;
   color: #fff;
 }
+
 .cardLabel {
   width: 100%;
   font-size: 18px;
   line-height: 24px;
   color: #000;
 }
+
 @media screen and (max-width: 1300px) {
-  .sectionCard{
+  .sectionCard {
     gap: 32px;
   }
 }
+
 @media screen and (max-width: 1200px) {
   .page {
     flex-direction: column;
   }
+
   .container {
     padding: var(--padding-24) var(--padding-24) var(--padding-48);
   }
+
   .sideNav {
-    display:none;
+    display: none;
   }
-  .content{
+
+  .content {
     width: 100%;
   }
 }
+
 @media screen and (max-width: 1000px) {
-  .sectionCard{
+  .sectionCard {
     gap: 60px;
   }
 }
+
 @media screen and (max-width: 768px) {
   .container {
     padding: 20px 24px 40px;
   }
+
   .sectionTitle {
     font-size: 28px;
     line-height: 34px;
   }
+
   .subTitle {
     font-size: 20px;
     line-height: 28px;
   }
-  .heroSection,.dosDontsGrid{
+
+  .heroSection,
+  .dosDontsGrid {
     flex-direction: column;
   }
-  .typeText{
+
+  .typeText {
     width: 100%;
   }
-  .dosCard, .dontsCard{
+
+  .dosCard,
+  .dontsCard {
     width: 100%;
   }
-  .content{
-    gap:32px
+
+  .content {
+    gap: 32px
   }
+
   .tablesHeader,
   .tablesRow {
-    grid-template-columns: 80px 150px  1fr;
+    grid-template-columns: 80px 150px 1fr;
     gap: 8px;
     padding: 16px 16px;
     font-size: 14px;
   }
+
   .tableHeading,
   .tableRows {
     grid-template-columns: 120px 80px 100px 1fr;
@@ -540,6 +660,7 @@
     padding: 16px 16px;
     font-size: 14px;
   }
+
   .table2Header,
   .table2Rows {
     grid-template-columns: 120px 1fr;
@@ -547,84 +668,105 @@
     padding: 16px 16px;
     font-size: 14px;
   }
+
   .tables2Rows,
   .tables2Header {
     font-size: 14px;
   }
+
   .table3Header,
   .table3Rows {
     grid-template-columns: 120px 1fr 120px;
     gap: 8px;
     padding: 16px;
   }
-  .sectionCard{
+
+  .sectionCard {
     gap: 32px;
   }
-  .splashProduct{
+
+  .splashProduct {
     flex-direction: column;
-    gap:16px;
+    gap: 16px;
   }
-  .cardGrid{
+
+  .cardGrid {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
     gap: 10px;
   }
-  .brandCard{
+
+  .brandCard {
     width: calc(23% - 20px);
   }
-  .swatch{
+
+  .swatch {
     font-size: 12px;
   }
-  .cardLabel{
+
+  .cardLabel {
     font-size: 14px;
     line-height: 20px;
   }
 }
+
 @media screen and (max-width: 700px) {
-  .brandCard{
+  .brandCard {
     width: calc(25% - 20px);
     padding: 5px;
   }
 }
+
 @media screen and (max-width: 480px) {
   .container {
     padding: 16px;
   }
+
   .sectionTitle {
     font-size: 24px;
     line-height: 30px;
   }
+
   .sectionText {
     font-size: 14px;
     line-height: 24px;
   }
+
   .tablesHeader,
   .tablesRow {
     grid-template-columns: 65px 120px 1fr;
     padding: 8px 8px;
   }
+
   .tableHeading,
   .tableRows {
     grid-template-columns: 1fr 60px 80px 1fr;
     padding: 8px;
   }
-  .sectionBtn{
+
+  .sectionBtn {
     gap: 8px;
   }
-  .sectionList, .list li{
-    font-size:14px;
+
+  .sectionList,
+  .list li {
+    font-size: 14px;
     line-height: 24px;
   }
-  .sectionCard{
+
+  .sectionCard {
     gap: 60px;
   }
-  .brandCard{
+
+  .brandCard {
     width: calc(50% - 30px);
     padding: 10px;
   }
 }
+
 @media screen and (max-width: 420px) {
+
   .table3Header,
   .table3Rows {
     grid-template-columns: 100px 1fr 80px;

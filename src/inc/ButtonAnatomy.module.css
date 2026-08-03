@@ -135,9 +135,9 @@
   transition: all 0.3s ease;
   cursor: pointer;
 }
-.buttonSection:hover {
-  transform: scale(1.02);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+.buttonSection:hover .toastBox,
+.buttonSection:hover .button {
+  transform: scale(1.05);
 }
 .buttonBox{
   display: flex;
@@ -161,6 +161,7 @@
   justify-content: center;
   gap: 8px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 .typesSection .sectiontwo:nth-child(1) .button{
   background: #006c8e;
@@ -306,6 +307,7 @@
   border-left: 6px solid var(--color-border-border-success-subtle, #2EA345);
   box-shadow: 0 10px 50px 0 rgba(35, 46, 49, 0.20);
   position: relative;
+  transition: transform 0.3s ease;
 }
 .toastButton{
   width: 24px;

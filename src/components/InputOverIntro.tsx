@@ -10,6 +10,7 @@ const InputOverIntro: FunctionComponent<ArtworkType> = ({ className = "" }) => {
   return (
     <div className={styles.borderBox}>
       <section className={[styles.artwork, className].join(" ")}>
+        <div className={styles.zoomContainer}>
         <InputIntroField
           state="Default"
           type="input"
@@ -99,6 +100,7 @@ const InputOverIntro: FunctionComponent<ArtworkType> = ({ className = "" }) => {
           <div className={styles.dot4}>
             <b className={styles.b}>10</b>
           </div>
+        </div>
         </div>
       </section>
     </div>

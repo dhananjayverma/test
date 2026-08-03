@@ -97,8 +97,10 @@
   cursor: pointer;
 }
 .previewCard:hover {
-  transform: scale(1.02);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+  /* removed hover */
+}
+.previewCard:hover .mockup {
+  transform: scale(1.05);
 }
 
 .previewSurface {
@@ -116,6 +118,7 @@
   flex-direction: column;
   gap: 8px;
   width: min(100%, 240px);
+  transition: transform 0.3s ease;
 }
 
 .labelRow,

@@ -56,8 +56,10 @@
   cursor: pointer;
 }
 .previewCard:hover {
-  transform: scale(1.02);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+  /* removed hover */
+}
+.previewCard:hover .mockup {
+  transform: scale(1.05);
 }
 .previewSurface {
   min-height: 125px;
@@ -73,6 +75,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
+  transition: transform 0.3s ease;
 }
 .labelText{
   font-size: 14px;
