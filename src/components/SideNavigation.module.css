@@ -52,7 +52,7 @@
 .designElements {
   font-size: 12px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 800;
   line-height: normal;
   letter-spacing: 0.1px;
   color: #A8A8A8;
@@ -214,9 +214,11 @@
   opacity: 0.6;
 }
 .close_sidenav{
-  text-align: right;
-  width: 100%;
+  position: absolute;
+  top: 16px;
+  right: 16px;
   display: none;
+  z-index: 10;
 }
 .close_sidenav .image{
   height: 20px;

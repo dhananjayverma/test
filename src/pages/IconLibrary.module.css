@@ -1,14 +1,14 @@
 .iconLibraryPage {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #FAFAFA;
 }
 
 .bodyLayout {
   display: flex;
-  flex: 1;
-  overflow: hidden;
+  align-items: flex-start;
+  background-color: #FAFAFA;
 }
 
 .mainContent {
@@ -16,7 +16,6 @@
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
-  margin-left: 20px;
 }
 
 .searchHeader {
@@ -48,10 +47,36 @@
   background-color: #FFFFFF;
 }
 
+.toggleFiltersBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  margin-left: 16px;
+  border-radius: 24px;
+  border: 1px solid #D1D5DB;
+  background-color: #FFFFFF;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggleFiltersBtn:hover {
+  background-color: #F3F4F6;
+}
+
+.toggleFiltersBtnActive {
+  border-color: #006AC2;
+  background-color: #EBF5FF;
+  color: #006AC2;
+}
+
 .iconGridWrapper {
   flex: 1;
-  overflow-y: auto;
   padding: 32px;
+  box-sizing: border-box;
 }
 
 .iconGrid {
@@ -70,6 +95,8 @@
   cursor: pointer;
   transition: all 0.2s ease;
   background-color: #FFFFFF;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .iconCard:hover {
@@ -93,83 +120,49 @@
   width: 100%;
 }
 
-.filtersSidebar {
-  width: 280px;
-  background-color: #FFFFFF;
-  border-right: 1px solid #E5E7EB;
+/* Right Side Navigation for Categories */
+.sideNav {
+  width: 200px;
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 32px;
+  max-height: calc(100vh - 100px);
   overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-right: 32px;
 }
-
-.filterSection {
-  margin-bottom: 24px;
+.sideNav::-webkit-scrollbar {
+  display: none;
 }
-
-.filterTitle {
-  font-size: 14px;
+.sideNavTitle {
+  font-size: 16px;
   font-weight: 600;
-  color: #111827;
-  margin-bottom: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  color: #101828;
+  margin: 0 0 16px 16px;
 }
-
-.sliderContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sliderHeader {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: #6B7280;
-}
-
-.filterSelect {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #D1D5DB;
-  border-radius: 8px;
+.navItem {
+  padding: 8px 16px;
+  border-left: 1px solid #e7e7e7;
   font-size: 14px;
-  color: #374151;
-  background-color: #FFFFFF;
-  outline: none;
-}
-
-.filterSelect:focus {
-  border-color: #006AC2;
-}
-
-.categoryList {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.categoryItem {
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 13px;
-  color: #4B5563;
+  line-height: 20px;
+  color: #52525b;
+  text-align: left;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
+}
+.navItem:hover {
+  background-color: #F9FAFB;
+}
+.navItemActive {
+  border-left: 2px solid #101828;
+  color: #101828;
+  font-weight: 600;
 }
 
-.categoryItem:hover {
-  background-color: #F3F4F6;
-}
-
-.categoryItemActive {
-  background-color: #EBF5FF;
-  color: #006AC2;
-  font-weight: 500;
-}
-
+/* No Results */
 .noResults {
   display: flex;
   flex-direction: column;
@@ -185,4 +178,177 @@
   margin-bottom: 8px;
 }
 
-/* Base App Overrides if needed for layout */
+/* Hero Banner Styles */
+.heroBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F0FBFC;
+  background-image: 
+    linear-gradient(to right, #E2F2F5 1px, transparent 1px),
+    linear-gradient(to bottom, #E2F2F5 1px, transparent 1px);
+  background-size: 40px 40px;
+  border-radius: 20px;
+  padding: 48px 48px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroTextContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 60%;
+  position: relative;
+  z-index: 2;
+}
+
+.heroSubtitle {
+  font-size: 12px;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.heroTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  margin: 4px 0 8px 0;
+}
+
+.heroDescription {
+  font-size: 15px;
+  color: #4B5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.heroGraphic {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroGraphicDots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#CFEFF3 4px, transparent 4px);
+  background-size: 24px 24px;
+  opacity: 0.8;
+  mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.heroGraphicAa {
+  font-size: 120px;
+  font-weight: 400;
+  color: #006AC2;
+  font-family: serif;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+  margin-right: 40px;
+}
+
+.heroGraphicAa::before, .heroGraphicAa::after {
+  content: '';
+  position: absolute;
+  background-color: #FFA3A3;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.heroGraphicAa::before {
+  top: 20%;
+  left: -20px;
+  right: -20px;
+  height: 1px;
+}
+
+.heroGraphicAa::after {
+  top: 80%;
+  left: -20px;
+  right: -20px;
+  height: 1px;
+}
+
+/* Layout for main icon area */
+.iconAreaLayout {
+  display: flex;
+  height: 100%;
+}
+
+/* Mobile Category Dropdown (Hidden on Desktop) */
+.mobileCategoryDropdown {
+  display: none;
+  padding: 16px 32px 0 32px;
+}
+
+.mobileCategoryDropdown label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #101828;
+  margin-bottom: 8px;
+}
+
+.mobileCategoryDropdown select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  /* Show dropdown, hide sidebar */
+  .mobileCategoryDropdown {
+    display: block;
+    padding: 16px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .sideNav {
+    display: none;
+  }
+  
+  /* Flex direction change for layout */
+  .iconAreaLayout {
+    flex-direction: column;
+  }
+  
+  /* Force grid to exactly 3 columns on mobile */
+  .iconGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .iconGridWrapper {
+    padding: 16px;
+  }
+  
+  .iconCard {
+    padding: 12px 4px;
+  }
+  
+  .iconName {
+    font-size: 11px; /* Slightly larger text since we have 3 columns instead of 4 */
+
+  }
+}
+

@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
 import SidebarItem from "./SidebarItem";
 import styles from "./SideNavigation.module.css";
 
@@ -180,13 +180,25 @@ const closeSidebar = (): void => {
 const SideNavigation: FunctionComponent<SideNavigationType> = ({
   className = "",
 }) => {
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1000) {
+        const sidebar = document.getElementById("sidebar_nav");
+        if (sidebar) {
+          sidebar.style.display = "";
+        }
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <section
       className={[styles.sideNavigation, className].join(" ")}
        id="sidebar_nav"
     >
-      <div className={styles.close_sidenav}><img onClick={closeSidebar} className={styles.image} alt="" src="/close-icon.png" /></div>
+      <div className={styles.close_sidenav}><img onClick={closeSidebar} className={styles.image} alt="Close" src="/close-icon.png" /></div>
       <div className={styles.getStarted}>
         <div className={styles.elementContainer}>
           <div className={styles.designElements}>About Design System</div>
