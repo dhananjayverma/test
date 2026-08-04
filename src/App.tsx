@@ -1,3 +1,5 @@
+import LandingPage from "./pages/LandingPage";
+
 import { useEffect } from "react";
 import {
   Routes,
@@ -132,20 +134,10 @@ function App() {
       }
     }
   }, [pathname]);
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "./src/script.js";
-    script.async = true;
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
   return (
     <Routes>
-      <Route path="/" element={<GetStartedAboutGlobalDesignSystemCollapsed />}/>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/design-system" element={<GetStartedAboutGlobalDesignSystemCollapsed />}/>
       <Route path="/vision" element={<Ourvision />} />
       <Route path="/design-philosophy" element={<OurDesignPhilosophy />} />
       <Route path="/design" element={<Design />} />

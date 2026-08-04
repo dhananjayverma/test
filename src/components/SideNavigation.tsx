@@ -22,7 +22,7 @@ const menuItems: MenuItem[] = [
     "label": "Get Started",
     "icon": "get_started.svg",
     "subItems": [
-      { "id": "get-started-1", "label": "About Global Design System", "path": "/" },
+      { "id": "get-started-1", "label": "About Global Design System", "path": "/design-system" },
       { "id": "get-started-2", "label": "Vision", "path": "/vision" },
       { "id": "get-started-3", "label": "Design Philosophy", "path": "/design-philosophy" },
       { "id": "get-started-4", "label": "Design", "path": "/design" },
@@ -170,6 +170,13 @@ const docItems: MenuItem[] = [
   },
 ]
 
+const closeSidebar = (): void => {
+  const sidebar = document.getElementById("sidebar_nav");
+  if (sidebar) {
+    sidebar.style.display = "none";
+  }
+};
+
 const SideNavigation: FunctionComponent<SideNavigationType> = ({
   className = "",
 }) => {
@@ -179,7 +186,7 @@ const SideNavigation: FunctionComponent<SideNavigationType> = ({
       className={[styles.sideNavigation, className].join(" ")}
        id="sidebar_nav"
     >
-      <div className={styles.close_sidenav}><img onClick={() => closeFunction()} className={styles.image} alt="" src="/close-icon.png" /></div>
+      <div className={styles.close_sidenav}><img onClick={closeSidebar} className={styles.image} alt="" src="/close-icon.png" /></div>
       <div className={styles.getStarted}>
         <div className={styles.elementContainer}>
           <div className={styles.designElements}>About Design System</div>

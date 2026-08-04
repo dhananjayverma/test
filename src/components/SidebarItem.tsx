@@ -1,6 +1,8 @@
 import {
   FunctionComponent,
-  useEffect, useState
+  MouseEvent,
+  useEffect,
+  useState
 } from "react";
 import clsx from "clsx";
 import { NavLink, useLocation } from "react-router-dom";
@@ -19,15 +21,28 @@ interface SidebarItemProps {
   item: SidebarItemType;
 }
 
+const hasActivePath = (item: SidebarItemType, pathname: string): boolean =>
+  item.path === pathname ||
+  Boolean(item.subItems?.some((child) => hasActivePath(child, pathname)));
+
+const closeMobileSidebar = () => {
+  if (window.matchMedia("(max-width: 1000px)").matches) {
+    const sidebar = document.getElementById("sidebar_nav");
+    if (sidebar) {
+      sidebar.style.display = "none";
+    }
+  }
+};
+
 const SidebarItem: FunctionComponent<SidebarItemProps> = ({ item }) => {
   const location = useLocation();
 
-  const hasChildren = item.subItems && item.subItems.length > 0;
+  const hasChildren = Boolean(item.subItems?.length);
+  const disabled = item.style === "disabled";
 
-  const childActive = item.subItems?.some(
-    (child) =>
-      location.pathname === child.path ||
-      child.subItems?.some((sub) => sub.path === location.pathname)
+  const itemActive = hasActivePath(item, location.pathname);
+  const childActive = Boolean(
+    item.subItems?.some((child) => hasActivePath(child, location.pathname))
   );
 
   const [open, setOpen] = useState(childActive);
@@ -38,21 +53,45 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = ({ item }) => {
     }
   }, [childActive]);
 
+  const toggleOpen = () => {
+    if (hasChildren && !disabled) {
+      setOpen((current) => !current);
+    }
+  };
+
+  const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.stopPropagation();
+
+    if (disabled) {
+      event.preventDefault();
+      return;
+    }
+
+    closeMobileSidebar();
+  };
+
   return (
     <div className={clsx(styles.sidebarItem, { [styles.open]: open,})}>
-      <div className={styles.sidebarTitle} onClick={() => setOpen(!open)}>
+      <div
+        className={styles.sidebarTitle}
+        onClick={toggleOpen}
+        role={hasChildren && !disabled ? "button" : undefined}
+        tabIndex={hasChildren && !disabled ? 0 : undefined}
+        onKeyDown={(event) => {
+          if ((event.key === "Enter" || event.key === " ") && hasChildren && !disabled) {
+            event.preventDefault();
+            toggleOpen();
+          }
+        }}
+      >
         {item.path ? (
           <NavLink
             to={item.path!}
-            onClick={(e) => {
-              if (item.style === "disabled") {
-                e.preventDefault();
-              }
-            }}
+            onClick={handleLinkClick}
             className={({ isActive }) =>
               clsx(styles.sidebarLink, {
-                [styles.active]: isActive,
-                [styles.disabled]: item.style === "disabled",
+                [styles.active]: isActive || itemActive,
+                [styles.disabled]: disabled,
               })
             }
           >
@@ -70,21 +109,36 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = ({ item }) => {
 
         {hasChildren && (
           <button
+            type="button"
             className={styles.toggleBtn}
+            aria-expanded={open}
+            aria-label={`${open ? "Collapse" : "Expand"} ${item.label}`}
+            disabled={disabled}
+            onClick={(event) => {
+              event.stopPropagation();
+              toggleOpen();
+            }}
           >
             <img
               src="/caretRight_icon.svg"
+              alt=""
               className={open ? styles.rotate : ""}
             />
           </button>
         )}
       </div>
 
-      {hasChildren && open && (
-        <div className={styles.sidebarContent}>
-          {item.subItems!.map((child) => (
-            <SidebarItem key={child.id} item={child} />
-          ))}
+      {hasChildren && (
+        <div
+          className={clsx(styles.sidebarContent, {
+            [styles.sidebarContentOpen]: open,
+          })}
+        >
+          <div className={styles.sidebarContentInner}>
+            {item.subItems!.map((child) => (
+              <SidebarItem key={child.id} item={child} />
+            ))}
+          </div>
         </div>
       )}
     </div>

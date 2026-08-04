@@ -26,8 +26,19 @@
 }
 .sidebarContent{
   width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.22s ease;
 }
-.sidebarItem > .sidebarContent > .sidebarItem > .sidebarTitle{
+.sidebarContentOpen{
+  grid-template-rows: 1fr;
+}
+.sidebarContentInner{
+  min-height: 0;
+  overflow: hidden;
+}
+.sidebarItem > .sidebarContent > .sidebarContentInner > .sidebarItem > .sidebarTitle{
   padding: var(--padding-0);
 }
 .sidebarContent  .sidebarLink{
@@ -65,10 +76,10 @@
 .sidebarItem.open > .sidebarTitle > .sidebarLink{
   font-weight: 700;
 }
-.sidebarItem.open > .sidebarContent > .sidebarItem.open > .sidebarTitle > .sidebarLink{
+.sidebarItem.open > .sidebarContent > .sidebarContentInner > .sidebarItem.open > .sidebarTitle > .sidebarLink{
   font-weight: 600;
 }
-.sidebarItem.open > .sidebarContent > .sidebarItem.open > .sidebarTitle > .sidebarLink.active{
+.sidebarItem.open > .sidebarContent > .sidebarContentInner > .sidebarItem.open > .sidebarTitle > .sidebarLink.active{
   font-weight: inherit;
 }
 .disabled{
@@ -81,10 +92,22 @@
   background: none;
   border:none;
   margin-right: 8px;
+  cursor: pointer;
+  padding: 0;
+}
+.toggleBtn:disabled{
+  cursor: not-allowed;
 }
 .toggleBtn img{
   transform: rotate(-90deg);
+  transition: transform 0.22s ease;
 }
 .toggleBtn img.rotate{
   transform: rotate(0deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .sidebarContent,
+  .toggleBtn img {
+    transition: none;
+  }
 }
