@@ -26,6 +26,7 @@ import Design from "./pages/Desing";
 import Development from "./pages/Development";
 import SplashScreen from "./pages/SplashScreen";
 import ToastMessagePage from "./pages/ToastMessage";
+import IconLibrary from "./pages/IconLibrary";
 
 function App() {
   const action = useNavigationType();
@@ -149,6 +150,7 @@ function App() {
       <Route path="/color-product-dark-blue" element={<ColorProductDarkBlue />} />
       <Route path="/typography" element={<TypographyOverview />} />
       <Route path="/spacing" element={<SpacingPage />} />
+      <Route path="/icon-library" element={<IconLibrary />} />
       <Route path="/product-icon" element={<ProductIconPage />} />
       <Route path="/button" element={<ButtonOverview />} />
       <Route path="/input-field" element={<InputFieldOverview />} />

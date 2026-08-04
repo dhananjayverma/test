@@ -57,7 +57,7 @@ const designItems: MenuItem[] = [
       { "id": "foundations-3", "label": "Spacing", "path": "/spacing" },
       { "id": "foundations-4", "label": "Grid & Layout", "style": "disabled"},
       { "id": "foundations-5", "label": "Elevation", "style": "disabled" },
-      { "id": "foundations-6", "label": "Icon", "style": "disabled" },
+      { "id": "foundations-6", "label": "Icon", "path": "/icon-library" },
       { "id": "foundations-7", "label": "Product Icon", "path": "/product-icon" },
       { "id": "foundations-8", "label": "Imagery","style": "disabled" },
       { "id": "foundations-9", "label": "Illustration","style": "disabled" },
