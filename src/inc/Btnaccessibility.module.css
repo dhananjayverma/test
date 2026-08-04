@@ -119,8 +119,20 @@
     padding: var(--padding-24) var(--padding-24) var(--padding-48);
   }
   .sideNav {
-    display:none;
-  }
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 170px;
+  max-height: calc(100vh - 190px);
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.sideNav::-webkit-scrollbar {
+  display: none;
+}
 }
 @media screen and (max-width: 768px) {
   .container {

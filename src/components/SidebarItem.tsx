@@ -67,6 +67,10 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = ({ item }) => {
       return;
     }
 
+    if (hasChildren) {
+      setOpen(true); // Open the dropdown when the link is clicked
+    }
+
     closeMobileSidebar();
   };
 
@@ -90,7 +94,7 @@ const SidebarItem: FunctionComponent<SidebarItemProps> = ({ item }) => {
             onClick={handleLinkClick}
             className={({ isActive }) =>
               clsx(styles.sidebarLink, {
-                [styles.active]: isActive || itemActive,
+                [styles.active]: isActive,
                 [styles.disabled]: disabled,
               })
             }

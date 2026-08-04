@@ -226,7 +226,7 @@
 .frameParent4 {
   width: 100%;
   display: grid;
-  align-items: flex-start;
+  align-items: stretch;
   padding: var(--padding-0) var(--padding-48);
   box-sizing: border-box;
   max-width: 100%;
@@ -337,7 +337,10 @@
   gap: var(--gap-16);
   max-width: 100%;
 }
-.frameParent7,
+.frameParent7 {
+  display: flex;
+  align-items: stretch;
+}
 .frameParent8,
 .frameParent9 {
   display: flex;

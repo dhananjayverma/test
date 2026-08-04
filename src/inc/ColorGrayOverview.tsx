@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
 import styles from "./ColorGrayOverview.module.css";
 
 export type ContainerType = {
@@ -44,7 +44,47 @@ const ColorOverview: FunctionComponent<ContainerType> = ({ className = "" }) => 
       });
     }
   };
-  return (
+  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 150;
+
+      for (let i = navigationItems.length - 1; i >= 0; i--) {
+        const item = navigationItems[i];
+        const section = document.getElementById(item.id);
+        if (section) {
+          const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+          if (sectionTop <= scrollPosition) {
+            setActiveNav(item.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const navItem = document.getElementById(`navItem-${activeNav}`);
+    const sideNav = document.getElementById("sideNavContainer");
+    if (navItem && sideNav) {
+      const navItemTop = navItem.offsetTop;
+      const navItemHeight = navItem.clientHeight;
+      const sideNavScrollTop = sideNav.scrollTop;
+      const sideNavHeight = sideNav.clientHeight;
+
+      if (navItemTop < sideNavScrollTop + 20) {
+        sideNav.scrollTo({ top: navItemTop - 20, behavior: 'smooth' });
+      } else if (navItemTop + navItemHeight > sideNavScrollTop + sideNavHeight - 20) {
+        sideNav.scrollTo({ top: navItemTop + navItemHeight - sideNavHeight + 20, behavior: 'smooth' });
+      }
+    }
+  }, [activeNav]);
+return (
     <div className={[styles.container, className].filter(Boolean).join(" ")}>
       <div className={styles.page}>
         <div className={styles.content}>
@@ -102,10 +142,11 @@ const ColorOverview: FunctionComponent<ContainerType> = ({ className = "" }) => 
           </section>
         </div>
 
-        <aside className={styles.sideNav}>
+        <aside id="sideNavContainer" className={styles.sideNav}>
           {navigationItems.map((item) => (
             <div
               key={item.id}
+              id={`navItem-${item.id}`}
               className={`${styles.navItem} ${
                 activeNav === item.id ? styles.navItemActive : ""
               }`}

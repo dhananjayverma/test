@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
 import clsx from "clsx";
 import styles from "./TypographyOverview.module.css";
 
@@ -66,6 +66,46 @@ const SplashScreenPage: FunctionComponent<ContainerType> = ({ className = "" }) 
       setIsVisible(true);
     }, 200);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 150; // Offset for header
+
+      for (let i = navigationItems.length - 1; i >= 0; i--) {
+        const item = navigationItems[i];
+        const section = document.getElementById(item.id);
+        if (section) {
+          const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+          if (sectionTop <= scrollPosition) {
+            setActiveNav(item.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Set initial active state
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const navItem = document.getElementById(`navItem-${activeNav}`);
+    const sideNav = document.getElementById("sideNavContainer");
+    if (navItem && sideNav) {
+      const navItemTop = navItem.offsetTop;
+      const navItemHeight = navItem.clientHeight;
+      const sideNavScrollTop = sideNav.scrollTop;
+      const sideNavHeight = sideNav.clientHeight;
+
+      if (navItemTop < sideNavScrollTop + 20) {
+        sideNav.scrollTo({ top: navItemTop - 20, behavior: 'smooth' });
+      } else if (navItemTop + navItemHeight > sideNavScrollTop + sideNavHeight - 20) {
+        sideNav.scrollTo({ top: navItemTop + navItemHeight - sideNavHeight + 20, behavior: 'smooth' });
+      }
+    }
+  }, [activeNav]);
+
   return (
     <div className={[styles.container, className].filter(Boolean).join(" ")}>
       <div className={styles.page}>
@@ -212,11 +252,11 @@ const SplashScreenPage: FunctionComponent<ContainerType> = ({ className = "" }) 
               </div>
           </section>
         </div>
-        <aside className={styles.sideNav}>
+        <aside className={styles.sideNav} id="sideNavContainer">
           {navigationItems.map((item) => (
             <div
               key={item.id}
-              className={`${styles.navItem} ${
+              id={`navItem-${item.id}`} className={`${styles.navItem} ${
                 activeNav === item.id ? styles.navItemActive : ""
               }`}
               onClick={() => handleNavClick(item.id)}

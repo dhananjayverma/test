@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
 import styles from "./Coloraccessibility.module.css";
 
 export type ContainerType = {
@@ -8,7 +8,7 @@ export type ContainerType = {
 const contrastRows = [
   {
     label: "Text and Icon on Brand color background",
-    preview: "frame-squire.svg",
+    preview: "/frame-squire.svg",
     whiteText: "5.46:1",
     whiteIcon: "5.46:1",
     darkText: "3.42:1",
@@ -18,14 +18,14 @@ const contrastRows = [
 const contrast2Rows = [
   {
     label: "Brand color on Light Backgrounds",
-    preview: "frame-Aa.svg",
+    preview: "/frame-Aa.svg",
     whiteText: "5.46:1",
     whiteIcon: "5.46:1",
     darkText: "4.97:1",
   },
   {
     label: "Brand Color Icon on Light Background",
-    preview: "frame-u.svg",
+    preview: "/frame-u.svg",
     whiteText: "5.46:1",
     whiteIcon: "5.23:1",
     darkText: "4.97:1",
@@ -55,7 +55,47 @@ const Coloraccessibility: FunctionComponent<ContainerType> = ({ className = "" }
       });
     }
   };
-  return (
+  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 150;
+
+      for (let i = navigationItems.length - 1; i >= 0; i--) {
+        const item = navigationItems[i];
+        const section = document.getElementById(item.id);
+        if (section) {
+          const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+          if (sectionTop <= scrollPosition) {
+            setActiveNav(item.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const navItem = document.getElementById(`navItem-${activeNav}`);
+    const sideNav = document.getElementById("sideNavContainer");
+    if (navItem && sideNav) {
+      const navItemTop = navItem.offsetTop;
+      const navItemHeight = navItem.clientHeight;
+      const sideNavScrollTop = sideNav.scrollTop;
+      const sideNavHeight = sideNav.clientHeight;
+
+      if (navItemTop < sideNavScrollTop + 20) {
+        sideNav.scrollTo({ top: navItemTop - 20, behavior: 'smooth' });
+      } else if (navItemTop + navItemHeight > sideNavScrollTop + sideNavHeight - 20) {
+        sideNav.scrollTo({ top: navItemTop + navItemHeight - sideNavHeight + 20, behavior: 'smooth' });
+      }
+    }
+  }, [activeNav]);
+return (
     <div className={[styles.container, className].filter(Boolean).join(" ")}>
       <div className={styles.page}>
         <div className={styles.content}>
@@ -178,10 +218,11 @@ const Coloraccessibility: FunctionComponent<ContainerType> = ({ className = "" }
             </div>
           </section>
         </div>
-        <aside className={styles.sideNav}>
+        <aside id="sideNavContainer" className={styles.sideNav}>
           {navigationItems.map((item) => (
             <div
               key={item.id}
+              id={`navItem-${item.id}`}
               className={`${styles.navItem} ${
                 activeNav === item.id ? styles.navItemActive : ""
               }`}

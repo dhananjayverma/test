@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
 import clsx from "clsx";
 import {Link} from "react-router-dom";
 import styles from "./ColorMainPage.module.css";
@@ -96,6 +96,45 @@ const ColorOverview: FunctionComponent<ContainerType> = ({ className = "" }) => 
       });
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 150; // Offset for header
+
+      for (let i = navigationItems.length - 1; i >= 0; i--) {
+        const item = navigationItems[i];
+        const section = document.getElementById(item.id);
+        if (section) {
+          const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+          if (sectionTop <= scrollPosition) {
+            setActiveNav(item.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Set initial active state
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const navItem = document.getElementById(`navItem-${activeNav}`);
+    const sideNav = document.getElementById("sideNavContainer");
+    if (navItem && sideNav) {
+      const navItemTop = navItem.offsetTop;
+      const navItemHeight = navItem.clientHeight;
+      const sideNavScrollTop = sideNav.scrollTop;
+      const sideNavHeight = sideNav.clientHeight;
+
+      if (navItemTop < sideNavScrollTop + 20) {
+        sideNav.scrollTo({ top: navItemTop - 20, behavior: 'smooth' });
+      } else if (navItemTop + navItemHeight > sideNavScrollTop + sideNavHeight - 20) {
+        sideNav.scrollTo({ top: navItemTop + navItemHeight - sideNavHeight + 20, behavior: 'smooth' });
+      }
+    }
+  }, [activeNav]);
   const tabs = [
       { id: "product-strong-blue", hex: "#006AC2", name: "Product Strong Blue", group: "Simulation" },
       { id: "product-teal-blue", hex: "#008080", name: "Product Teal Blue", group: "Data Acquisition"},
@@ -275,10 +314,11 @@ const ColorOverview: FunctionComponent<ContainerType> = ({ className = "" }) => 
           </p>
         </div>
 
-        <aside className={styles.sideNav}>
+        <aside id="sideNavContainer" className={styles.sideNav}>
           {navigationItems.map((item) => (
             <div
               key={item.id}
+              id={`navItem-${item.id}`}
               className={`${styles.navItem} ${
                 activeNav === item.id ? styles.navItemActive : ""
               }`}
