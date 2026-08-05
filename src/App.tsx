@@ -37,12 +37,6 @@ function App() {
   if (pathname !== prevPath) {
     window.scrollTo(0, 0);
     setPrevPath(pathname);
-    
-    // Explicitly reset the sideNavContainer if it exists in the DOM from the previous page
-    const sideNav = document.getElementById("sideNavContainer");
-    if (sideNav) {
-      sideNav.scroll({ top: 0, left: 0, behavior: "instant" });
-    }
   }
 
 

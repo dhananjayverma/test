@@ -1,0 +1,331 @@
+.drawerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawerOverlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 450px;
+  height: 100vh;
+  background: #ffffff;
+  color: #1f1f1f;
+  z-index: 1000;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+  color: #1f1f1f;
+  text-transform: capitalize;
+}
+
+.headerActions {
+  display: flex;
+  gap: 16px;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  color: #5f6368;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.iconButton:hover {
+  background: #f1f3f4;
+  color: #1f1f1f;
+}
+
+.content {
+  padding: 32px;
+  flex: 1;
+}
+
+.previewSection {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.iconPreview {
+  width: 160px;
+  height: 160px;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.copyIconBtn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #5f6368;
+  cursor: pointer;
+}
+
+.copyIconBtn:hover {
+  color: #1f1f1f;
+}
+
+.settings {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settingGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settingLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #5f6368;
+}
+
+.controlBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #dadce0;
+  border-radius: 24px;
+  padding: 8px 16px;
+}
+
+.controlBox input {
+  background: transparent;
+  border: none;
+  color: #1f1f1f;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.controlBox input:focus {
+  outline: none;
+}
+
+.controlBox button {
+  background: none;
+  border: none;
+  color: #5f6368;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.controlBox button:hover {
+  color: #1f1f1f;
+}
+
+.colorPickerBox {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dadce0;
+  border-radius: 24px;
+  padding: 8px 16px;
+  gap: 12px;
+}
+
+.colorPickerBox input[type="color"] {
+  border: none;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.colorPickerBox input[type="text"] {
+  background: transparent;
+  border: none;
+  color: #1f1f1f;
+  font-size: 14px;
+  font-family: inherit;
+  flex: 1;
+  outline: none;
+}
+
+.description {
+  font-size: 14px;
+  color: #5f6368;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.downloadButtons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.downloadBtn {
+  flex: 1;
+  background: #e8f0fe;
+  color: #1a73e8;
+  border: none;
+  border-radius: 24px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.downloadBtn:hover {
+  background: #d2e3fc;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 24px;
+}
+
+.tab {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #5f6368;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  color: #1a73e8;
+  border-bottom-color: #1a73e8;
+}
+
+.instructionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.instructionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.instructionGroup h4 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+.instructionGroup p {
+  font-size: 14px;
+  color: #5f6368;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.instructionGroup a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.instructionGroup a:hover {
+  text-decoration: underline;
+}
+
+.codeBlockWrapper {
+  background: #f1f3f4;
+  border-radius: 8px;
+  padding: 16px;
+  position: relative;
+}
+
+.codeBlock {
+  font-family: monospace;
+  font-size: 13px;
+  color: #202124;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.6;
+}
+
+.copyCodeBtn {
+  background: none;
+  border: none;
+  color: #5f6368;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 12px;
+  float: right;
+}
+
+.copyCodeBtn:hover {
+  color: #1f1f1f;
+}
+
+@media (max-width: 600px) {
+  .drawer {
+    width: 100vw;
+    right: -100vw;
+  }
+}

@@ -84,6 +84,8 @@
   width: 115px;
   height: 115px;
   object-fit: cover;
+  display: block;
+  margin: 0 auto 16px;
 }
 .atom {
   margin: 0;

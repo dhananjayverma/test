@@ -4,6 +4,7 @@ import SideNavigation from "../components/SideNavigation";
 import Footer from "../components/Footer";
 import styles from "./IconLibrary.module.css";
 import bannerStyles from "./TypographyOverview.module.css";
+import IconDrawer from "../components/IconDrawer";
 
 interface IconData {
   id: number;
@@ -17,6 +18,7 @@ interface IconData {
 const IconLibrary: React.FC = () => {
   const [icons, setIcons] = useState<IconData[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedIcon, setSelectedIcon] = useState<IconData | null>(null);
   
   // Customization States
   const [fill, setFill] = useState(false);
@@ -79,8 +81,10 @@ const IconLibrary: React.FC = () => {
 
 
   return (
-    <div className={styles.iconLibraryPage}>
-      <Header hBKNewLogo1="/HBK-New-Logo-1.svg" />
+    <>
+      <IconDrawer isOpen={!!selectedIcon} onClose={() => setSelectedIcon(null)} icon={selectedIcon} />
+      <div className={styles.iconLibraryPage}>
+        <Header hBKNewLogo1="/HBK-New-Logo-1.svg" />
       
       <main className={styles.bodyLayout}>
         <SideNavigation />
@@ -139,7 +143,7 @@ const IconLibrary: React.FC = () => {
                 ) : icons.length > 0 ? (
                   <div className={styles.iconGrid}>
                     {icons.map(icon => (
-                      <div key={icon.id} className={styles.iconCard}>
+                      <div key={icon.id} className={styles.iconCard} onClick={() => setSelectedIcon(icon)}>
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           viewBox="0 0 24 24" 
@@ -187,6 +191,7 @@ const IconLibrary: React.FC = () => {
         </div>
       </main>
     </div>
+    </>
   );
 };
 
