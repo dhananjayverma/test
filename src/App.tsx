@@ -1,6 +1,6 @@
 import LandingPage from "./pages/LandingPage";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Routes,
   Route,
@@ -33,11 +33,19 @@ function App() {
   const location = useLocation();
   const pathname = location.pathname;
 
-  useEffect(() => {
-    if (action !== "POP") {
-      window.scrollTo(0, 0);
+  const [prevPath, setPrevPath] = useState("");
+  if (pathname !== prevPath) {
+    window.scrollTo(0, 0);
+    setPrevPath(pathname);
+    
+    // Explicitly reset the sideNavContainer if it exists in the DOM from the previous page
+    const sideNav = document.getElementById("sideNavContainer");
+    if (sideNav) {
+      sideNav.scroll({ top: 0, left: 0, behavior: "instant" });
     }
-  }, [action, pathname]);
+  }
+
+
 
   useEffect(() => {
     let title = "";
