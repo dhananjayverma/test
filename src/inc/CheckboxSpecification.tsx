@@ -276,9 +276,9 @@ const Checkboxspecs: FunctionComponent<ContainerType> = ({ className = "" }) => 
                       <h3 className={styles.headingTitle}>{section.title}</h3>
                     </div>
                     <div className={styles.attributeList}>
-                      {section.attributes?.map((attribute) => (
-                        <div className={styles.listItem}>
-                          <div key={attribute.title} className={styles.titleRow}>
+                      {section.attributes?.map((attribute, idx) => (
+                        <div key={idx} className={styles.listItem}>
+                          <div className={styles.titleRow}>
                             <span className={styles.accentDot} ><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5H17.998V15H2V5Z" stroke="#6B6B6B"/></svg></span>
                             <h3 className={styles.subTitle}>{attribute.title}</h3>
                           </div>

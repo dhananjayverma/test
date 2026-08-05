@@ -48,9 +48,9 @@ const InputSpecsSize: FunctionComponent<ContainerType> = ({ className = "" }) =>
           <article key={section.title} className={styles.specCard}>
             <div className={styles.infoColumn}>
               <div className={styles.attributeList}>
-                {section.attributes?.map((attribute) => (
-                  <div className={styles.listItem}>
-                    <div key={attribute.title} className={styles.titleRow}>
+                {section.attributes?.map((attribute, idx) => (
+                  <div key={idx} className={styles.listItem}>
+                    <div className={styles.titleRow}>
                       <span className={styles.accentDot} ><img src="./type-icon-3.svg"></img></span>
                       <h3 className={styles.subTitle}>{attribute.title}</h3>
                     </div>

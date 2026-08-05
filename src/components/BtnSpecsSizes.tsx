@@ -59,9 +59,9 @@ const ButtonSpecSize: FunctionComponent<ContainerType> = ({ className = "" }) =>
                 <h3 className={styles.headingTitle}>{section.title}</h3>
               </div>
               <div className={styles.attributeList}>
-                {section.attributes?.map((attribute) => (
-                  <div className={styles.listItem}>
-                    <div key={attribute.title} className={styles.titleRow}>
+                {section.attributes?.map((attribute, idx) => (
+                  <div key={idx} className={styles.listItem}>
+                    <div className={styles.titleRow}>
                       <span className={styles.accentDot} ><img src={attribute.image}></img></span>
                       <h3 className={styles.subTitle}>{attribute.title}</h3>
                     </div>

@@ -153,8 +153,8 @@ const ButtonAnatomy: FunctionComponent<ContainerType> = ({ className = "" }) => 
             </div>
             <div className={styles.typesSection}>
               {buttonTypes.map((type, idx) => (
-                <div className={styles.sectiontwo}>
-                  <div className={styles.typeBlock} key={idx}>
+                <div key={idx} className={styles.sectiontwo}>
+                  <div className={styles.typeBlock}>
                     <h3 className={styles.typeName}>{type.name}</h3>
                     <p className={styles.typeDescription}>{type.description}</p>
                     <div className={styles.examplesList}>
