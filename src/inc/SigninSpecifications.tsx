@@ -171,15 +171,15 @@ const SigninSpecifications: FunctionComponent<ContainerType> = ({ className = ""
           </section>
           <section className={styles.section}>
             <div className={styles.cardList}>
-              {specSections.map((section) => (
-                <article className={styles.specCard}>
+              {specSections.map((section, idx) => (
+                <article key={idx} className={styles.specCard}>
                   <div className={styles.infoColumn}>
                     <div className={styles.titleRow}>
                       <h3 className={styles.subTitle}>{section.title}</h3>
                     </div>
                     <div className={styles.attributeItem}>
-                      {section.attributes?.map((attribute) => (
-                        <div className={styles.attributeRow}><span className={clsx(styles.attributeName, styles.attributeWidth)}>{attribute.title} {attribute.value}</span></div>
+                      {section.attributes?.map((attribute, idx) => (
+                        <div key={idx} className={styles.attributeRow}><span className={clsx(styles.attributeName, styles.attributeWidth)}>{attribute.title} {attribute.value}</span></div>
                       ))}
                     </div>
                     <div className={styles.titleRow}>
@@ -206,15 +206,15 @@ const SigninSpecifications: FunctionComponent<ContainerType> = ({ className = ""
           </section>
           <section className={styles.section}>
             <div className={styles.cardList}>
-              {layoutSections.map((sections) => (
-                <article className={styles.specCard}>
+              {layoutSections.map((sections, idx) => (
+                <article key={idx} className={styles.specCard}>
                   <div className={styles.infoColumn}>
                     <div className={styles.titleRow}>
                       <h3 className={styles.subTitle}>{sections.title}</h3>
                     </div>
                     <div className={styles.attributeItem}>
-                      {sections.attributes?.map((attributes) => (
-                        <div className={styles.attributeRow}><span className={clsx(styles.attributeName, styles.attributeWidth)}>{attributes.title} {attributes.value}</span></div>
+                      {sections.attributes?.map((attributes, idx) => (
+                        <div key={idx} className={styles.attributeRow}><span className={clsx(styles.attributeName, styles.attributeWidth)}>{attributes.title} {attributes.value}</span></div>
                       ))}
                     </div>
                   </div>
