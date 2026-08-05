@@ -29,6 +29,8 @@ const IconLibrary: React.FC = () => {
   const [selectedStyle, setSelectedStyle] = useState<string>('Outlined');
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState<number>(1);
+  const [hasMore, setHasMore] = useState<boolean>(false);
 
   // Expanded Categories based on Material Symbols
   const categories = [
@@ -44,7 +46,13 @@ const IconLibrary: React.FC = () => {
     setOpticalSize(24);
     setSelectedStyle('Outlined');
     setSelectedCategory('');
+    setPage(1);
   };
+
+  // Reset page when filters change
+  useEffect(() => {
+    setPage(1);
+  }, [searchTerm, selectedCategory, selectedStyle]);
 
   // Fetch icons from backend
   useEffect(() => {
@@ -55,15 +63,23 @@ const IconLibrary: React.FC = () => {
         if (searchTerm) queryParams.append('search', searchTerm);
         if (selectedCategory) queryParams.append('category', selectedCategory);
         if (selectedStyle) queryParams.append('style', selectedStyle);
+        queryParams.append('page', page.toString());
+        queryParams.append('limit', '50');
 
-        // Fetching from the standalone backend on port 3000
         const apiUrl = import.meta.env.VITE_API_URL;
         const response = await fetch(`${apiUrl}/api/icons?${queryParams.toString()}`);
         if (!response.ok) {
           throw new Error('Failed to fetch');
         }
         const data = await response.json();
-        setIcons(data);
+        
+        if (page === 1) {
+          setIcons(data.data);
+        } else {
+          setIcons(prev => [...prev, ...data.data]);
+        }
+        
+        setHasMore(page < data.totalPages);
       } catch (error) {
         console.error("Error fetching icons:", error);
       } finally {
@@ -77,7 +93,7 @@ const IconLibrary: React.FC = () => {
     }, 300);
 
     return () => clearTimeout(timerId);
-  }, [searchTerm, selectedCategory, selectedStyle]);
+  }, [searchTerm, selectedCategory, selectedStyle, page]);
 
 
   return (
@@ -143,7 +159,7 @@ const IconLibrary: React.FC = () => {
                 ) : icons.length > 0 ? (
                   <div className={styles.iconGrid}>
                     {icons.map(icon => (
-                      <div key={icon.id} className={styles.iconCard} onClick={() => setSelectedIcon(icon)}>
+                      <div key={`${icon.id}_${page}`} className={styles.iconCard} onClick={() => setSelectedIcon(icon)}>
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           viewBox="0 -960 960 960" 
@@ -161,6 +177,17 @@ const IconLibrary: React.FC = () => {
                   <div className={styles.noResults}>
                     <h3>No icons found</h3>
                     <p>Try adjusting your search or filters.</p>
+                  </div>
+                )}
+                
+                {hasMore && (
+                  <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+                    <button 
+                      onClick={() => setPage(p => p + 1)}
+                      style={{ padding: '10px 24px', background: '#3f51b5', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '1rem', fontWeight: 500 }}
+                    >
+                      {loading ? 'Loading...' : 'Load More'}
+                    </button>
                   </div>
                 )}
               </div>
