@@ -146,7 +146,7 @@ const IconLibrary: React.FC = () => {
                       <div key={icon.id} className={styles.iconCard} onClick={() => setSelectedIcon(icon)}>
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
-                          viewBox="0 0 24 24" 
+                          viewBox="0 -960 960 960" 
                           width={opticalSize} 
                           height={opticalSize} 
                           fill="currentColor"

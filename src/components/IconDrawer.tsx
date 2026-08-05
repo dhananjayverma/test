@@ -55,7 +55,7 @@ const IconDrawer: React.FC<IconDrawerProps> = ({ isOpen, onClose, icon }) => {
 
   const getFullSvgString = () => {
     if (!icon) return "";
-    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${size}" height="${size}" fill="${color}"><path d="${icon.svg_path}"/></svg>`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="${size}" height="${size}" fill="${color}"><path d="${icon.svg_path}"/></svg>`;
   };
 
   const downloadSVG = () => {
@@ -90,7 +90,7 @@ const IconDrawer: React.FC<IconDrawerProps> = ({ isOpen, onClose, icon }) => {
           <div className={styles.content}>
             <div className={styles.previewSection}>
               <div className={styles.iconPreview}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size > 140 ? 140 : size} height={size > 140 ? 140 : size} fill={color}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width={size > 140 ? 140 : size} height={size > 140 ? 140 : size} fill={color}>
                   <path d={icon.svg_path} />
                 </svg>
                 <button className={styles.copyIconBtn} onClick={() => handleCopy(getFullSvgString(), 'svg')} title="Copy SVG">
