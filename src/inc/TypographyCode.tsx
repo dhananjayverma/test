@@ -37,7 +37,15 @@ const TypographyCode: FunctionComponent<ContainerType> = ({ className = "" }) =>
     setActiveNav(id);
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const offset = 125;
+      const top =
+        section.getBoundingClientRect().top +
+        window.scrollY -
+        offset;
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
     }
   };
 
