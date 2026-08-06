@@ -76,13 +76,11 @@ const GlobaldesignSystem1: FunctionComponent<FrameComponent1Type> = ({
                 </button>
               </div>
               <div className={styles.frameWrapper2}>
-                <button className={styles.caretrightGroup}>
-                  <img
-                    className={styles.caretrightIcon2}
-                    alt=""
-                    src="/CaretRight.svg"
-                  />
-                  <div className={styles.viewFigmaKit}>View Figma Kit</div>
+                <button
+                  className="flex items-center justify-center text-sm font-bold px-7 py-3.5 rounded-[16px] border-2 text-foreground hover:bg-muted transition-all duration-200"
+                  style={{ borderColor: "#005B9A35", color: "#000" }}
+                >
+                  View Figma Kit
                 </button>
               </div>
             </div>

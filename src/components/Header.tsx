@@ -63,11 +63,22 @@ const Header: FunctionComponent<HeaderType> = ({
 
             <div className="flex shrink-0 items-center gap-2 sm:gap-[12px]">
               <button
-                className="flex h-[52px] min-w-[156px] items-center justify-center rounded-[16px] px-6 text-[18px] font-extrabold leading-none text-white shadow-[0_8px_16px_rgba(0,91,154,0.18)] transition-all hover:opacity-90 max-[520px]:h-11 max-[520px]:min-w-[132px] max-[520px]:rounded-[14px] max-[520px]:px-4 max-[520px]:text-[15px] md:h-[42px] md:min-w-[126px] md:rounded-[15px] md:px-[20px] md:text-[14px]"
-                style={{ background: "#0071BC" }}
+                className="text-sm font-semibold px-5 py-2 rounded-xl text-white transition-all hover:opacity-90 hover:shadow-lg"
+                style={{ background: "#005B9A", boxShadow: "0 4px 12px #0071BC35" }}
               >
                 Connect with Us
               </button>
+
+
+
+
+              {/* <button
+              className="text-sm font-semibold px-5 py-2 rounded-xl text-white transition-all hover:opacity-90 hover:shadow-lg"
+              style={{ background: B.blue, boxShadow: `0 4px 12px ${B.blue}35` }}>
+              Connect with Us
+            </button> */}
+
+
               <button
                 className="lg:hidden text-muted-foreground"
                 onClick={() => {
