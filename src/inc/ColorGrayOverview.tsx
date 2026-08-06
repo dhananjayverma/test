@@ -20,7 +20,7 @@ const ProductStrongBlueCard: FunctionComponent<{ className?: string }> = ({ clas
       <div className={styles.colorSwatch} />
       <div className={styles.colorCardText}>
         <h3>Product Grey Blue</h3>
-        <p>#006C8E</p>
+        <p>#005B9A</p>
       </div>
     </div>
     <span className={styles.colorCardCaption}>Product Grey Blue Color</span>

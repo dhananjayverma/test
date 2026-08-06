@@ -156,7 +156,7 @@
   display: inline-flex;
   background: transparent;
   border: 1px solid transparent;
-  color: #006c8e;
+  color: #005B9A;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -164,10 +164,10 @@
   transition: transform 0.3s ease;
 }
 .typesSection .sectiontwo:nth-child(1) .button{
-  background: #006c8e;
+  background: #005B9A;
 }
 .typesSection .sectiontwo:nth-child(2) .button{
-  border: 1px solid #006c8e;
+  border: 1px solid #005B9A;
   height: 38px;
 }
 .icon {
@@ -180,7 +180,7 @@
   font-size: 12px;
   font-weight: 500;
   line-height: 16px;
-  color: #006c8e;
+  color: #005B9A;
   white-space: nowrap;
 }
 .typesSection .sectiontwo:nth-child(1) .label{

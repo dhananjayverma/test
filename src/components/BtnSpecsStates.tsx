@@ -20,7 +20,7 @@ const specSections: SpecSection[] = [
     "value": "",
     "attributes": [
       { "title": "Button", "value": "", "image": "Type-icon.svg",
-        "attributes": [{"title": "Background color", "value": "#006C8E", "style": "heighlight-text" },
+        "attributes": [{"title": "Background color", "value": "#005B9A", "style": "heighlight-text" },
                         {"title": "Stroke alignment", "value": "Inside", "style": "heighlight-text" }
         ] },
       { "title": "Button Text", "value": "", "image": "Type-icon1.svg",
@@ -61,7 +61,7 @@ const specSections: SpecSection[] = [
     "value": "",
     "attributes": [
       { "title": "Button", "value": "", "image": "Type-icon.svg",
-        "attributes": [{"title": "Background color", "value": "#006C8E", "style": "heighlight-text" },
+        "attributes": [{"title": "Background color", "value": "#005B9A", "style": "heighlight-text" },
                         {"title": "Stroke alignment", "value": "Outside", "style": "heighlight-text" }
         ] },
       { "title": "Button Text", "value": "", "image": "Type-icon1.svg",

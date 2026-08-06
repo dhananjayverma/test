@@ -20,7 +20,7 @@ const specSections: SpecSection[] = [
     "value": "",
     "attributes": [
       { "title": "Button", "value": "", "image": "Type-icon.svg",
-        "attributes": [{"title": "Background color", "value": "#006C8E", "style": "heighlight-text" }] },
+        "attributes": [{"title": "Background color", "value": "#005B9A", "style": "heighlight-text" }] },
       { "title": "Button Text", "value": "", "image": "Type-icon1.svg",
         "attributes": [{"title": "Text color", "value": "#FFFFFF", "style": "heighlight-text" },
                         {"title": "Text Style", "value": "Label/S", "style": "heighlight-text" }
@@ -35,15 +35,15 @@ const specSections: SpecSection[] = [
     "value": "",
     "attributes": [
       { "title": "Button", "value": "", "image": "Type-icon.svg",
-        "attributes": [{"title": "Border Color", "value": "#006C8E", "style": "heighlight-text" },
+        "attributes": [{"title": "Border Color", "value": "#005B9A", "style": "heighlight-text" },
                         {"title": "Border Weight", "value": "1", "style": "heighlight-text" }
         ] },
       { "title": "Button Text", "value": "", "image": "Type-icon1.svg",
-        "attributes": [{"title": "Text color", "value": "#006C8E", "style": "heighlight-text" },
+        "attributes": [{"title": "Text color", "value": "#005B9A", "style": "heighlight-text" },
                         {"title": "Text Style", "value": "Label/S", "style": "heighlight-text" }
         ] },
       { "title": "Icon", "value": "", "image": "Type-icon.svg",
-        "attributes": [{"title": "Icon color", "value": "#006C8E", "style": "heighlight-text" }] },
+        "attributes": [{"title": "Icon color", "value": "#005B9A", "style": "heighlight-text" }] },
     ],
     "image": "btn-3.svg",
   },
@@ -52,11 +52,11 @@ const specSections: SpecSection[] = [
     "value": "",
     "attributes": [
       { "title": "Button Text", "value": "", "image": "Type-icon1.svg",
-        "attributes": [{"title": "Text color", "value": "#006C8E", "style": "heighlight-text" },
+        "attributes": [{"title": "Text color", "value": "#005B9A", "style": "heighlight-text" },
                         {"title": "Text Style", "value": "Label/S", "style": "heighlight-text" }
         ] },
       { "title": "Icon", "value": "", "image": "Type-icon.svg",
-        "attributes": [{"title": "Icon color", "value": "#006C8E", "style": "heighlight-text" }] },
+        "attributes": [{"title": "Icon color", "value": "#005B9A", "style": "heighlight-text" }] },
     ],
     "image": "btn-4.svg",
   },
@@ -65,11 +65,11 @@ const specSections: SpecSection[] = [
     "value": "",
     "attributes": [
       { "title": "Button Text", "value": "", "image": "Type-icon1.svg",
-        "attributes": [{"title": "Text color", "value": "#006C8E", "style": "heighlight-text" },
+        "attributes": [{"title": "Text color", "value": "#005B9A", "style": "heighlight-text" },
                         {"title": "Text Style", "value": "Label/S-Underline", "style": "heighlight-text" }
         ] },
       { "title": "Icon", "value": "", "image": "Type-icon.svg",
-        "attributes": [{"title": "Icon color", "value": "#006C8E", "style": "heighlight-text" }] },
+        "attributes": [{"title": "Icon color", "value": "#005B9A", "style": "heighlight-text" }] },
     ],
     "image": "btn-5.svg",
   }

@@ -9,6 +9,9 @@ body {
 a{
   text-decoration: none;
 }
+img {
+  cursor: default !important;
+}
 :root {
   /* Figma Variables */
 
@@ -73,8 +76,8 @@ a{
   --line-height-5xl: 40px;
 
   /* Color */
-  --color-background-bg-brand: #006c8e;
-  --color-background-bg-cta: #006c8e;
+  --color-background-bg-brand: #005B9A;
+  --color-background-bg-cta: #005B9A;
   --color-background-bg-grey: #d4d4d8;
   --color-background-bg-primary: #fff;
   --color-background-bg-cta-hover: #008ab8;
@@ -83,8 +86,8 @@ a{
   --color-background-bg-secondary: #fafafa;
   --color-background-bg-tertiary: #f4f4f5;
   --color-background-bg-white: #fff;
-  --color-border-border-brand: #006c8e;
-  --color-border-border-cta: #006c8e;
+  --color-border-border-brand: #005B9A;
+  --color-border-border-cta: #005B9A;
   --color-border-border-default: #282828;
   --color-border-border-soft: #e4e4e7;
   --color-border-border-brand-soft: #80c9de;
@@ -98,13 +101,13 @@ a{
   --color-text-text-body-subtle-on-primary: #71717a;
   --color-text-text-body-subtle-on-secondary: #52525b;
   --color-text-text-dark: #121212;
-  --color-text-text-fg-brand: #006c8e;
+  --color-text-text-fg-brand: #005B9A;
   --color-text-text-fg-red: #c5281c;
   --color-text-text-fg-disabled: rgba(18, 18, 18, 0.24);
   --color-text-text-heading-on-tertiary: #121212;
   --color-text-text-on-brand: #fff;
   --color-text-text-on-cta: #fff;
-  --color-text-text-secondary-cta: #006c8e;
+  --color-text-text-secondary-cta: #005B9A;
 
   /* Font */
   --family-primary: Noto Sans, Arial, sans-serif;
@@ -160,7 +163,7 @@ a{
   --color-goldenrod: #f2c94c;
   --color-lavenderblush: #fdecec;
   --color-oldlace: #fffaeb;
-  --color-steelblue: #006c8e;
+  --color-steelblue: #005B9A;
   --color-tomato: #d92d20;
   --color-forestgreen: #2ea345;
   --color-honeydew: #d6fbe0;

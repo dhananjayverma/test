@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--padding-24) var(--padding-0) var(--padding-16) var(--padding-0);
+  padding: 0 var(--padding-0) var(--padding-16) var(--padding-0);
   box-sizing: border-box;
   min-width: 256px;
   max-width: 280px;
@@ -48,6 +48,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: var(--padding-12) var(--padding-24) var(--padding-0);
+  flex-shrink: 0;
 }
 .designElements {
   font-size: 12px;

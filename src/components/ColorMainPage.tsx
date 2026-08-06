@@ -22,7 +22,7 @@ const brandColors = [
   },
   {
     name: "Product Grey Blue",
-    hex: "#006C8E",
+    hex: "#005B9A",
     reason:
       "The blue-teal tone feels technical and analytical, while remaining distinct from the more sensor-oriented teal.",
   },
@@ -138,7 +138,7 @@ const ColorOverview: FunctionComponent<ContainerType> = ({ className = "" }) => 
   const tabs = [
       { id: "product-strong-blue", hex: "#006AC2", name: "Product Strong Blue", group: "Simulation" },
       { id: "product-teal-blue", hex: "#008080", name: "Product Teal Blue", group: "Data Acquisition"},
-      { id: "product-grey-blue", hex: "#006C8E", name: "Product Grey Blue", group: "Data Analytical" },
+      { id: "product-grey-blue", hex: "#005B9A", name: "Product Grey Blue", group: "Data Analytical" },
       { id: "product-dark-blue", hex: "#014070", name: "Product Dark Blue", group: "Data Management" },
       ];
   const [activeTab, setActiveTab] = useState("product-strong-blue");

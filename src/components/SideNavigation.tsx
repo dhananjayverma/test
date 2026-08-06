@@ -43,24 +43,26 @@ const designItems: MenuItem[] = [
     "label": "Foundations",
     "icon": "foundations.svg",
     "subItems": [
-      { "id": "foundations-1",
+      {
+        "id": "foundations-1",
         "label": "Color",
         "path": "/color",
         "subItems": [
-          {"id": "foundations-1-1", "label": "Product Strong Blue", "path": "/color-product-strong-blue"},
-          {"id": "foundations-1-2", "label": "Product Teal Blue", "path": "/color-product-teal-blue"},
-          {"id": "foundations-1-3", "label": "Product Grey Blue", "path": "/color-product-grey-blue"},
-          {"id": "foundations-1-4", "label": "Product Dark Blue", "path": "/color-product-dark-blue"},
+          { "id": "foundations-1-1", "label": "Product Strong Blue", "path": "/color-product-strong-blue" },
+          { "id": "foundations-1-2", "label": "Product Teal Blue", "path": "/color-product-teal-blue" },
+          { "id": "foundations-1-3", "label": "Product Grey Blue", "path": "/color-product-grey-blue" },
+          { "id": "foundations-1-4", "label": "Product Dark Blue", "path": "/color-product-dark-blue" },
         ]
       },
       { "id": "foundations-2", "label": "Typography", "path": "/typography" },
       { "id": "foundations-3", "label": "Spacing", "path": "/spacing" },
-      { "id": "foundations-4", "label": "Grid & Layout", "style": "disabled"},
+      { "id": "foundations-4", "label": "Grid & Layout", "style": "disabled" },
       { "id": "foundations-5", "label": "Elevation", "style": "disabled" },
-      { "id": "foundations-6", "label": "Icon", "path": "/icon-library" },
+      { "id": "foundations-6", "label": "Icon", "style": "disabled" },
+      // { "id": "foundations-6", "label": "Icon", "path": "/icon-library" }
       { "id": "foundations-7", "label": "Product Icon", "path": "/product-icon" },
-      { "id": "foundations-8", "label": "Imagery","style": "disabled" },
-      { "id": "foundations-9", "label": "Illustration","style": "disabled" },
+      { "id": "foundations-8", "label": "Imagery", "style": "disabled" },
+      { "id": "foundations-9", "label": "Illustration", "style": "disabled" },
     ],
   },
   {
@@ -71,26 +73,28 @@ const designItems: MenuItem[] = [
       { "id": "components-1", "label": "Avatar", "style": "disabled" },
       { "id": "components-2", "label": "Badges", "style": "disabled" },
       { "id": "components-3", "label": "Datagrid", "style": "disabled" },
-      { "id": "components-4", 
+      {
+        "id": "components-4",
         "label": "Call to Actions",
         "subItems": [
-          {"id": "components-4-1", "label": "Button", "path": "/button"},
-          {"id": "components-4-2", "label": "Icon Button", "style": "disabled"},
+          { "id": "components-4-1", "label": "Button", "path": "/button" },
+          { "id": "components-4-2", "label": "Icon Button", "style": "disabled" },
         ]
       },
-      { "id": "components-5", 
+      {
+        "id": "components-5",
         "label": "Form Elements",
         "subItems": [
-          {"id": "components-5-1", "label": "Input Field", "path": "/input-field"},
-          {"id": "components-5-2", "label": "Dropdown", "style": "disabled"},
-          {"id": "components-5-3", "label": "Search Box", "style": "disabled"},
-          {"id": "components-5-4", "label": "Date Picker", "style": "disabled"},
-          {"id": "components-5-5", "label": "Datalist", "style": "disabled"},
-          {"id": "components-5-6", "label": "Radio Button", "style": "disabled"},
-          {"id": "components-5-7", "label": "Checkbox", "path": "/checkbox"},
-          {"id": "components-5-8", "label": "Text Area", "style": "disabled"},
-          {"id": "components-5-9", "label": "Toggle Switch", "style": "disabled"},
-          {"id": "components-5-10", "label": "Upload Box", "style": "disabled"},
+          { "id": "components-5-1", "label": "Input Field", "path": "/input-field" },
+          { "id": "components-5-2", "label": "Dropdown", "style": "disabled" },
+          { "id": "components-5-3", "label": "Search Box", "style": "disabled" },
+          { "id": "components-5-4", "label": "Date Picker", "style": "disabled" },
+          { "id": "components-5-5", "label": "Datalist", "style": "disabled" },
+          { "id": "components-5-6", "label": "Radio Button", "style": "disabled" },
+          { "id": "components-5-7", "label": "Checkbox", "path": "/checkbox" },
+          { "id": "components-5-8", "label": "Text Area", "style": "disabled" },
+          { "id": "components-5-9", "label": "Toggle Switch", "style": "disabled" },
+          { "id": "components-5-10", "label": "Upload Box", "style": "disabled" },
         ]
       },
       { "id": "components-6", "label": "Progress Indicator", "style": "disabled" },
@@ -120,11 +124,12 @@ const designItems: MenuItem[] = [
       { "id": "template-4", "label": "Template White", "style": "disabled" },
       { "id": "template-5", "label": "Template Black", "style": "disabled" },
       { "id": "template-6", "label": "Template Blue", "style": "disabled" },
-      { "id": "template-7",
+      {
+        "id": "template-7",
         "label": "Data Visualisation",
         "style": "disabled",
         "subItems": [
-          { "id": "template-7-1", "label": "Charts","style": "disabled" },
+          { "id": "template-7-1", "label": "Charts", "style": "disabled" },
           { "id": "template-7-2", "label": "Graphs", "style": "disabled" },
           { "id": "template-7-3", "label": "Tables", "style": "disabled" },
           { "id": "template-7-4", "label": "Dashboards", "style": "disabled" },
@@ -196,7 +201,7 @@ const SideNavigation: FunctionComponent<SideNavigationType> = ({
   return (
     <section
       className={[styles.sideNavigation, className].join(" ")}
-       id="sidebar_nav"
+      id="sidebar_nav"
     >
       <div className={styles.close_sidenav}><img onClick={closeSidebar} className={styles.image} alt="Close" src="/close-icon.png" /></div>
       <div className={styles.getStarted}>

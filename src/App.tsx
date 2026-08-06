@@ -33,13 +33,9 @@ function App() {
   const location = useLocation();
   const pathname = location.pathname;
 
-  const [prevPath, setPrevPath] = useState("");
-  if (pathname !== prevPath) {
+  useEffect(() => {
     window.scrollTo(0, 0);
-    setPrevPath(pathname);
-  }
-
-
+  }, [pathname]);
 
   useEffect(() => {
     let title = "";
