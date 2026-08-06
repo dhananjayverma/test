@@ -103,7 +103,11 @@ const ColorPalettes: FunctionComponent<ContainerType> = ({ className = "" }) => 
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 150; // Offset for header
+      const scrollPosition = window.scrollY + 150;
+      if (Math.ceil(window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight) {
+        setActiveNav(navigationItems[navigationItems.length - 1].id);
+        return;
+      }
 
       for (let i = navigationItems.length - 1; i >= 0; i--) {
         const item = navigationItems[i];
