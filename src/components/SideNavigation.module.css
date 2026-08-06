@@ -11,9 +11,9 @@
   min-width: 256px;
   max-width: 280px;
   position: sticky;
-  top: 106px;
+  top: 69px;
   align-self: flex-start;
-  height: calc(100vh - 106px);
+  height: calc(100vh - 69px);
   text-align: left;
   font-size: var(--fs-14);
   color: var(--color-darkslategray-200);
@@ -238,14 +238,14 @@
   }
   .sideNavigation{
     position: fixed;
-    top: 106px;
+    top: 69px;
     z-index: 100;
     display: none;
   }
 }
 @media screen and (max-width: 768px) {
   .sideNavigation{
-    top: 86px;
+    top: 89px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -253,7 +253,7 @@
     flex: 1;
   }
   .sideNavigation{
-    top: 78px;
+    top: 89px;
   }
 }
 

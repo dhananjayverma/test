@@ -1,6 +1,6 @@
 import LandingPage from "./pages/LandingPage";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useLayoutEffect } from "react";
 import {
   Routes,
   Route,
@@ -33,7 +33,7 @@ function App() {
   const location = useLocation();
   const pathname = location.pathname;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
