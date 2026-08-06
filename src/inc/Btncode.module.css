@@ -54,7 +54,7 @@
   font-size: var(--fs-40);
   color: var(--color-black);
   font-family: var(--font-noto-sans);
-  scroll-margin-top: 170px;
+  scroll-margin-top: 125px;
 }
 .codeParent {
   align-self: stretch;
@@ -244,7 +244,7 @@
   font-size: 14px;
   line-height: 24px;
   color: var(--color-slategray);
-  scroll-margin-top: 170px;
+  scroll-margin-top: 125px;
 }
 .primaryButtonContainer {
   width: 100%;
@@ -347,8 +347,8 @@
   flex-direction: column;
   flex-shrink: 0;
   position: sticky;
-  top: 170px;
-  max-height: calc(100vh - 190px);
+  top: 125px;
+  max-height: calc(100vh - 145px);
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;

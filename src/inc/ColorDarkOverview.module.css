@@ -189,8 +189,8 @@
   flex-direction: column;
   flex-shrink: 0;
   position: sticky;
-  top: 170px;
-  max-height: calc(100vh - 190px);
+  top: 125px;
+  max-height: calc(100vh - 145px);
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;

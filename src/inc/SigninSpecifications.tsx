@@ -109,7 +109,7 @@ const SigninSpecifications: FunctionComponent<ContainerType> = ({ className = ""
     setActiveNav(id);
     const section = document.getElementById(id);
     if (section) {
-      const offset = 170;
+      const offset = 125;
       const top =
         section.getBoundingClientRect().top +
         window.scrollY -
