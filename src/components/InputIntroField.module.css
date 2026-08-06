@@ -43,7 +43,6 @@
   color: var(--color-text-text-fg-disabled);
 }
 .personIcon {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-01);
   background-color: transparent;
@@ -58,7 +57,6 @@
   font-weight: 500;
 }
 .searchIcon {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-01);
   background-color: transparent;

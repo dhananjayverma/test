@@ -41,7 +41,6 @@
   flex-shrink: 0;
 }
 .personIcon {
-  cursor: pointer;
   padding: var(--padding-01);
   height: var(--input-field-input-icon-size);
   width: var(--width-20);
@@ -67,7 +66,6 @@
   display: inline-block;
 }
 .searchIcon {
-  cursor: pointer;
   padding: var(--padding-01);
   height: var(--input-field-input-icon-size);
   width: var(--width-20);

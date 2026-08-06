@@ -30,7 +30,6 @@
   gap: var(--gap-24);
   min-width: var(--min-w-209);
   max-width: 100%;
-  cursor: pointer;
 }
 .frameChild {
   width: 129.8px;

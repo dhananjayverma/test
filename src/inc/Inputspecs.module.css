@@ -179,7 +179,6 @@
   width: calc(100% - 20px);
   background: #fff;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 .previewSurface:hover {
   /* removed hover */
@@ -231,7 +230,6 @@
   line-height: 20px;
   color: #52525b;
   text-align: left;
-  cursor: pointer;
 }
 .navItemActive {
   border-left: 2px solid #101828;

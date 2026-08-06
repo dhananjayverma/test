@@ -1,5 +1,4 @@
 .root {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-0) var(--button-padding-small);
   background-color: var(--color-background-bg-cta);

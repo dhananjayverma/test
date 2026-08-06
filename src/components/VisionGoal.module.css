@@ -13,7 +13,6 @@
   color: var(--color-gray-500);
   font-family: var(--font-noto-sans);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
 }
 .frameWrapper:hover {
   transform: translateY(-6px);

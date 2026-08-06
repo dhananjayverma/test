@@ -17,7 +17,6 @@
   justify-content: space-between;
   gap: var(--gap-20);
   padding: var(--padding-12) var(--padding-0) var(--padding-12) var(--padding-24);
-  cursor: pointer;
 }
 .sidebarLink{
   display: flex;
@@ -93,7 +92,6 @@
   background: none;
   border:none;
   margin-right: 8px;
-  cursor: pointer;
   padding: 0;
 }
 .toggleBtn:disabled{

@@ -16,7 +16,6 @@
   padding: 16px;
   border: 1px solid transparent;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
   height: 100%;
 }
 .frameParent:hover {
@@ -75,7 +74,6 @@
   height: var(--height-24);
 }
 .caretrightParent {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-01);
   background-color: transparent;
@@ -119,7 +117,6 @@
   height: var(--height-24);
 }
 .caretrightGroup {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-01);
   background-color: transparent;

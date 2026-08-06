@@ -96,7 +96,6 @@
 
 /* Clickable header row */
 .menuHeader {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-12) 0;
   background-color: transparent;
@@ -126,7 +125,6 @@
 }
 /* Caret icon */
 .caretIcon {
-  cursor: pointer;
   height: var(--height-24);
   width: var(--width-24);
   position: relative;
@@ -169,7 +167,6 @@
 
 /* Individual sub-menu item */
 .subMenuItem {
-  cursor: pointer;
   border: 0;
   background-color: transparent;
   align-self: stretch;
@@ -223,7 +220,6 @@
 }
 .close_sidenav .image{
   height: 20px;
-  cursor: pointer;
 }
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
@@ -239,8 +235,11 @@
   .sideNavigation{
     position: fixed;
     top: 69px;
-    z-index: 100;
+    left: 0;
+    z-index: 9999;
     display: none;
+    background-color: white !important;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
   }
 }
 @media screen and (max-width: 768px) {

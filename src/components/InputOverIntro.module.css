@@ -4,7 +4,6 @@
   border:1px solid var(--color-whitesmoke-400);
   background-color: var(--color-white);
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 .borderBox:hover {
   /* removed hover */
@@ -40,7 +39,6 @@
 }
 .personIcon,
 .searchIcon {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-01);
   background-color: transparent;

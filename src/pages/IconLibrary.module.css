@@ -59,7 +59,6 @@
   color: #374151;
   font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
   transition: all 0.2s ease;
 }
 
@@ -93,7 +92,6 @@
   padding: 24px 16px;
   gap: 12px;
   border-radius: 8px;
-  cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
   background-color: #FFFFFF;
   box-sizing: border-box;
@@ -151,7 +149,6 @@
   line-height: 20px;
   color: #52525b;
   text-align: left;
-  cursor: pointer;
   transition: all 0.2s;
 }
 .navItem:hover {
@@ -310,7 +307,6 @@
   font-size: 16px;
   background-color: #FFFFFF;
   outline: none;
-  cursor: pointer;
   box-sizing: border-box;
 }
 

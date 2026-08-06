@@ -61,7 +61,6 @@
   padding: 10px;
   box-sizing: border-box;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 .previewCard:hover {
   /* removed hover */

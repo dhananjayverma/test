@@ -477,7 +477,7 @@ function HeroIllustration() {
 }
 
 // ─── Top navigation ───────────────────────────────────────────
-const navLinks = ["Design Workshop", "Design System"];
+const navLinks = ["Innovation Lab", "Design System", "Products"];
 
 function TopNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -519,39 +519,28 @@ function TopNav() {
           <div className="flex shrink-0 items-center gap-2 sm:gap-[12px]">
 
             <button
-              className="hidden h-[42px] min-w-[112px] items-center justify-center rounded-[15px] border-[2px] border-[#d3dfeb] bg-white px-[18px] text-[14px] font-extrabold leading-none text-[#122033] transition-colors hover:bg-[#f8fbfd] xl:flex">
-              Resources
-            </button>
-            <button
               className="flex h-[52px] min-w-[156px] items-center justify-center rounded-[16px] px-6 text-[18px] font-extrabold leading-none text-white shadow-[0_8px_16px_rgba(0,91,154,0.18)] transition-all hover:opacity-90 max-[520px]:h-11 max-[520px]:min-w-[132px] max-[520px]:rounded-[14px] max-[520px]:px-4 max-[520px]:text-[15px] md:h-[42px] md:min-w-[126px] md:rounded-[15px] md:px-[20px] md:text-[14px]"
               style={{ background: "#0071BC" }}>
-              Get Started
+              Connect with Us
             </button>
-            <button className="lg:hidden text-muted-foreground" onClick={() => setMobileOpen(v => !v)}>
+            <button className="lg:hidden text-muted-foreground" onClick={() => {
+              const sidebar = document.getElementById("sidebar_nav");
+              if (sidebar) {
+                if (sidebar.style.display === "flex") {
+                  sidebar.style.setProperty("display", "none", "important");
+                  setMobileOpen(false);
+                } else {
+                  sidebar.style.setProperty("display", "flex", "important");
+                  setMobileOpen(true);
+                }
+              } else {
+                setMobileOpen(v => !v);
+              }
+            }}>
               {mobileOpen ? <X size={28} className="max-[520px]:size-6" /> : <Menu size={28} className="max-[520px]:size-6" />}
             </button>
           </div>
         </div>
-
-        {/* Mobile menu */}
-        {mobileOpen && (
-          <div className="border-t border-[#dbe6f0] pb-9 pt-8 lg:hidden max-[520px]:py-4">
-            {navLinks.map(link => {
-              if (link === "Design System") {
-                return (
-                  <Link key={link} to="/design-system" className="block w-full rounded-lg px-4 py-4 text-left text-[16px] font-medium leading-none text-[#607487] transition-colors hover:bg-muted hover:text-foreground max-[520px]:px-2 max-[520px]:py-3.5 max-[520px]:text-[15px]">
-                    {link}
-                  </Link>
-                );
-              }
-              return (
-                <button key={link} className="w-full rounded-lg px-4 py-4 text-left text-[16px] font-medium leading-none text-[#607487] transition-colors hover:bg-muted hover:text-foreground max-[520px]:px-2 max-[520px]:py-3.5 max-[520px]:text-[15px]">
-                  {link}
-                </button>
-              );
-            })}
-          </div>
-        )}
       </div>
     </header>
   );
@@ -827,13 +816,26 @@ export default function App() {
         </div>
       </section>
 
+
+
+
+
+
+
+
+
+
+
+
       {/* ── Four category cards ───────────────────────────────── */}
-      <section className="px-4 py-12 sm:px-6 md:px-10 md:py-16">
+
+
+      <section className="px-6 md:px-10 py-16">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-8 flex items-end justify-between md:mb-10">
+          <div className="flex items-end justify-between mb-10">
             <div>
               <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: B.blue }}>Core Areas</div>
-              <h2 className="text-2xl font-extrabold text-foreground md:text-4xl" style={{ letterSpacing: "-0.02em" }}>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-foreground" style={{ letterSpacing: "-0.02em" }}>
                 Explore the Ecosystem
               </h2>
             </div>
@@ -842,7 +844,7 @@ export default function App() {
             </button>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
+          <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {[
               { title: "Design Workshop", desc: "Facilitate collaborative workshops, design thinking sessions, ideation, user journeys and product discovery.", Illustration: WorkshopIllustration, color: B.purple, bg: B.purpleL, tag: "Workshop" },
               { title: "Design System", desc: "Access reusable foundations, components, design tokens, documentation and Figma libraries.", Illustration: DesignSystemIllustration, color: B.blue, bg: B.blueLight, tag: "System" },
@@ -850,26 +852,26 @@ export default function App() {
               { title: "Product Portfolio", desc: "Discover HBK's complete product ecosystem, capabilities, solutions and digital platforms.", Illustration: ProductPortfolioIllustration, color: B.orange, bg: B.orangeL, tag: "Portfolio" },
             ].map(({ title, desc, Illustration, color, bg, tag }) => (
               <div key={title}
-                className="group cursor-pointer overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:-translate-y-2 md:rounded-3xl"
+                className="group bg-white rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2"
                 style={{ border: `1.5px solid ${color}18`, boxShadow: `0 2px 16px ${color}0C` }}
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = `0 20px 48px ${color}22`; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = `0 2px 16px ${color}0C`; }}
               >
                 {/* Illustration — 58% height */}
-                <div className="h-[170px] overflow-hidden transition-transform duration-500 group-hover:scale-[1.03] md:h-[200px]"
-                  style={{ background: bg }}>
+                <div className="overflow-hidden transition-transform duration-500 group-hover:scale-[1.03]"
+                  style={{ height: 200, background: bg }}>
                   <Illustration />
                 </div>
                 {/* Card body */}
-                <div className="p-5 md:p-6">
+                <div className="p-6">
                   <span className="inline-block text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-3"
                     style={{ background: bg, color }}>
                     {tag}
                   </span>
-                  <h3 className="mb-2 text-[17px] font-extrabold text-[#122033]" style={{ letterSpacing: "-0.01em" }}>
+                  <h3 className="font-extrabold text-base text-foreground mb-2" style={{ letterSpacing: "-0.01em" }}>
                     {title}
                   </h3>
-                  <p className="mb-4 text-[12px] font-normal leading-relaxed text-[#607487]">{desc}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-4">{desc}</p>
                   <div className="flex items-center gap-1.5 text-xs font-bold transition-colors" style={{ color }}>
                     Explore
                     <ArrowRight size={13} className="transition-transform duration-200 group-hover:translate-x-1.5" />
@@ -881,34 +883,37 @@ export default function App() {
         </div>
       </section>
 
+
+
+
       {/* ── Experience Journey ────────────────────────────────── */}
-      <section className="px-4 py-12 sm:px-6 md:px-10 md:py-16"
+      <section className="px-6 md:px-10 py-16"
         style={{ background: `linear-gradient(135deg, #F0F7FF 0%, #F7FAFD 60%, #EEF5FB 100%)` }}>
         <div className="max-w-7xl mx-auto">
-          <div className="mb-10 text-center md:mb-12">
-            <div className="mb-[14px] text-[13px] font-extrabold uppercase leading-none tracking-[0.18em]" style={{ color: B.blue }}>Process</div>
-            <h2 className="mb-[14px] text-2xl font-extrabold leading-tight text-[#050b12] md:text-[40px] md:leading-none" style={{ letterSpacing: "-0.03em" }}>
+          <div className="text-center mb-12">
+            <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: B.blue }}>Process</div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3" style={{ letterSpacing: "-0.02em" }}>
               The Experience Journey
             </h2>
-            <p className="mx-auto max-w-2xl text-[14px] font-normal leading-[1.6] text-[#607487]">
-              From initial workshop to product delivery — a connected process that transforms ideas<br className="hidden sm:block" /> into impactful digital products.
+            <p className="text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              From initial workshop to product delivery — a connected process that transforms ideas into impactful digital products.
             </p>
           </div>
 
           <div className="relative">
             {/* Connector */}
-            <div className="absolute top-11 left-0 right-0 h-px hidden lg:block mx-auto"
+            <div className="absolute top-11 left-0 right-0 h-px hidden md:block mx-auto"
               style={{ maxWidth: "72%", background: `linear-gradient(to right, ${B.purple}, ${B.blue}, ${B.emerald}, ${B.orange})`, opacity: 0.25 }} />
 
-            <div className="relative z-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
               {journeySteps.map((step, i) => (
                 <div key={i} className="flex flex-col items-center text-center group">
-                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-2xl transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-xl md:h-[88px] md:w-[88px]"
-                    style={{ background: step.color, color: "white", boxShadow: `0 8px 24px ${step.color}30` }}>
+                  <div className="w-22 h-22 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-xl"
+                    style={{ width: 88, height: 88, background: step.color, color: "white", boxShadow: `0 8px 24px ${step.color}30` }}>
                     {step.icon}
                   </div>
-                  <div className="mb-1.5 text-[15px] font-extrabold text-[#122033]">{step.label}</div>
-                  <div className="whitespace-nowrap text-[11.5px] font-normal leading-[1.6] text-[#607487]">{step.desc}</div>
+                  <div className="text-sm font-bold text-foreground mb-1.5">{step.label}</div>
+                  <div className="text-xs text-muted-foreground leading-relaxed">{step.desc}</div>
                   <div className="mt-3 w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-extrabold"
                     style={{ background: step.color }}>
                     {i + 1}
@@ -920,25 +925,28 @@ export default function App() {
         </div>
       </section>
 
+
+
+
       {/* ── Join a Workshop – Registration Form ───────────────── */}
-      <section className="bg-[#F8F9FB] px-4 py-12 sm:px-6 md:px-10 md:py-20" id="register">
+      <section className="px-6 md:px-10 py-20" id="register">
         <div className="max-w-7xl mx-auto">
-          <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-12">
+          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
             {/* Left: content + illustration */}
             <div>
-              <div className="mb-[14px] text-[13px] font-extrabold uppercase leading-none tracking-[0.18em]" style={{ color: B.purple }}>
+              <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: B.purple }}>
                 Workshop Registration
               </div>
-              <h2 className="mb-[14px] text-2xl font-extrabold leading-tight text-[#050b12] md:text-[40px] md:leading-none" style={{ letterSpacing: "-0.03em" }}>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4" style={{ letterSpacing: "-0.02em" }}>
                 Join a Workshop
               </h2>
-              <p className="mb-8 max-w-md text-[14px] font-normal leading-[1.6] text-[#607487]">
+              <p className="text-sm text-muted-foreground leading-relaxed mb-8 max-w-md">
                 Participate in hands-on design thinking workshops led by HBK experts. Learn methodologies, build skills,
                 and create real outcomes with your team.
               </p>
 
               {/* Workshop highlights */}
-              <div className="mb-8 space-y-4">
+              <div className="space-y-4 mb-8">
                 {[
                   { title: "Expert-led sessions", desc: "Facilitated by senior HBK designers and strategists", icon: <Star size={16} />, color: B.purple },
                   { title: "Hands-on outcomes", desc: "Walk away with artifacts, prototypes, and clear next steps", icon: <CheckCircle size={16} />, color: B.emerald },
@@ -946,26 +954,26 @@ export default function App() {
                   { title: "Cross-team collaboration", desc: "Designed for mixed teams of designers, devs, and PMs", icon: <Users size={16} />, color: B.orange },
                 ].map(h => (
                   <div key={h.title} className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl"
+                    <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0"
                       style={{ background: h.color + "18", color: h.color }}>
                       {h.icon}
                     </div>
                     <div>
-                      <div className="mb-0.5 text-[15px] font-semibold text-[#122033]">{h.title}</div>
-                      <div className="text-[12px] font-normal leading-[1.5] text-[#607487]">{h.desc}</div>
+                      <div className="text-sm font-semibold text-foreground">{h.title}</div>
+                      <div className="text-xs text-muted-foreground">{h.desc}</div>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Mini workshop illustration */}
-              <div className="rounded-2xl overflow-hidden transition-transform duration-500 hover:scale-[1.03]" style={{ border: `1px solid ${B.purple}18`, boxShadow: `0 8px 32px ${B.purple}10` }}>
+              <div className="rounded-2xl overflow-hidden" style={{ border: `1px solid ${B.purple}18`, boxShadow: `0 8px 32px ${B.purple}10` }}>
                 <WorkshopIllustration />
               </div>
             </div>
 
             {/* Right: form card */}
-            <div className="rounded-2xl bg-white p-5 sm:p-7 md:rounded-3xl md:p-10" style={{ boxShadow: `0 16px 56px ${B.blue}10`, border: `1.5px solid ${B.blue}12` }}>
+            <div className="bg-white rounded-3xl p-8 md:p-10" style={{ boxShadow: `0 16px 56px ${B.blue}10`, border: `1.5px solid ${B.blue}12` }}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center"
                   style={{ background: B.blueLight }}>
@@ -992,50 +1000,57 @@ export default function App() {
         </div>
       </section>
 
+
+
+
+
+
       {/* ── Featured Resources ────────────────────────────────── */}
-      <section className="px-4 py-12 sm:px-6 md:px-10 md:py-20 lg:py-[92px]"
+
+
+      <section className="px-6 md:px-10 py-16"
         style={{ background: `linear-gradient(180deg, #F7FAFD 0%, #EEF3F8 100%)` }}>
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-8 flex items-end justify-between md:mb-[54px]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end justify-between mb-10">
             <div>
-              <div className="mb-[10px] text-[13px] font-extrabold uppercase leading-none tracking-[0.18em]" style={{ color: B.blue }}>Downloads</div>
-              <h2 className="text-2xl font-extrabold leading-tight text-[#122033] md:text-[38px] md:leading-none" style={{ letterSpacing: "-0.02em" }}>
+              <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: B.blue }}>Downloads</div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-foreground" style={{ letterSpacing: "-0.02em" }}>
                 Featured Resources
               </h2>
             </div>
-            <button className="hidden items-center gap-[10px] text-[15px] font-extrabold leading-none md:flex" style={{ color: B.blue }}>
-              All resources <ArrowRight size={15} />
+            <button className="hidden md:flex items-center gap-1.5 text-sm font-bold" style={{ color: B.blue }}>
+              All resources <ArrowRight size={14} />
             </button>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:gap-[28px]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {resources.map(res => (
               <div key={res.title}
-                className="group flex min-h-[160px] cursor-pointer flex-col rounded-[18px] border border-[#dbe6f0] bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-transparent md:min-h-[180px] xl:min-h-[190px] xl:p-5"
-                style={{ boxShadow: "0 2px 12px rgba(15, 31, 45, 0.05)" }}
+                className="group bg-white rounded-2xl p-6 border border-border cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-transparent"
+                style={{ boxShadow: "0 1px 8px rgba(0,0,0,0.04)" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = `0 12px 36px ${res.color}16`; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 2px 12px rgba(15, 31, 45, 0.05)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 1px 8px rgba(0,0,0,0.04)"; }}
               >
-                <div className="mb-3 flex items-start justify-between md:mb-[12px]">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-[12px] md:h-[46px] md:w-[46px] md:rounded-[14px]"
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center"
                     style={{ background: res.bg, color: res.color }}>
                     {res.icon}
                   </div>
-                  <span className="rounded-[6px] px-[8px] py-[4px] text-[10px] font-extrabold uppercase leading-none tracking-[0.14em]"
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest px-2 py-1 rounded"
                     style={{ background: res.bg, color: res.color }}>
                     {res.type}
                   </span>
                 </div>
-                <h4 className="mb-[4px] text-[15px] font-extrabold leading-tight text-[#122033]">{res.title}</h4>
-                <p className="mb-[12px] text-[12px] font-medium leading-relaxed text-[#607487]">
+                <h4 className="font-bold text-sm text-foreground mb-1">{res.title}</h4>
+                <p className="text-xs text-muted-foreground mb-5 leading-relaxed">
                   Essential {res.tag.toLowerCase()} resources for the HBK design ecosystem.
                 </p>
-                <div className="mt-auto flex items-center justify-between">
-                  <span className="rounded-full px-[10px] py-[4px] text-[10px] font-extrabold leading-none"
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full"
                     style={{ background: res.bg, color: res.color }}>
                     {res.tag}
                   </span>
-                  <button className="flex h-[32px] items-center gap-[6px] rounded-[12px] px-[14px] text-[12px] font-extrabold leading-none transition-all"
+                  <button className="flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl transition-all"
                     style={{ background: res.bg, color: res.color }}>
                     <Download size={12} /> Download
                   </button>
@@ -1046,41 +1061,48 @@ export default function App() {
         </div>
       </section>
 
+
+
       {/* ── Why HBK ───────────────────────────────────────────── */}
-      <section className="px-4 py-8 sm:px-6 md:px-10 md:py-12 lg:py-[64px]" style={{ background: "#F7FAFD" }}>
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-6 text-center md:mb-[40px]">
-            <div className="mb-[12px] text-[13px] font-extrabold uppercase leading-none tracking-[0.18em]" style={{ color: B.blue }}>Benefits</div>
-            <h2 className="text-2xl font-extrabold leading-tight text-[#122033] md:text-[40px] md:leading-none" style={{ letterSpacing: "-0.03em" }}>
+      <section className="px-6 md:px-10 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: B.blue }}>Benefits</div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground" style={{ letterSpacing: "-0.02em" }}>
               Why HBK Experience Hub
             </h2>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-[28px]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map(b => (
               <div key={b.title}
-                className="min-h-[160px] rounded-[18px] border border-[#dbe6f0] bg-white p-5 transition-transform duration-300 hover:-translate-y-1 md:min-h-[200px] md:p-6 xl:min-h-[220px] xl:p-8"
+                className="bg-white rounded-2xl p-7 border border-border hover:-translate-y-1 transition-transform duration-300"
                 style={{ boxShadow: `0 2px 12px ${b.color}08` }}>
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[12px] md:mb-[20px] md:h-[50px] md:w-[50px] md:rounded-[14px]"
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                   style={{ background: b.bg, color: b.color }}>
                   {b.icon}
                 </div>
-                <h4 className="mb-[8px] text-[15px] font-extrabold leading-tight text-[#122033]">{b.title}</h4>
-                <p className="text-[12px] font-medium leading-[1.55] text-[#607487]">{b.desc}</p>
+                <h4 className="font-bold text-sm text-foreground mb-2">{b.title}</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+
+
+
+
+
       {/* ── Statistics ────────────────────────────────────────── */}
-      <section className="px-4 py-12 sm:px-6 md:px-10 md:py-14"
+      <section className="px-6 md:px-10 py-14"
         style={{ background: `linear-gradient(135deg, #EEF5FB 0%, #F0F7FF 100%)` }}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {stats.map(s => (
-              <div key={s.label} className="rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl md:p-8"
+              <div key={s.label} className="rounded-2xl p-8 text-center"
                 style={{ background: s.bg, border: `1.5px solid ${s.color}18` }}>
-                <div className="mb-2 text-4xl font-extrabold md:text-5xl" style={{ color: s.color, letterSpacing: "-0.04em" }}>
+                <div className="text-5xl font-extrabold mb-2" style={{ color: s.color, letterSpacing: "-0.04em" }}>
                   {s.value}
                 </div>
                 <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
@@ -1092,36 +1114,39 @@ export default function App() {
         </div>
       </section>
 
+
+
+
       {/* ── Testimonials ──────────────────────────────────────── */}
-      <section className="px-4 py-8 sm:px-6 md:px-10 md:py-12 lg:py-[64px]" style={{ background: "#F7FAFD" }}>
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-8 text-center md:mb-[48px]">
-            <div className="mb-[14px] text-[13px] font-extrabold uppercase leading-none tracking-[0.18em]" style={{ color: B.blue }}>Testimonials</div>
-            <h2 className="text-2xl font-extrabold leading-tight text-[#122033] md:text-[40px] md:leading-none" style={{ letterSpacing: "-0.03em" }}>
+      <section className="px-6 md:px-10 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: B.blue }}>Testimonials</div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground" style={{ letterSpacing: "-0.02em" }}>
               Loved by Teams Across HBK
             </h2>
           </div>
-          <div className="grid gap-5 md:grid-cols-3 xl:gap-[28px]">
+          <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map(t => (
-              <div key={t.name} className="min-h-[160px] rounded-[18px] border border-[#dbe6f0] bg-white p-5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl md:min-h-[180px] md:p-6 xl:min-h-[200px] xl:p-6"
+              <div key={t.name} className="bg-white rounded-2xl p-7 border border-border"
                 style={{ boxShadow: `0 4px 20px ${t.color}0A` }}>
-                <div className="mb-4 flex gap-[6px] md:mb-[16px]">
+                <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} fill={t.color} color={t.color} />
+                    <Star key={i} size={14} fill={t.color} color={t.color} />
                   ))}
                 </div>
-                <div className="relative mb-5 rounded-[16px] px-4 py-4 md:mb-[20px] md:px-[20px] md:py-[20px]" style={{ background: t.color + "0D" }}>
-                  <p className="text-[12px] font-medium leading-[1.55] text-[#122033]">"{t.quote}"</p>
-                  <div className="absolute -bottom-[8px] left-[28px] h-[16px] w-[16px] rotate-45" style={{ background: t.color + "0D" }} />
+                <div className="relative rounded-xl p-4 mb-5" style={{ background: t.color + "0D" }}>
+                  <p className="text-xs text-foreground leading-relaxed">"{t.quote}"</p>
+                  <div className="absolute -bottom-2 left-5 w-3 h-3 rotate-45" style={{ background: t.color + "0D" }} />
                 </div>
-                <div className="mt-2 flex items-center gap-[12px]">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[14px] font-extrabold text-white md:h-[46px] md:w-[46px] md:text-[16px]"
+                <div className="flex items-center gap-3 mt-2">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-extrabold shrink-0"
                     style={{ background: t.color }}>
                     {t.initials}
                   </div>
                   <div>
-                    <div className="text-[15px] font-extrabold leading-tight text-[#122033]">{t.name}</div>
-                    <div className="text-[12px] font-medium leading-tight text-[#607487]">{t.role}</div>
+                    <div className="text-sm font-bold text-foreground">{t.name}</div>
+                    <div className="text-xs text-muted-foreground">{t.role}</div>
                   </div>
                 </div>
               </div>
@@ -1130,14 +1155,16 @@ export default function App() {
         </div>
       </section>
 
+
+
       {/* ── Contribution banner ───────────────────────────────── */}
-      <section className="px-4 py-12 sm:px-6 md:px-10 md:py-20 lg:py-[92px]" style={{ background: "#F7FAFD" }}>
-        <div className="mx-auto max-w-7xl">
-          <div className="flex min-h-0 flex-col items-center gap-6 rounded-[20px] px-5 py-8 sm:px-8 md:min-h-[320px] md:flex-row md:gap-8 md:rounded-[24px] md:px-[54px] md:py-[50px] lg:gap-[50px]"
+      <section className="px-6 md:px-10 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="rounded-3xl px-8 md:px-14 py-12 md:py-16 flex flex-col md:flex-row items-center gap-10"
             style={{ background: `linear-gradient(135deg, ${B.blueLight} 0%, #D6ECFB 100%)`, border: `1.5px solid ${B.blue}18` }}>
             {/* Illustration */}
-            <div className="w-full shrink-0 md:w-[220px] lg:w-[260px]">
-              <svg width="260" height="180" viewBox="0 0 220 150" fill="none" className="mx-auto h-auto w-full max-w-[220px] sm:max-w-[240px]">
+            <div className="shrink-0">
+              <svg width="220" height="150" viewBox="0 0 220 150" fill="none">
                 {/* Three people */}
                 <circle cx="44" cy="54" r="20" fill={B.purple} fillOpacity="0.48" />
                 <rect x="26" y="76" width="36" height="44" rx="9" fill={B.purple} fillOpacity="0.28" />
@@ -1166,31 +1193,36 @@ export default function App() {
             </div>
 
             <div className="flex-1 text-center md:text-left">
-              <div className="mb-[10px] text-[13px] font-extrabold uppercase leading-none tracking-[0.18em]" style={{ color: B.blue }}>Contribute</div>
-              <h2 className="mb-[12px] text-2xl font-extrabold leading-[1.12] text-[#050b12] sm:text-[26px] md:text-[30px]" style={{ letterSpacing: "-0.03em" }}>
+              <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: B.blue }}>Contribute</div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-3" style={{ letterSpacing: "-0.01em" }}>
                 Help Shape the<br />HBK Experience
               </h2>
-              <p className="mb-[24px] max-w-[590px] text-[14px] font-medium leading-[1.55] text-[#050b12]">
+              <p className="text-sm text-muted-foreground mb-7 max-w-md leading-relaxed">
                 Join designers, developers, and product managers collaborating to build a world-class design ecosystem.
                 Your contributions make HBK products better for everyone.
               </p>
-              <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-[16px] md:justify-start">
-                <button className="flex h-[42px] w-full items-center justify-center gap-[9px] rounded-[12px] px-[20px] text-[14px] font-extrabold leading-none text-white transition-all hover:opacity-90 sm:w-auto"
+              <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                <button className="flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-xl text-white hover:opacity-90 transition-all"
                   style={{ background: B.blue }}>
-                  <MessageSquare size={15} /> Contact Team
+                  <MessageSquare size={14} /> Contact Team
                 </button>
-                <button className="flex h-[42px] w-full items-center justify-center gap-[9px] rounded-[12px] border-[2px] px-[20px] text-[14px] font-extrabold leading-none text-[#050b12] transition-all hover:bg-white sm:w-auto"
+                <button className="flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-xl border-2 text-foreground hover:bg-white transition-all"
                   style={{ borderColor: B.blue + "30" }}>
-                  <BarChart3 size={15} /> Contribute
+                  <BarChart3 size={14} /> Contribute
                 </button>
-                <button className="flex h-[42px] w-full items-center justify-center gap-[9px] rounded-[12px] px-[20px] text-[14px] font-extrabold leading-none text-[#050b12] transition-all hover:bg-white sm:w-auto">
-                  <Users size={15} /> Join Community
+                <button className="flex items-center gap-2 text-sm font-bold px-6 py-3 rounded-xl text-foreground hover:bg-white transition-all">
+                  <Users size={14} /> Join Community
                 </button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+
+
+
+
 
       {/* ── Footer ────────────────────────────────────────────── */}
       <footer className="border-t border-border bg-white px-4 py-12 sm:px-6 md:px-10 md:py-14">

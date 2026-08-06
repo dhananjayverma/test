@@ -76,7 +76,6 @@
   color: var(--color-dimgray);
 }
 .frameButton {
-  cursor: pointer;
   border: var(--border-7);
   padding: var(--padding-11) var(--padding-10) var(--padding-11)
     var(--padding-15);

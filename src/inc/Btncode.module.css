@@ -106,7 +106,6 @@
   min-width: 399px;
   max-width: 100%;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
 }
 .frameWrapper:hover {
   /* Only image zooms, card doesn't float anymore */
@@ -138,7 +137,6 @@
   font-family: inherit;
 }
 .frameButton {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-12) var(--padding-16);
   background-color: var(--color-background-bg-cta);
@@ -196,7 +194,6 @@
   transform: scale(1.05);
 }
 .frameWrapper3 {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-12) var(--padding-16);
   background-color: var(--color-background-bg-cta);
@@ -322,7 +319,6 @@
   font-family: inherit;
 }
 .caretdownIcon {
-  cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
@@ -367,7 +363,6 @@
   line-height: 20px;
   color: #52525b;
   text-align: left;
-  cursor: pointer;
 }
 .navItemActive {
   border-left: 2px solid #101828;

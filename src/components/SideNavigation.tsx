@@ -178,7 +178,7 @@ const docItems: MenuItem[] = [
 const closeSidebar = (): void => {
   const sidebar = document.getElementById("sidebar_nav");
   if (sidebar) {
-    sidebar.style.display = "none";
+    sidebar.style.setProperty("display", "none", "important");
   }
 };
 

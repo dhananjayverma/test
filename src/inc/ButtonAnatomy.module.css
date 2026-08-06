@@ -72,7 +72,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 .previewSurface img{
   height: 170px;
@@ -133,7 +132,6 @@
   border-radius: 12px;
   background: #fff;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 .buttonSection:hover .toastBox,
 .buttonSection:hover .button {
@@ -160,7 +158,6 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  cursor: pointer;
   transition: transform 0.3s ease;
 }
 .typesSection .sectiontwo:nth-child(1) .button{
@@ -243,7 +240,6 @@
   background: #fff;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
 }
 .dosCard:hover,
 .dontsCard:hover {
@@ -357,7 +353,6 @@
   line-height: 20px;
   color: #52525b;
   text-align: left;
-  cursor: pointer;
 }
 .navItemActive {
   border-left: 2px solid #101828;

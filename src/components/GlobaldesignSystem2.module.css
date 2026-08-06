@@ -67,7 +67,6 @@
   max-width: 100%;
 }
 .frameContainer {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-12) var(--padding-16);
   background-color: var(--color-background-bg-cta);

@@ -28,7 +28,6 @@
   color: var(--color-text-text-fg-brand);
 }
 .addIcon {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-01);
   background-color: transparent;

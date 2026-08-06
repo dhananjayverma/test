@@ -142,7 +142,6 @@
   border-bottom: 1px solid #e7e7e7;
 }
 .addIcon {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-01);
   background-color: transparent;
@@ -152,7 +151,6 @@
   align-items: center;
 }
 .navButtonHorizontal {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-01);
   background-color: transparent;

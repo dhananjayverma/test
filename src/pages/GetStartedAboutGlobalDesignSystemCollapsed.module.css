@@ -72,8 +72,10 @@
   padding-left: 30px;
 }
 .frameIcon {
-  width: 100%;
+  width: 80%;
   line-height: 1;
+  display: block;
+  margin: 0 auto;
 }
 .frameSection {
   gap: var(--gap-16);
@@ -124,7 +126,6 @@
   height: var(--height-24);
 }
 .caretrightParent {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-01);
   background-color: transparent;
@@ -168,7 +169,6 @@
   height: var(--height-24);
 }
 .caretrightGroup {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-01);
   background-color: transparent;
@@ -275,7 +275,6 @@
   flex-shrink: 0;
 }
 .allResourcesParent {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-01);
   background-color: transparent;
@@ -408,7 +407,6 @@
   gap: var(--gap-16);
 }
 .frameWrapper13 {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-12) var(--padding-14);
   background-color: var(--color-background-bg-cta);
@@ -446,7 +444,6 @@
   text-align: left;
 }
 .frameWrapper14 {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-12) var(--padding-16);
   background-color: var(--color-background-bg-cta);

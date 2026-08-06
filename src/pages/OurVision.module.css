@@ -132,7 +132,6 @@
   max-height: 238px;
   flex-shrink: 0;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .frameIcon:hover {
@@ -228,7 +227,6 @@
 }
 
 .frameWrapper13 {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-12) var(--padding-14);
   background-color: var(--color-background-bg-cta);
@@ -271,7 +269,6 @@
 }
 
 .frameWrapper14 {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-12) var(--padding-16);
   background-color: var(--color-background-bg-cta);

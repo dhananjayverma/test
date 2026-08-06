@@ -247,7 +247,6 @@
   line-height: 20px;
   color: #52525b;
   text-align: left;
-  cursor: pointer;
 }
 .navItemActive {
   border-left: 2px solid #101828;

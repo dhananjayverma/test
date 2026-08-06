@@ -7,7 +7,7 @@ export type HeaderType = {
   hBKNewLogo1?: string;
 };
 
-const navLinks = ["Design Workshop", "Design System"];
+const navLinks = ["Innovation Lab", "Design System", "Products"];
 
 const Header: FunctionComponent<HeaderType> = ({
   className = "",
@@ -31,14 +31,14 @@ const Header: FunctionComponent<HeaderType> = ({
           {/* Right section */}
           <div className="flex items-center gap-4 lg:gap-7 xl:gap-[42px]">
             {/* Desktop nav */}
-            <nav className="hidden items-center gap-5 lg:flex xl:gap-[28px]">
+            <nav className="hidden items-center gap-1 lg:flex xl:gap-2">
               {navLinks.map((link) => {
                 if (link === "Design System") {
                   return (
                     <Link
                       key={link}
                       to="/design-system"
-                      className="whitespace-nowrap text-[14px] font-bold leading-none text-[#5d7184] transition-colors hover:text-[#122033] xl:text-[15px]"
+                      className="flex h-[42px] items-center justify-center rounded-[15px] px-[18px] whitespace-nowrap text-[14px] font-bold leading-none text-[#5d7184] transition-colors hover:bg-[#EEF3F8] hover:text-[#122033] xl:text-[15px]"
                     >
                       {link}
                     </Link>
@@ -47,7 +47,7 @@ const Header: FunctionComponent<HeaderType> = ({
                 return (
                   <button
                     key={link}
-                    className="whitespace-nowrap text-[14px] font-bold leading-none text-[#5d7184] transition-colors hover:text-[#122033] xl:text-[15px]"
+                    className="flex h-[42px] items-center justify-center rounded-[15px] px-[18px] whitespace-nowrap text-[14px] font-bold leading-none text-[#5d7184] transition-colors hover:bg-[#EEF3F8] hover:text-[#122033] xl:text-[15px]"
                   >
                     {link}
                   </button>
@@ -56,21 +56,24 @@ const Header: FunctionComponent<HeaderType> = ({
             </nav>
 
             <div className="flex shrink-0 items-center gap-2 sm:gap-[12px]">
-              <button className="hidden h-[42px] min-w-[112px] items-center justify-center rounded-[15px] border-[2px] border-[#d3dfeb] bg-white px-[18px] text-[14px] font-extrabold leading-none text-[#122033] transition-colors hover:bg-[#f8fbfd] xl:flex">
-                Resources
-              </button>
               <button
                 className="flex h-[52px] min-w-[156px] items-center justify-center rounded-[16px] px-6 text-[18px] font-extrabold leading-none text-white shadow-[0_8px_16px_rgba(0,91,154,0.18)] transition-all hover:opacity-90 max-[520px]:h-11 max-[520px]:min-w-[132px] max-[520px]:rounded-[14px] max-[520px]:px-4 max-[520px]:text-[15px] md:h-[42px] md:min-w-[126px] md:rounded-[15px] md:px-[20px] md:text-[14px]"
                 style={{ background: "#0071BC" }}
               >
-                Get Started
+                Connect with Us
               </button>
               <button
                 className="lg:hidden text-muted-foreground"
                 onClick={() => {
                   const sidebar = document.getElementById("sidebar_nav");
                   if (sidebar) {
-                    sidebar.style.display = "flex";
+                    if (sidebar.style.display === "flex") {
+                      sidebar.style.setProperty("display", "none", "important");
+                      setMobileOpen(false);
+                    } else {
+                      sidebar.style.setProperty("display", "flex", "important");
+                      setMobileOpen(true);
+                    }
                   } else {
                     setMobileOpen((v) => !v);
                   }

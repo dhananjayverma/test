@@ -11,7 +11,7 @@ export type GetStartedAboutGlobalDesignSystemCollapsedType = {};
 
 const GetStartedAboutGlobalDesignSystemCollapsed: FunctionComponent<
   GetStartedAboutGlobalDesignSystemCollapsedType
-> = ({}) => {
+> = ({ }) => {
   const [frameComponent1Items] = useState([
     {
       frame58: "/principle.png",
@@ -95,16 +95,16 @@ const GetStartedAboutGlobalDesignSystemCollapsed: FunctionComponent<
         <SideNavigation />
         <div className={styles.contentColumn}>
           <section className={styles.frameParent}>
-            <div className={styles.frameGroup}> 
+            <div className={styles.frameGroup}>
               <section className={styles.frameContainer}>
                 <div className={styles.frame2}>
-                <img
-                  className={styles.frameIcon}
-                  loading="lazy"
-                  alt=""
-                  src="/home-banner.svg"
-                />
-              </div>
+                  <img
+                    className={styles.frameIcon}
+                    loading="lazy"
+                    alt=""
+                    src="/home-banner.svg"
+                  />
+                </div>
               </section>
               <section className={styles.frameSection}>
                 <div className={styles.hbkGlobalDesignSystemParent}>
@@ -237,9 +237,9 @@ const GetStartedAboutGlobalDesignSystemCollapsed: FunctionComponent<
                 </div>
               </div>
             </section>
-            <section className="py-12 pr-4 sm:pr-6 md:pr-10 md:py-16 w-full pl-0">
-              <div className="flex min-h-0 flex-col items-center gap-6 rounded-r-[20px] rounded-l-none border-l-0 px-5 py-8 sm:px-8 md:min-h-[320px] md:flex-row md:gap-8 md:rounded-r-[24px] md:px-[54px] md:py-[50px] lg:gap-[50px]"
-                style={{ background: `linear-gradient(135deg, #E8F4FD 0%, #D6ECFB 100%)`, borderTop: `1.5px solid #005B9A18`, borderRight: `1.5px solid #005B9A18`, borderBottom: `1.5px solid #005B9A18` }}>
+            <section className="py-12 px-4 sm:px-6 md:px-12 md:py-16 w-full">
+              <div className="flex min-h-0 flex-col items-center gap-6 rounded-[20px] px-5 py-8 sm:px-8 md:min-h-[320px] md:flex-row md:gap-8 md:rounded-[24px] md:px-[54px] md:py-[50px] lg:gap-[50px]"
+                style={{ background: `linear-gradient(135deg, #E8F4FD 0%, #D6ECFB 100%)`, border: `1.5px solid #005B9A18` }}>
                 {/* Illustration */}
                 <div className="w-full shrink-0 md:w-[220px] lg:w-[260px]">
                   <svg width="260" height="180" viewBox="0 0 220 150" fill="none" className="mx-auto h-auto w-full max-w-[220px] sm:max-w-[240px]">
@@ -269,17 +269,16 @@ const GetStartedAboutGlobalDesignSystemCollapsed: FunctionComponent<
                     <text x="110" y="134" textAnchor="middle" fontFamily="Inter" fontSize="10" fontWeight="700" fill="#005B9A">Designers · Developers · PMs</text>
                   </svg>
                 </div>
-
                 <div className="flex-1 text-center md:text-left">
-                  <div className="mb-[10px] text-[13px] font-extrabold uppercase leading-none tracking-[0.18em]" style={{ color: "#005B9A" }}>Contribute</div>
-                  <h2 className="mb-[12px] text-2xl font-extrabold leading-[1.12] text-[#050b12] sm:text-[26px] md:text-[30px]" style={{ letterSpacing: "-0.03em" }}>
+                  <div className="mb-[12px] text-[13px] font-extrabold uppercase leading-none tracking-[0.18em]" style={{ color: "#005B9A" }}>Contribute</div>
+                  <h2 className="mb-[16px] text-2xl font-extrabold leading-[1.12] text-[#050b12] sm:text-[26px] md:text-[32px]" style={{ letterSpacing: "-0.03em" }}>
                     Help Shape the<br />HBK Experience
                   </h2>
-                  <p className="mb-[24px] max-w-[590px] text-[14px] font-medium leading-[1.55] text-[#050b12]">
+                  <p className="text-sm text-muted-foreground mb-7 max-w-md leading-relaxed">
                     Join designers, developers, and product managers collaborating to build a world-class design ecosystem.
                     Your contributions make HBK products better for everyone.
                   </p>
-                  <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-[16px] md:justify-start">
+                  <div className="flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap sm:gap-[20px] md:justify-start">
                     <button className="flex h-[42px] w-full items-center justify-center gap-[9px] rounded-[12px] px-[20px] text-[14px] font-extrabold leading-none text-white transition-all hover:opacity-90 sm:w-auto"
                       style={{ background: "#005B9A" }}>
                       <MessageSquare size={15} /> Contact Team
@@ -288,7 +287,7 @@ const GetStartedAboutGlobalDesignSystemCollapsed: FunctionComponent<
                       style={{ borderColor: "#005B9A" + "30" }}>
                       <BarChart3 size={15} /> Contribute
                     </button>
-                    <button className="flex h-[42px] w-full items-center justify-center gap-[9px] rounded-[12px] px-[20px] text-[14px] font-extrabold leading-none text-[#050b12] transition-all hover:bg-white sm:w-auto">
+                    <button className="flex h-[42px] w-full items-center justify-center gap-[9px] rounded-[12px] px-[20px] text-[14px] font-extrabold leading-none text-[#64748B] transition-all hover:bg-white sm:w-auto">
                       <Users size={15} /> Join Community
                     </button>
                   </div>
