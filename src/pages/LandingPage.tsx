@@ -498,23 +498,26 @@ function TopNav() {
           <div className="flex-1" />
 
           {/* Desktop nav */}
+
           <nav className="hidden items-center gap-5 lg:flex xl:gap-[28px]">
             {navLinks.map(link => {
               if (link === "Design System") {
                 return (
-                  <Link key={link} to="/design-system" className="whitespace-nowrap text-[14px] font-bold leading-none text-[#5d7184] transition-colors hover:text-[#122033] xl:text-[15px]">
+                  <Link key={link} to="/design-system" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap">
                     {link}
                   </Link>
                 );
               }
               return (
                 <button key={link}
-                  className="whitespace-nowrap text-[14px] font-bold leading-none text-[#5d7184] transition-colors hover:text-[#122033] xl:text-[15px]">
+                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap">
                   {link}
                 </button>
               );
             })}
           </nav>
+
+
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-[12px]">
 
@@ -1053,7 +1056,7 @@ export default function App() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {resources.map(res => (
               <div key={res.title}
-                className="group bg-white rounded-2xl p-6 border border-border cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-transparent"
+                className="group bg-white rounded-2xl p-6 border border-border transition-all duration-300 hover:-translate-y-1 hover:border-transparent"
                 style={{ boxShadow: "0 1px 8px rgba(0,0,0,0.04)" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = `0 12px 36px ${res.color}16`; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 1px 8px rgba(0,0,0,0.04)"; }}
@@ -1282,11 +1285,11 @@ export default function App() {
               { title: "Company", links: ["About HBK", "Team", "Blog", "Careers", "Contact"] },
             ].map(col => (
               <div key={col.title}>
-                <h4 className="mb-4 text-[12px] font-extrabold uppercase tracking-[0.1em] text-[#050b12]">{col.title}</h4>
-                <ul className="space-y-[14px]">
+                <h4 className="text-xs font-extrabold text-foreground uppercase tracking-widest mb-4">{col.title}</h4>
+                <ul className="space-y-2.5">
                   {col.links.map(link => (
                     <li key={link}>
-                      <a href="#" className="text-[13px] font-normal text-[#607487] transition-colors hover:text-[#050b12]">{link}</a>
+                      <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">{link}</a>
                     </li>
                   ))}
                 </ul>

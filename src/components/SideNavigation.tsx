@@ -179,6 +179,7 @@ const closeSidebar = (): void => {
   const sidebar = document.getElementById("sidebar_nav");
   if (sidebar) {
     sidebar.style.setProperty("display", "none", "important");
+    window.dispatchEvent(new Event("sidebar-closed"));
   }
 };
 

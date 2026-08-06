@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
@@ -14,6 +14,12 @@ const Header: FunctionComponent<HeaderType> = ({
   hBKNewLogo1 = "/HBK-New-Logo-1.svg",
 }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const handleSidebarClosed = () => setMobileOpen(false);
+    window.addEventListener("sidebar-closed", handleSidebarClosed);
+    return () => window.removeEventListener("sidebar-closed", handleSidebarClosed);
+  }, []);
 
   return (
     <header className={`w-full sticky top-0 z-50 border-b border-[#dfe9f2] bg-white px-8 max-[520px]:px-5 md:px-10 ${className}`}>
@@ -31,14 +37,14 @@ const Header: FunctionComponent<HeaderType> = ({
           {/* Right section */}
           <div className="flex items-center gap-4 lg:gap-7 xl:gap-[42px]">
             {/* Desktop nav */}
-            <nav className="hidden items-center gap-1 lg:flex xl:gap-2">
+            <nav className="hidden items-center gap-5 lg:flex xl:gap-[28px]">
               {navLinks.map((link) => {
                 if (link === "Design System") {
                   return (
                     <Link
                       key={link}
                       to="/design-system"
-                      className="flex h-[42px] items-center justify-center rounded-[15px] px-[18px] whitespace-nowrap text-[14px] font-bold leading-none text-[#5d7184] transition-colors hover:bg-[#EEF3F8] hover:text-[#122033] xl:text-[15px]"
+                      className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap"
                     >
                       {link}
                     </Link>
@@ -47,7 +53,7 @@ const Header: FunctionComponent<HeaderType> = ({
                 return (
                   <button
                     key={link}
-                    className="flex h-[42px] items-center justify-center rounded-[15px] px-[18px] whitespace-nowrap text-[14px] font-bold leading-none text-[#5d7184] transition-colors hover:bg-[#EEF3F8] hover:text-[#122033] xl:text-[15px]"
+                    className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap"
                   >
                     {link}
                   </button>
