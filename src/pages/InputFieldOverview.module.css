@@ -124,7 +124,7 @@
   padding: var(--padding-0) var(--padding-48);
   gap: var(--internal-padding-large);
   position:sticky;
-  top:105px;
+  top:69px;
   z-index: 10;
   background-color: var(--color-gray-101);
   border-bottom: 1px solid #e7e7e7;
@@ -231,7 +231,7 @@
   }
   .navButtonHorizontalParent{
     gap:20px;
-    top: 86px;
+    top: 89px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -244,7 +244,7 @@
   .navButtonHorizontalParent{
     padding: var(--padding-0) var(--padding-16);
     gap:var(--gap-15);
-    top: 78px;
+    top: 89px;
   }
   .navButtonHorizontal{
     height: 40px;
