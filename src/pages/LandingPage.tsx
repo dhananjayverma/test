@@ -541,6 +541,33 @@ function TopNav() {
             </button>
           </div>
         </div>
+
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <div className="border-t border-[#dbe6f0] pb-9 pt-8 lg:hidden max-[520px]:py-4">
+            {navLinks.map((link) => {
+              if (link === "Design System") {
+                return (
+                  <Link
+                    key={link}
+                    to="/design-system"
+                    className="block w-full rounded-lg px-4 py-4 text-left text-[16px] font-medium leading-none text-[#607487] transition-colors hover:bg-muted hover:text-foreground max-[520px]:px-2 max-[520px]:py-3.5 max-[520px]:text-[15px]"
+                  >
+                    {link}
+                  </Link>
+                );
+              }
+              return (
+                <button
+                  key={link}
+                  className="w-full rounded-lg px-4 py-4 text-left text-[16px] font-medium leading-none text-[#607487] transition-colors hover:bg-muted hover:text-foreground max-[520px]:px-2 max-[520px]:py-3.5 max-[520px]:text-[15px]"
+                >
+                  {link}
+                </button>
+              );
+            })}
+          </div>
+        )}
       </div>
     </header>
   );

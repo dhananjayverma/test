@@ -90,7 +90,7 @@ const Header: FunctionComponent<HeaderType> = ({
         </div>
 
         {/* Mobile menu */}
-        {mobileOpen && (
+        {mobileOpen && !document.getElementById("sidebar_nav") && (
           <div className="border-t border-[#dbe6f0] pb-9 pt-8 lg:hidden max-[520px]:py-4">
             {navLinks.map((link) => {
               if (link === "Design System") {
