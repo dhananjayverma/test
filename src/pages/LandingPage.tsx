@@ -833,7 +833,7 @@ export default function App() {
             </div>
 
             {/* Hero illustration */}
-            <div className="relative hidden md:block">
+            <div className="relative mt-12 md:mt-0 block">
               <div className="mx-auto aspect-[700/440] w-full max-w-[700px] overflow-hidden rounded-2xl transition-transform duration-500 hover:scale-[1.03] md:rounded-3xl lg:ml-auto" style={{ boxShadow: `0 32px 80px ${B.blue}18` }}>
                 <HeroIllustration />
               </div>
