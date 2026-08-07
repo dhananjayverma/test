@@ -27,6 +27,9 @@ import Development from "./pages/Development";
 import SplashScreen from "./pages/SplashScreen";
 import ToastMessagePage from "./pages/ToastMessage";
 import IconLibrary from "./pages/IconLibrary";
+import InnovationLab from "./pages/InnovationLab";
+import Products from "./pages/Products";
+import ConnectWithUs from "./pages/ConnectWithUs";
 
 function App() {
   const action = useNavigationType();
@@ -156,6 +159,9 @@ function App() {
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/splash-screen" element={<SplashScreen />} />
       <Route path="/toast-message" element={<ToastMessagePage />} />
+      <Route path="/innovation-lab" element={<InnovationLab />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/connect-with-us" element={<ConnectWithUs />} />
     </Routes>
   );
 }

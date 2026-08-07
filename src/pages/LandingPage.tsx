@@ -508,11 +508,12 @@ function TopNav() {
                   </Link>
                 );
               }
+              const route = link === "Innovation Lab" ? "/innovation-lab" : (link === "Products" ? "/products" : "#");
               return (
-                <button key={link}
+                <Link key={link} to={route}
                   className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap">
                   {link}
-                </button>
+                </Link>
               );
             })}
           </nav>
@@ -521,11 +522,13 @@ function TopNav() {
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-[12px]">
 
-            <button
-              className="text-sm font-semibold px-5 py-2 rounded-xl text-white transition-all hover:opacity-90 hover:shadow-lg"
-              style={{ background: B.blue, boxShadow: `0 4px 12px ${B.blue}35` }}>
-              Connect with Us
-            </button>
+            <Link to="/connect-with-us">
+              <button
+                className="text-sm font-semibold px-5 py-2 rounded-xl text-white transition-all hover:opacity-90 hover:shadow-lg"
+                style={{ background: B.blue, boxShadow: `0 4px 12px ${B.blue}35` }}>
+                Connect with Us
+              </button>
+            </Link>
             <button className="lg:hidden text-muted-foreground" onClick={() => {
               const sidebar = document.getElementById("sidebar_nav");
               if (sidebar) {
@@ -560,13 +563,15 @@ function TopNav() {
                   </Link>
                 );
               }
+              const route = link === "Innovation Lab" ? "/innovation-lab" : (link === "Products" ? "/products" : "#");
               return (
-                <button
+                <Link
                   key={link}
-                  className="w-full rounded-lg px-4 py-4 text-left text-[16px] font-medium leading-none text-[#607487] transition-colors hover:bg-muted hover:text-foreground max-[520px]:px-2 max-[520px]:py-3.5 max-[520px]:text-[15px]"
+                  to={route}
+                  className="block w-full rounded-lg px-4 py-4 text-left text-[16px] font-medium leading-none text-[#607487] transition-colors hover:bg-muted hover:text-foreground max-[520px]:px-2 max-[520px]:py-3.5 max-[520px]:text-[15px]"
                 >
                   {link}
-                </button>
+                </Link>
               );
             })}
           </div>
