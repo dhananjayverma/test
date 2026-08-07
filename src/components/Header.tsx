@@ -1,5 +1,5 @@
 import { FunctionComponent, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 export type HeaderType = {
@@ -14,6 +14,7 @@ const Header: FunctionComponent<HeaderType> = ({
   hBKNewLogo1 = "/HBK-New-Logo-1.svg",
 }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleSidebarClosed = () => setMobileOpen(false);
@@ -39,20 +40,11 @@ const Header: FunctionComponent<HeaderType> = ({
             {/* Desktop nav */}
             <nav className="hidden items-center gap-5 lg:flex xl:gap-[28px]">
               {navLinks.map((link) => {
-                if (link === "Design System") {
-                  return (
-                    <Link
-                      key={link}
-                      to="/about-global-design-system"
-                      className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap"
-                    >
-                      {link}
-                    </Link>
-                  );
-                }
+                const route = link === "Innovation Lab" ? "/innovation-lab" : (link === "Products" ? "/products" : (link === "Design System" ? "/about-global-design-system" : "#"));
                 return (
                   <button
                     key={link}
+                    onClick={() => navigate(route)}
                     className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap"
                   >
                     {link}
@@ -63,6 +55,7 @@ const Header: FunctionComponent<HeaderType> = ({
 
             <div className="flex shrink-0 items-center gap-2 sm:gap-[12px]">
               <button
+                onClick={() => navigate("/connect-with-us")}
                 className="text-sm font-semibold px-5 py-2 rounded-xl text-white transition-all hover:opacity-90 hover:shadow-lg"
                 style={{ background: "#005B9A", boxShadow: "0 4px 12px #0071BC35" }}
               >
@@ -110,20 +103,11 @@ const Header: FunctionComponent<HeaderType> = ({
         {mobileOpen && !document.getElementById("sidebar_nav") && (
           <div className="border-t border-[#dbe6f0] pb-9 pt-8 lg:hidden max-[520px]:py-4">
             {navLinks.map((link) => {
-              if (link === "Design System") {
-                return (
-                  <Link
-                    key={link}
-                    to="/about-global-design-system"
-                    className="block w-full rounded-lg px-4 py-4 text-left text-[16px] font-medium leading-none text-[#607487] transition-colors hover:bg-muted hover:text-foreground max-[520px]:px-2 max-[520px]:py-3.5 max-[520px]:text-[15px]"
-                  >
-                    {link}
-                  </Link>
-                );
-              }
+              const route = link === "Innovation Lab" ? "/innovation-lab" : (link === "Products" ? "/products" : (link === "Design System" ? "/about-global-design-system" : "#"));
               return (
                 <button
                   key={link}
+                  onClick={() => navigate(route)}
                   className="w-full rounded-lg px-4 py-4 text-left text-[16px] font-medium leading-none text-[#607487] transition-colors hover:bg-muted hover:text-foreground max-[520px]:px-2 max-[520px]:py-3.5 max-[520px]:text-[15px]"
                 >
                   {link}
