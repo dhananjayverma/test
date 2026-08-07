@@ -1,5 +1,5 @@
 import { useState, ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const B = {
@@ -23,6 +23,7 @@ const navLinks = ["Innovation Lab", "Design System", "Products"];
 
 function TopNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#dfe9f2] bg-white px-8 max-[520px]:px-5 md:px-10">
@@ -46,7 +47,7 @@ function TopNav() {
                 return (
                   <Link
                     key={link}
-                    to="/design-system"
+                    to="/about-global-design-system"
                     className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap"
                   >
                     {link}
@@ -55,26 +56,25 @@ function TopNav() {
               }
               const route = link === "Innovation Lab" ? "/innovation-lab" : (link === "Products" ? "/products" : "#");
               return (
-                <Link
+                <button
                   key={link}
-                  to={route}
+                  onClick={() => navigate(route)}
                   className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap"
                 >
                   {link}
-                </Link>
+                </button>
               );
             })}
           </nav>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-[12px]">
-            <Link to="/connect-with-us">
-              <button
-                className="text-sm font-semibold px-5 py-2 rounded-xl text-white transition-all hover:opacity-90 hover:shadow-lg"
-                style={{ background: B.blue, boxShadow: `0 4px 12px ${B.blue}35` }}
-              >
-                Connect with Us
-              </button>
-            </Link>
+            <button
+              onClick={() => navigate("/connect-with-us")}
+              className="text-sm font-semibold px-5 py-2 rounded-xl text-white transition-all hover:opacity-90 hover:shadow-lg"
+              style={{ background: B.blue, boxShadow: `0 4px 12px ${B.blue}35` }}
+            >
+              Connect with Us
+            </button>
             <button
               className="lg:hidden text-muted-foreground"
               onClick={() => {
@@ -98,7 +98,7 @@ function TopNav() {
                 return (
                   <Link
                     key={link}
-                    to="/design-system"
+                    to="/about-global-design-system"
                     className="block w-full rounded-lg px-4 py-4 text-left text-[16px] font-medium leading-none text-[#607487] transition-colors hover:bg-muted hover:text-foreground max-[520px]:px-2 max-[520px]:py-3.5 max-[520px]:text-[15px]"
                   >
                     {link}
@@ -107,13 +107,13 @@ function TopNav() {
               }
               const route = link === "Innovation Lab" ? "/innovation-lab" : (link === "Products" ? "/products" : "#");
               return (
-                <Link
+                <button
                   key={link}
-                  to={route}
+                  onClick={() => navigate(route)}
                   className="block w-full rounded-lg px-4 py-4 text-left text-[16px] font-medium leading-none text-[#607487] transition-colors hover:bg-muted hover:text-foreground max-[520px]:px-2 max-[520px]:py-3.5 max-[520px]:text-[15px]"
                 >
                   {link}
-                </Link>
+                </button>
               );
             })}
           </div>

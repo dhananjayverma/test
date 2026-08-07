@@ -22,7 +22,7 @@ const menuItems: MenuItem[] = [
     "label": "Get Started",
     "icon": "get_started.svg",
     "subItems": [
-      { "id": "get-started-1", "label": "About Global Design System", "path": "/design-system" },
+      { "id": "get-started-1", "label": "About Global Design System", "path": "/about-global-design-system" },
       { "id": "get-started-2", "label": "Vision", "path": "/vision" },
       { "id": "get-started-3", "label": "Design Philosophy", "path": "/design-philosophy" },
       { "id": "get-started-4", "label": "Design", "path": "/design" },

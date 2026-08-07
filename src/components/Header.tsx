@@ -43,7 +43,7 @@ const Header: FunctionComponent<HeaderType> = ({
                   return (
                     <Link
                       key={link}
-                      to="/design-system"
+                      to="/about-global-design-system"
                       className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap"
                     >
                       {link}
@@ -114,7 +114,7 @@ const Header: FunctionComponent<HeaderType> = ({
                 return (
                   <Link
                     key={link}
-                    to="/design-system"
+                    to="/about-global-design-system"
                     className="block w-full rounded-lg px-4 py-4 text-left text-[16px] font-medium leading-none text-[#607487] transition-colors hover:bg-muted hover:text-foreground max-[520px]:px-2 max-[520px]:py-3.5 max-[520px]:text-[15px]"
                   >
                     {link}

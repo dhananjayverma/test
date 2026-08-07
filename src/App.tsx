@@ -49,6 +49,22 @@ function App() {
         title = "HBK Experience Hub";
         metaDescription = "";
         break;
+      case "/about-global-design-system":
+        title = "HBK Experience Hub - About Global Design System";
+        metaDescription = "";
+        break;
+      case "/innovation-lab":
+        title = "HBK Experience Hub - Innovation Lab";
+        metaDescription = "";
+        break;
+      case "/products":
+        title = "HBK Experience Hub - Products";
+        metaDescription = "";
+        break;
+      case "/connect-with-us":
+        title = "HBK Experience Hub - Connect with Us";
+        metaDescription = "";
+        break;
       case "/vision":
         title = "HBK Experience Hub - Vision";
         metaDescription = "";
@@ -139,7 +155,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/design-system" element={<GetStartedAboutGlobalDesignSystemCollapsed />}/>
+      <Route path="/about-global-design-system" element={<GetStartedAboutGlobalDesignSystemCollapsed />}/>
       <Route path="/vision" element={<Ourvision />} />
       <Route path="/design-philosophy" element={<OurDesignPhilosophy />} />
       <Route path="/design" element={<Design />} />
