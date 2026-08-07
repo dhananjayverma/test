@@ -50,7 +50,7 @@ const stateSections: SpecSection[] = [
             {"title": "Border radius", "value": "4", "style": "heighlight-text" }
         ] },
     ],
-    "image": "checkbox-4.svg",
+    "image": "checkbox-3.svg",
   },
   {
     "title": "Hover State",
@@ -62,7 +62,7 @@ const stateSections: SpecSection[] = [
             {"title": "Border radius", "value": "4", "style": "heighlight-text" }
         ] },
     ],
-    "image": "checkbox-5.svg",
+    "image": "checkbox-4.svg",
   },
   {
     "title": "Focus State",
@@ -75,7 +75,7 @@ const stateSections: SpecSection[] = [
             {"title": "Border radius", "value": "6", "style": "heighlight-text" }
         ] },
     ],
-    "image": "checkbox-6.svg",
+    "image": "checkbox-5.svg",
   },
   {
     "title": "Pressed State",
@@ -87,7 +87,7 @@ const stateSections: SpecSection[] = [
             {"title": "Border radius", "value": "4", "style": "heighlight-text" }
         ] },
     ],
-    "image": "checkbox-7.svg",
+    "image": "checkbox-6.svg",
   },
   {
     "title": "Disabled State",
@@ -100,7 +100,7 @@ const stateSections: SpecSection[] = [
             {"title": "Border radius", "value": "4", "style": "heighlight-text" }
         ] },
     ],
-    "image": "checkbox-8.svg",
+    "image": "checkbox-7.svg",
   },
 ];
 
@@ -219,7 +219,7 @@ const Checkboxspecs: FunctionComponent<ContainerType> = ({ className = "" }) => 
                 <div className={styles.previewColumn}>
                   <div className={styles.previewSurface}>
                     <div className={styles.previewImage}>
-                      <img src="checkbox.svg" ></img>
+                      <img src="checkbox-01.svg" ></img>
                     </div>
                   </div>
                 </div>

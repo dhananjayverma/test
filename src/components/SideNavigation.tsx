@@ -204,7 +204,12 @@ const SideNavigation: FunctionComponent<SideNavigationType> = ({
       className={[styles.sideNavigation, className].join(" ")}
       id="sidebar_nav"
     >
-      <div className={styles.close_sidenav}><img onClick={closeSidebar} className={styles.image} alt="Close" src="/close-icon.png" /></div>
+      <div className={styles.mobileHeader}>
+        <div className={styles.close_sidenav}>
+          <img onClick={closeSidebar} className={styles.image} alt="Close" src="/close-icon.png" />
+        </div>
+      </div>
+      
       <div className={styles.getStarted}>
         <div className={styles.elementContainer}>
           <div className={styles.designElements}>About Design System</div>
