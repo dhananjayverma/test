@@ -198,6 +198,7 @@
   display: none;
 }
 .navItem {
+  cursor: pointer;
   padding: 8px 16px;
   border-left: 1px solid #e7e7e7;
   font-size: 14px;
@@ -232,6 +233,7 @@
     gap: var(--gap-16);
   }
   .navItem {
+  cursor: pointer;
     border-left: 0;
     border-bottom: 1px solid #e7e7e7;
   }
