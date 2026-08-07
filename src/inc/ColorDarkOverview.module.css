@@ -179,8 +179,10 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .simulationImage {
-  width: 100%;
+  width: 80%;
   height: auto;
+  display: block;
+  margin: 0 auto;
   transition: transform 0.3s ease;
 }
 .sideNav {

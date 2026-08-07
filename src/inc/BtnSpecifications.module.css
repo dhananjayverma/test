@@ -80,7 +80,7 @@
 .specCard {
   display: flex;
   gap: 24px;
-  align-items: center;
+  align-items: stretch;
 }
 .infoColumn {
   flex: 1;
@@ -129,20 +129,18 @@
   color: #000000;
   width: 45%;
 }
-.attributeValue span {
-  display: inline-block;
-  padding: 2px 6px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-}
 .heighlight-text{
-  border-color: #A4C2D8 !important;
+  border-radius: 8px;
+  border: 1px solid #A4C2D8;
   background: #E6F4F8;
+  padding: 2px 6px;
 }
 .previewColumn {
   width: 55%;
   flex-shrink: 0;
   background: #fff;
+  display: flex;
+  align-items: stretch;
 }
 .previewSurface {
   display: flex;
@@ -152,29 +150,32 @@
   border-radius: 8px;
   border: 1px solid #f2f2f2;
   width: 100%;
+  height: auto;
   box-sizing: border-box;
-  height: 320px;
-  transition: all 0.3s ease;
+  flex: 1;
 }
-.previewSurface:hover {
-  /* removed hover */
-}
+
 .previewSurface img{
+  width: auto;
+  height: auto;
   max-height: 225px;
-  transition: transform 0.3s ease;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+  display: block;
 }
 .previewSurface:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 .previewImage{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width:100%;
   height: 100%;
   overflow: hidden;
   background: #f2f2f2;
-  border-radius: 8px;
 }
 .heightSet img{
   height: 350px;
@@ -186,28 +187,20 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  position: sticky;
-  top: 125px;
-  max-height: calc(100vh - 145px);
-  overflow-y: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.sideNav::-webkit-scrollbar {
-  display: none;
+  position:sticky;
+  top:170px;
 }
 .navItem {
-  cursor: pointer;
   padding: 8px 16px;
   border-left: 1px solid #e7e7e7;
   font-size: 14px;
   line-height: 20px;
   color: #52525b;
   text-align: left;
+  cursor: pointer;
 }
 .navItemActive {
   border-left: 2px solid #101828;
-  padding-left: 15px;
   color: #101828;
   font-weight: 600;
 }
@@ -260,9 +253,12 @@
   .previewColumn{
     width: 100%;
   }
+  .previewSurface{
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
   .previewSurface img{
-    max-height: 100%;
-    width:100%;
+    max-height: 225px;
   }
   .heightSet img{
     height: auto;
@@ -300,8 +296,6 @@
   }
   .previewSurface img{
     max-height: 225px;
-    width: 100%;
-    object-fit: contain;
   }
   .heightSet img{
     height: auto;

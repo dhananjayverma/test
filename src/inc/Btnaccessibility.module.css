@@ -62,9 +62,7 @@
   box-sizing: border-box;
   transition: all 0.3s ease;
 }
-.previewCard:hover {
-  /* removed hover */
-}
+
 .previewCard img {
   transition: transform 0.3s ease;
 }
@@ -74,6 +72,7 @@
 .previewSurface {
   position: relative;
   width: 100%;
+  height: 245px;
   border-radius: 8px;
   background: #f2f2f2;
   overflow: hidden;
@@ -87,7 +86,15 @@
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 8px 0;
+  height: 100%;
+  padding: 0;
+}
+.mockup img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
 }
 .list {
   margin: 0;
@@ -145,6 +152,9 @@
     font-size: 20px;
     line-height: 28px;
   }
+  .previewSurface {
+    height: 240px;
+  }
 }
 @media screen and (max-width: 480px) {
   .container {
@@ -161,6 +171,9 @@
   .list li{
     font-size: 14px;
     line-height: 24px;
+  }
+  .previewSurface {
+    height: 220px;
   }
   .height150 img{
     height: 150px;
