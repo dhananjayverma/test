@@ -13,7 +13,7 @@ import Buttoncode from "../inc/Btncode";
 export type ButtonOverviewType = {};
 
 const ButtonOverview: FunctionComponent<ButtonOverviewType> = ({}) => {
-  const tabs = ["Overview", "Specifications", "Accessibility", "Code"];
+  const tabs = ["Overview", "Specifications", "Accessibility", "Code", "Storybook"];
   const [activeTab, setActiveTab] = useState("Overview");
   const [displayedTab, setDisplayedTab] = useState("Overview");
   const [isVisible, setIsVisible] = useState(true);
@@ -98,6 +98,11 @@ const ButtonOverview: FunctionComponent<ButtonOverviewType> = ({}) => {
             {displayedTab === "Code" && (
               <div className={styles.codeSection}>
                 <Buttoncode />
+              </div>
+            )}
+            {displayedTab === "Storybook" && (
+              <div className={styles.codeSection} style={{ height: "600px", width: "100%", padding: "20px" }}>
+                <iframe src={`${import.meta.env.VITE_STORYBOOK_URL}?path=/story/hbk-button--main-component&nav=0`} width="100%" height="100%" style={{ border: "1px solid #dfe9f2", borderRadius: "12px", background: "#fff" }} title="Storybook - Button" />
               </div>
             )}
           </div>

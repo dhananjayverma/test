@@ -11,7 +11,7 @@ import InputAccessibility from "../inc/InputAccessibility";
 import Inputcode from "../inc/Inputcode";
 
 const InputFieldOverview: FunctionComponent = () => {
-  const tabs = ["Overview", "Specifications", "Accessibility", "Code"];
+  const tabs = ["Overview", "Specifications", "Accessibility", "Code", "Storybook"];
   const [activeTab, setActiveTab] = useState("Overview");
   const [displayedTab, setDisplayedTab] = useState("Overview");
   const [isVisible, setIsVisible] = useState(true);
@@ -93,6 +93,11 @@ const InputFieldOverview: FunctionComponent = () => {
             {displayedTab === "Code" && (
               <div className={styles.codeSection}>
                 <Inputcode />
+              </div>
+            )}
+            {displayedTab === "Storybook" && (
+              <div className={styles.codeSection} style={{ height: "600px", width: "100%", padding: "20px" }}>
+                <iframe src={`${import.meta.env.VITE_STORYBOOK_URL}?path=/story/hbk-input-field--main-component&nav=0`} width="100%" height="100%" style={{ border: "1px solid #dfe9f2", borderRadius: "12px", background: "#fff" }} title="Storybook - Input" />
               </div>
             )}
           </div>
