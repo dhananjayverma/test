@@ -5,11 +5,13 @@
   font-family: "Noto Sans", sans-serif;
   color: #444;
 }
+
 .page {
   display: flex;
   align-items: flex-start;
   gap: 48px;
 }
+
 .content {
   flex: 1;
   min-width: 0;
@@ -17,13 +19,14 @@
   flex-direction: column;
   gap: 60px;
   text-align: left;
-  width:100%;
+  width: 100%;
 }
+
 .section {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  max-width:  100%;
+  max-width: 100%;
 }
 
 .sectionHeader {
@@ -31,6 +34,7 @@
   flex-direction: column;
   gap: 24px;
 }
+
 .sectionTitle,
 .subTitle,
 .headingTitle {
@@ -38,34 +42,41 @@
   color: #282828;
   font-weight: 600;
 }
+
 .sectionTitle {
   font-size: 30px;
   line-height: 38px;
 }
+
 .subTitle {
   font-size: 18px;
   line-height: 24px;
 }
+
 .headingTitle {
   font-size: 22px;
   line-height: 30px;
 }
+
 .sectionText {
   margin: 0;
   font-size: 14px;
   line-height: 24px;
   color: #52525b;
 }
+
 .sectionBlock {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
+
 .headerBlock {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+
 .title {
   margin: 0;
   font-size: 30px;
@@ -73,33 +84,38 @@
   font-weight: 600;
   color: #282828;
 }
+
 .cardList {
   display: flex;
   flex-direction: column;
   gap: 60px;
 }
+
 .specCard {
   display: flex;
   gap: 24px;
   align-items: flex-start;
 }
-.checkRow{
+
+.checkRow {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.checkColumn{
+
+.checkColumn {
   display: flex;
   gap: 12px;
 }
-.number{
+
+.number {
   height: 24px;
   width: 24px;
   background: #c64400;
   border-radius: 50%;
-  color:#fff;
+  color: #fff;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -109,6 +125,7 @@
   box-sizing: border-box;
   padding-bottom: 2px;
 }
+
 .infoColumn {
   flex: 1;
   min-width: 0;
@@ -116,35 +133,42 @@
   flex-direction: column;
   gap: 12px;
 }
+
 .titleRow {
   display: flex;
   align-items: center;
   gap: 8px;
 }
+
 .accentDot {
   line-height: 1;
 }
+
 .summary {
   margin: 0;
   font-size: 14px;
   line-height: 24px;
   color: #52525b;
 }
-.attributeItem{
+
+.attributeItem {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
 }
+
 .attributeList {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.listItem{
+
+.listItem {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .attributeRow {
   display: flex;
   align-items: center;
@@ -152,23 +176,33 @@
   font-size: 14px;
   line-height: 20px;
 }
-.attributeName{
+
+.attributeName {
   color: #000000;
   width: 45%;
 }
-.attributeWidth{
-  width:100%;
+
+.attributeWidth {
+  width: 100%;
 }
-.heighlight-text{
-  border-radius: 8px;
-  border: 1px solid #A4C2D8;
-  background: #E6F4F8;
+
+.attributeValue span {
+  display: inline-block;
   padding: 2px 6px;
+  border: 1px solid transparent;
+  border-radius: 8px;
 }
+
+.heighlight-text {
+  border-color: #A4C2D8 !important;
+  background: #E6F4F8;
+}
+
 .previewColumn {
   width: 55%;
   flex-shrink: 0;
 }
+
 .previewSurface {
   display: flex;
   align-items: center;
@@ -180,34 +214,41 @@
   background: #fff;
   transition: all 0.3s ease;
 }
+
 .previewSurface:hover {
   /* removed hover */
 }
-.previewSurface img{
+
+.previewSurface img {
   max-height: 225px;
   transition: transform 0.3s ease;
 }
+
 .previewSurface:hover img {
   transform: scale(1.05);
 }
-.previewSurface .previewWidth img{
+
+.previewSurface .previewWidth img {
   max-height: inherit;
-  width:100%;
+  width: 100%;
 }
-.previewImage{
+
+.previewImage {
   display: flex;
   align-items: center;
   justify-content: center;
-  width:100%;
+  width: 100%;
   overflow: hidden;
   min-height: 150px;
   background: #f2f2f2;
 }
-.heightSet img{
+
+.heightSet img {
   height: 350px;
   max-height: 100%;
   width: auto;
 }
+
 .sideNav {
   width: 160px;
   display: flex;
@@ -220,9 +261,11 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .sideNav::-webkit-scrollbar {
   display: none;
 }
+
 .navItem {
   cursor: pointer;
   padding: 8px 16px;
@@ -232,39 +275,48 @@
   color: #52525b;
   text-align: left;
 }
+
 .navItemActive {
   border-left: 2px solid #101828;
   color: #101828;
   font-weight: 600;
 }
+
 .divider {
   width: 100%;
   height: 1px;
   background: #e5e7eb;
 }
+
 @media screen and (max-width: 1300px) {
-  .heightSet img{
+  .heightSet img {
     height: 282px;
   }
 }
+
 @media screen and (max-width: 1200px) {
   .page {
     flex-direction: column;
   }
+
   .container {
     padding: var(--padding-24) var(--padding-24) var(--padding-48);
   }
+
   .sideNav {
-    display:none;
+    display: none;
   }
-  .attributeName{
-    width:100%;
+
+  .attributeName {
+    width: 40%;
   }
-  .attributeWidth{
-    width:100%;
+
+  .attributeWidth {
+    width: 100%;
   }
-  .content{
-    gap:32px;
+
+  .content {
+    gap: 32px;
   }
 }
 
@@ -272,41 +324,73 @@
   .container {
     padding: 20px 24px 40px;
   }
+
   .sectionTitle {
     font-size: 28px;
     line-height: 34px;
   }
+
   .subTitle {
     font-size: 20px;
     line-height: 28px;
   }
-  .specCard{
+
+  .specCard {
     flex-direction: column;
   }
-  .infoColumn{
+
+  .infoColumn {
     width: 100%;
   }
-  .previewColumn{
+
+  .previewColumn {
     width: 100%;
   }
-  .previewSurface img{
+
+  .previewSurface {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .previewSurface img {
     max-height: 100%;
-    width:100%;
+    width: 100%;
   }
-  .heightSet img{
+
+  .previewSurface {
+    transition: transform 0.3s ease;
+  }
+
+  .previewSurface:hover {
+    transform: scale(1.05);
+  }
+
+  .previewSurface:hover img {
+    transform: none;
+  }
+
+  .heightSet img {
     height: auto;
   }
-  .content{
-    gap:24px;
+
+  .content {
+    gap: 24px;
   }
-  .cardList{
+
+  .attributeName {
+    width: 120px;
+  }
+
+  .cardList {
     gap: 32px;
   }
-  .headingTitle{
+
+  .headingTitle {
     font-size: 20px;
     line-height: 28px;
   }
-  .subTitle{
+
+  .subTitle {
     font-size: 16px;
     line-height: 24px;
   }
@@ -316,19 +400,28 @@
   .container {
     padding: 16px;
   }
+
   .sectionTitle {
     font-size: 24px;
     line-height: 30px;
   }
+
   .sectionText {
     font-size: 14px;
     line-height: 24px;
   }
-  .previewSurface img{
+
+  .previewSurface img {
     max-height: 225px;
-    width:inherit;
+    width: 100%;
+    object-fit: contain;
   }
-  .heightSet img{
+
+  .attributeName {
+    width: 120px;
+  }
+
+  .heightSet img {
     height: auto;
   }
 }

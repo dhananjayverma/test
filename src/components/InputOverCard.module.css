@@ -201,7 +201,8 @@
     flex-direction: column;
   }
   .previewCard {
-    width: calc(100% - 22px);
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 @media screen and (max-width: 480px) {

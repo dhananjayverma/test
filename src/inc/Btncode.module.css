@@ -108,7 +108,8 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .frameWrapper:hover {
-  /* Only image zooms, card doesn't float anymore */
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 .frameDiv {
   align-self: stretch;
@@ -150,8 +151,6 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .frameButton:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   filter: brightness(1.05);
 }
 .caretrightParent {
@@ -207,8 +206,6 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .frameWrapper3:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   filter: brightness(1.05);
 }
 .caretrightGroup {

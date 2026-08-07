@@ -129,11 +129,15 @@
   color: #000000;
   width: 45%;
 }
-.heighlight-text{
-  border-radius: 8px;
-  border: 1px solid #A4C2D8;
-  background: #E6F4F8;
+.attributeValue span {
+  display: inline-block;
   padding: 2px 6px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+.heighlight-text{
+  border-color: #A4C2D8 !important;
+  background: #E6F4F8;
 }
 .previewColumn {
   width: 55%;
@@ -296,7 +300,8 @@
   }
   .previewSurface img{
     max-height: 225px;
-    width:inherit;
+    width: 100%;
+    object-fit: contain;
   }
   .heightSet img{
     height: auto;
